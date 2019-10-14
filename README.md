@@ -1,1 +1,1 @@
-# GDW_WS1920_Bao_Gedrath_Pelzer
+# GDW Projekt: Bao, Gedrath, Pelzer (WS 2019/20)
