@@ -3,7 +3,7 @@
  * Grundlagen des Web (Medieninformatik Ba.)
  *
  * @author Finn Nils Gedrath
- * @arbeitsblatt 1
+ * @arbeitsblatt 2 / 1
  */
 
  // Einbinden des readline moduls
