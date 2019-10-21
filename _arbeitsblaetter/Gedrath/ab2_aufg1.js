@@ -21,6 +21,8 @@ console.log("Finn Nils Gedrath");
 const max_bewertung = 4;
 var bewertung_meta = ["App-Bewertung", 0, 0]; // <= name, anzahl, letze Abgegebene Bewertung
 
+console.log("Länge des Arrays: " + bewertung_meta.length);
+
 // Zufällige Ganzzahl zw. [min] und [max]
 const getRandom = function(min, max){
     return Math.round(Math.random() * (max - min) + min);
