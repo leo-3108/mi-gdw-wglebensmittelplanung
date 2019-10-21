@@ -1,5 +1,4 @@
 //Aufgabe2
-
 const maxBewertung = 5
 let anzahlBewertungen = 1
 let Bewertung = 3
