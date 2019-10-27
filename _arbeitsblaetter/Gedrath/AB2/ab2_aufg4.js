@@ -25,7 +25,7 @@ var ratings = {
     anzahl: 0,
     last_bw: 0,
     bewertung: new_bw => {
-        let bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl); // DEBUG: Anzahl, last_bw bleibt undefined
+        let bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl); // DEBUG: Anzahl, last_bw bleibt undefineda
         //logBewertung(this.anzahl, bw, new_bw);
         console.log(ratings);
 
