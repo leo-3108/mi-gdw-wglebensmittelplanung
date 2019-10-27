@@ -45,7 +45,7 @@ const logBewertung = function(bw_anzahl, bw, new_bw){
 rl.question("Wie viele Bewertungen sollen berechnet werden?\n>> ", function(answer){
     if(!isNaN(answer) && answer > 0){
         for(let i = 0; i < answer; i++){
-            ratings.bewertung(getRandom(0, max_bewertung));a
+            ratings.bewertung(getRandom(0, max_bewertung));
         }
     }
     else{
