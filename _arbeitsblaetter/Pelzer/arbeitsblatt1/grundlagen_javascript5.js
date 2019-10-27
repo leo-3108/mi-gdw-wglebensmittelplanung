@@ -3,7 +3,7 @@ const readline = require('readline');
 const rl = readline.createInterface(process.stdin,process.stdout);
 
 let bewertung = 0;
-maxBewertung = 5;
+const maxBewertung = 5;
 
 //Eingabe der Anzahl der Bewertungen
 rl.question('Anzahl der Bewertungen: ', function(anzahlBewertungen){
