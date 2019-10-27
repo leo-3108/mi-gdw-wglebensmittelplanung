@@ -22,22 +22,18 @@ const max_bewertung = 4;
 var ratings = {
     name: "App-Bewertung",
     anzahl: 0,
-    last_bwt: 0
-}
+    last_bw: 0,
+    bewertung: function(new_bw){
+        bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl);
+        logBewertung(this.anzahl, bw, new_bw);
 
-console.log("Länge des Arrays: " + ratings.length);
+        return bw;
+    }
+}
 
 // Zufällige Ganzzahl zw. [min] und [max]
 const getRandom = function(min, max){
     return Math.round(Math.random() * (max - min) + min);
-}
-
-// Berechnet die Bewertung
-const calcBewertung = function(bw_anzahl, bw, new_bw){
-    bw = (bw * bw_anzahl + new_bw) / (++bw_anzahl);
-    logBewertung(bw_anzahl, bw, new_bw);
-
-    return bw;
 }
 
 const logBewertung = function(bw_anzahl, bw, new_bw){
@@ -49,11 +45,7 @@ const logBewertung = function(bw_anzahl, bw, new_bw){
 rl.question("Wie viele Bewertungen sollen berechnet werden?\n>> ", function(answer){
     if(!isNaN(answer) && answer > 0){
         for(let i = 0; i < answer; i++){
-            ratings.last_bwt = calcBewertung(
-                ratings.anzahl++,
-                ratings.last_bwt,
-                getRandom(0, max_bewertung)
-            );
+            ratings.bewertung(getRandom(0, max_bewertung));
         }
     }
     else{
