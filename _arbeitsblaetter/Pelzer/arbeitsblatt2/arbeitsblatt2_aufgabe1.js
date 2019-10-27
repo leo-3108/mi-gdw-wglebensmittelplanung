@@ -2,7 +2,7 @@
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin,process.stdout);
 
-let bewertung = ['Bewertung', 0, 0];
+let bewertung = ['Bewertung', 1, 0];
 const maxBewertung = 5;
 
 //Funktion zu Erstellung einer Zufallszahl
@@ -12,7 +12,7 @@ const getRandom = function(min, max) {
 
 //Berechnung der Bewertung
 const berechneBewertung = function(anzahlBewertungen, tmp, neueBewertung){
-      bewertung = (anzahlBewertungen*tmp+neueBewertung)/(anzahlBewertungen)
+      tmp = (anzahlBewertungen*tmp+neueBewertung)/(anzahlBewertungen);
 
       //Ausgabe
       console.log('abgegebene Bewertung:');
@@ -23,13 +23,13 @@ const berechneBewertung = function(anzahlBewertungen, tmp, neueBewertung){
       console.log(anzahlBewertungen);
       console.log('------------------');
 
-      return bewertung
+      return tmp;
 }
 
 //Eingabe der Anzahl der Bewertungen
 rl.question('Anzahl der Bewertungen: ', function(anzahlBewertungen){
     for (let i = 0; i < anzahlBewertungen; i++){
-      bewertung[2] = berechneBewertung(bewertung[1]++, bewertung[2], getRandom(0, maxBewertung))
+      bewertung[2] = berechneBewertung(bewertung[1]++, bewertung[2], getRandom(0, maxBewertung));
     }
 
 rl.close();
