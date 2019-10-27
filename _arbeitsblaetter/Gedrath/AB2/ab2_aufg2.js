@@ -3,7 +3,7 @@
  * Grundlagen des Web (Medieninformatik Ba.)
  *
  * @author Finn Nils Gedrath
- * @arbeitsblatt 2 / 1
+ * @arbeitsblatt 2 / 2
  */
 
  // Einbinden des readline moduls
@@ -19,9 +19,9 @@ console.log("Finn Nils Gedrath");
 
 // Bewertungs-Definition
 const max_bewertung = 4;
-var bewertung_meta = ["App-Bewertung", 0, 0]; // <= name, anzahl, letze Abgegebene Bewertung
+var ratings = ["App-Bewertung", 0, 0]; // <= name, anzahl, letze Abgegebene Bewertung
 
-console.log("Länge des Arrays: " + bewertung_meta.length);
+console.log("Länge des Arrays: " + ratings.length);
 
 // Zufällige Ganzzahl zw. [min] und [max]
 const getRandom = function(min, max){
@@ -45,9 +45,9 @@ const logBewertung = function(bw_anzahl, bw, new_bw){
 rl.question("Wie viele Bewertungen sollen berechnet werden?\n>> ", function(answer){
     if(!isNaN(answer) && answer > 0){
         for(let i = 0; i < answer; i++){
-            bewertung_meta[2] = calcBewertung(
-                bewertung_meta[1]++,
-                bewertung_meta[2],
+            ratings[2] = calcBewertung(
+                ratings[1]++,
+                ratings[2],
                 getRandom(0, max_bewertung)
             );
         }
