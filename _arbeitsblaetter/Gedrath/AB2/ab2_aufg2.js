@@ -19,7 +19,11 @@ console.log("Finn Nils Gedrath");
 
 // Bewertungs-Definition
 const max_bewertung = 4;
-var ratings = ["App-Bewertung", 0, 0]; // <= name, anzahl, letze Abgegebene Bewertung
+var ratings = {
+    name: "App-Bewertung",
+    anzahl: 0,
+    last_bwt: 0
+}
 
 console.log("Länge des Arrays: " + ratings.length);
 
@@ -45,9 +49,9 @@ const logBewertung = function(bw_anzahl, bw, new_bw){
 rl.question("Wie viele Bewertungen sollen berechnet werden?\n>> ", function(answer){
     if(!isNaN(answer) && answer > 0){
         for(let i = 0; i < answer; i++){
-            ratings[2] = calcBewertung(
-                ratings[1]++,
-                ratings[2],
+            ratings.last_bwt = calcBewertung(
+                ratings.anzahl++,
+                ratings.last_bwt,
                 getRandom(0, max_bewertung)
             );
         }
@@ -57,3 +61,11 @@ rl.question("Wie viele Bewertungen sollen berechnet werden?\n>> ", function(answ
     }
     rl.close();
 });
+
+
+/**
+ *  Wie könnte man nun mehrere Bewertungen mit unterschiedlichen Namen abspeichern?
+ *
+ * * Es können verschiedene Objekte mit verschiedenen Namen erstellt werden.
+ * * Diese können wiederum in einem Array referenziert werden.
+ */
