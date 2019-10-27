@@ -11,7 +11,7 @@ let rating = new Object();
   rating.bewertung = neueBewertung =>{
         tmp = (this.anzahl*this.letzteBewertung+neueBewertung)/(++this.anzahl);
 
-        ausgeben(this.anzahl, tmp, neueBewertung)
+        ausgeben(this.anzahl, tmp, neueBewertung)             //Ausgabe funktioniert noch nicht
         return tmp;
       }
 
