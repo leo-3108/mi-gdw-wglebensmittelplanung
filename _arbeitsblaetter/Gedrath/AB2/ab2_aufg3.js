@@ -24,7 +24,7 @@ var ratings = {
     anzahl: 0,
     last_bw: 0,
     bewertung: function(new_bw){
-        bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl);
+        let bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl);
         logBewertung(this.anzahl, bw, new_bw);
 
         return bw;

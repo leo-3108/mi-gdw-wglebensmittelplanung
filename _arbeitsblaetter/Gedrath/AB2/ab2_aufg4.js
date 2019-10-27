@@ -1,3 +1,4 @@
+'use strict';
 /**
  * TH Koeln - Campus Gummersbach
  * Grundlagen des Web (Medieninformatik Ba.)
@@ -23,9 +24,10 @@ var ratings = {
     name: "App-Bewertung",
     anzahl: 0,
     last_bw: 0,
-    bewertung: function(new_bw){
-        bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl);
-        logBewertung(this.anzahl, bw, new_bw);
+    bewertung: new_bw => {
+        let bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl); // DEBUG: Anzahl, last_bw bleibt undefined
+        //logBewertung(this.anzahl, bw, new_bw);
+        console.log(ratings);
 
         return bw;
     }
@@ -45,7 +47,7 @@ const logBewertung = function(bw_anzahl, bw, new_bw){
 rl.question("Wie viele Bewertungen sollen berechnet werden?\n>> ", function(answer){
     if(!isNaN(answer) && answer > 0){
         for(let i = 0; i < answer; i++){
-            ratings.bewertung(getRandom(0, max_bewertung));a
+            ratings.bewertung(getRandom(0, max_bewertung));
         }
     }
     else{
