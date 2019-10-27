@@ -7,7 +7,9 @@
  */
 
 /**
- * Funktioniert nicht, da auf world nur lokal in helloWorld() zugegriffen werden kann und diese Variable nicht in worldHello() existiert.
+ * Funktioniert nicht, da auf world nur lokal in helloWorld()
+ * zugegriffen werden kann und diese Variable nicht in worldHello() existiert.
+ * 
 
 const hello = "hello";
 
