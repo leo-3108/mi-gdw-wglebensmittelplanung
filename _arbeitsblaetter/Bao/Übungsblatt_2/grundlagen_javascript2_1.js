@@ -1,3 +1,6 @@
+//Aufgabe 1
+console.log('Aufgabe 1')
+
 //Maximale Höher der möglichen Bewertung
 const max = 5;
 //Aktuelle Anzahl der Bewertung
@@ -26,10 +29,12 @@ const bewerten = function(){
       bewertung = Math.round(Math.random()* (maxr - minr) + minr);
       aktuell = anzahl + 1;
       bewertung2 = (bewertung2 + bewertung)/aktuell;
+      //Hinzufügen jeweiliger Werte
       arrayanzahl.push(anzahl);
       arraybewertung.push(bewertung);
       arrayname.push('Bewertung' + anzahl)
 
+      //Ausgabe der Länge des Arrays
       console.log(arrayanzahl.length);
 
       console.log('Abgegebene Bewertung:' + bewertung, 'Anzahl:' + aktuell, 'Die aktuelle Bewertung beträgt' + bewertung2  );
