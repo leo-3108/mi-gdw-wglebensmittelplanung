@@ -1,5 +1,5 @@
-//Aufgabe 2.3
-console.log('Aufgabe 2.3')
+//Aufgabe 2.4
+console.log('Aufgabe 2.4')
 
 //Maximale Höher der möglichen Bewertung
 const max = 5;
@@ -46,9 +46,8 @@ const rl = readline.createInterface({
         anzahlr: anzahl,
         letzteBewertung: bewertung,
         name: 'Bewertung ' + aktuell,
-        bewertungr: function(){
-          return summe/this.anzahlr;
-        }
+        bewertungr: () => summe/this.anzahl //Arrow Function
+                                            //unklar: wieso this.anzahl und nicht this.anzahlr?
       }
       console.log(ratings.bewertungr());
 
