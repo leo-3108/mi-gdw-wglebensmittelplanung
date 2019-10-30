@@ -15,4 +15,18 @@ Das nun programmierte Modul soll in einer anderen Datei aufgerufen und verwendet
 Um mit JSON Daten zu arbeiten müssen Sie JSON.parse() und JSON.stringify() anwenden. Sollte es sich bei einem Aufruf von JSON.parse() nicht um valides JSON handeln erhalten Sie eine Exception. Schreiben Sie einen try/catch Block um fs.readFile() , welcher diese Fehler abfängt und eine entsprechende Nachricht auf der Konsole ausgibt.Fällt Ihnen dabei etwas auf? Überprüfen Sie die Eigenschaften von try/catch in Javascript und überlegen Sie wie man dieses Problem lösen könnte.
 
 
-## Aufg. 4 – Asynchrone Programmierung 
+## Aufg. 4 – Asynchrone Programmierung
+
+Legen Sie nun ein zweite Datei an, welche Informationen zu diversen Usern enthält. Dabei soll mindestens der Vorname, Nachname, eine E-Mail, sowie der Wohnort eines Users enthalten sein. Die Wohnorte sollen sich an den Namen der Städte der "cities.json" orientieren.
+Verwenden Sie für die Asynchrone Programmierung das Prinzip von Promises (6) und die Async Functions (7) mit Await().
+Lesen Sie nun die Städte und User mit Node.js ein und verbinden Sie die Daten zu einem Datensatz. Geben Sie diese Daten wie folgt auf der Konsole aus:
+
+Vorname: Max
+Nachname: Mustermann
+E-Mail: max@mustermann.de
+Wohnort: Köln
+Einwohner: 1061000
+Bundesland: Nordrhein Westfalen
+- - -
+Vorname: Hans
+...
