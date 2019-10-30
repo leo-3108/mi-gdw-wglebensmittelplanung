@@ -13,7 +13,7 @@ function konkatenieren1(){
   konkatenieren1();
   //konkatenieren2();
 
-//--------------------------
+//-------------------------- Aenderung
 
 const hello2 = "Hello2"
 const world2 = "World2";
