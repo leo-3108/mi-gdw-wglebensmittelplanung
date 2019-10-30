@@ -41,7 +41,10 @@ const rl = readline.createInterface({
       arrayname.push('Bewertung' + anzahl);
 
       summe = bewertung + summe;
-      //Objekterzeugung
+      /*Objekterzeugung
+        Aufgetretenes Problem: Die Berechnung der "bewertungr" ergab "NaN."
+        Das eigentlich Problem konnte erst nach langem Testen gelöst werden.
+        */
       var ratings = {
         anzahlr: anzahl,
         letzteBewertung: bewertung,
