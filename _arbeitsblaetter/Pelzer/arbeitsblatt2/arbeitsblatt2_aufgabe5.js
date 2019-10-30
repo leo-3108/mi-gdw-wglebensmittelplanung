@@ -12,3 +12,19 @@ function konkatenieren1(){
 
   konkatenieren1();
   //konkatenieren2();
+
+//--------------------------
+
+const hello2 = "Hello2"
+const world2 = "World2";
+
+function konkatenieren3(){
+  console.log(hello2+world2);
+  }
+
+function konkatenieren4(){
+  console.log(hello2+world2);
+  }
+
+konkatenieren3();
+konkatenieren4();
