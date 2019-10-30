@@ -18,15 +18,24 @@ Um mit JSON Daten zu arbeiten müssen Sie JSON.parse() und JSON.stringify() anwe
 ## Aufg. 4 – Asynchrone Programmierung
 
 Legen Sie nun ein zweite Datei an, welche Informationen zu diversen Usern enthält. Dabei soll mindestens der Vorname, Nachname, eine E-Mail, sowie der Wohnort eines Users enthalten sein. Die Wohnorte sollen sich an den Namen der Städte der "cities.json" orientieren.
+
 Verwenden Sie für die Asynchrone Programmierung das Prinzip von Promises (6) und die Async Functions (7) mit Await().
 Lesen Sie nun die Städte und User mit Node.js ein und verbinden Sie die Daten zu einem Datensatz. Geben Sie diese Daten wie folgt auf der Konsole aus:
 
 Vorname: Max
+
 Nachname: Mustermann
+
 E-Mail: max@mustermann.de
+
 Wohnort: Köln
+
 Einwohner: 1061000
+
 Bundesland: Nordrhein Westfalen
+
 - - -
+
 Vorname: Hans
+
 ...
