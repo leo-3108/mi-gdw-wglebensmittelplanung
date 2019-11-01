@@ -1,0 +1,12 @@
+"cities":[
+  {"name":"Berlin", "einwohnerzahl":"3.644.826", "bundesland":"Berlin"},
+  {"name":"Hamburg", "einwohnerzahl":"1.841.179", "bundesland":"Hamburg"},
+  {"name":"München", "einwohnerzahl":"1.471.508", "bundesland":"Bayern"},
+  {"name":"Köln", "einwohnerzahl":"1.085.664", "bundesland":"Nordrhein-Westfalen"},
+  {"name":"Frankfurt am Main", "einwohnerzahl":"753.056", "bundesland":"Hessen"},
+  {"name":"Stuttgart", "einwohnerzahl":"634.830", "bundesland":"Baden-Württemberg"},
+  {"name":"Düsseldorf", "einwohnerzahl":"619.294", "bundesland":"Nordrhein-Westfalen"},
+  {"name":"Leipzig", "einwohnerzahl":"587.857", "bundesland":"Sachsen"},
+  {"name":"Dortmund", "einwohnerzahl":"587.010", "bundesland":"Nordrhein-Westfalen"},
+  {"name":"Essen", "einwohnerzahl":"583.109", "bundesland":"Nordrhein-Westfalen"},
+]
