@@ -7,5 +7,6 @@ let data = fs.readFile('cities.json', (err, data)=>{
   }
   else{
     console.log(data.toString());
+    let dataArray = JSON.parse(data)
   }
 });

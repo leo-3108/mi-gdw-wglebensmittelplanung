@@ -1,3 +1,4 @@
+{
 "cities":[
   {"name":"Berlin", "einwohnerzahl":"3.644.826", "bundesland":"Berlin"},
   {"name":"Hamburg", "einwohnerzahl":"1.841.179", "bundesland":"Hamburg"},
@@ -8,5 +9,6 @@
   {"name":"Düsseldorf", "einwohnerzahl":"619.294", "bundesland":"Nordrhein-Westfalen"},
   {"name":"Leipzig", "einwohnerzahl":"587.857", "bundesland":"Sachsen"},
   {"name":"Dortmund", "einwohnerzahl":"587.010", "bundesland":"Nordrhein-Westfalen"},
-  {"name":"Essen", "einwohnerzahl":"583.109", "bundesland":"Nordrhein-Westfalen"},
+  {"name":"Essen", "einwohnerzahl":"583.109", "bundesland":"Nordrhein-Westfalen"}
 ]
+}
