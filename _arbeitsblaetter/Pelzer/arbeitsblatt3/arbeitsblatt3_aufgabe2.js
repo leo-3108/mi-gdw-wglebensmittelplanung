@@ -11,18 +11,32 @@ let data = fs.readFile('cities.json', (err, data)=>{
   else{
     var dataArray = JSON.parse(data);
 
-rl.question('Suchbegriff: ',function suchen(suchbegriff){
-    if(m.search(dataArray, suchbegriff)==true){
-      console.log("Name gefunden");
-    }
-    else{
-      console.log("Name nicht gefunden");
-    }
+function auswaehlen(){
+rl.question('1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->',function suchen(befehl){
+  if(befehl==1){
+    rl.question('Suchbegriff: ',function suchen(suchbegriff){
+        if(m.search(dataArray, suchbegriff)==true){
+          console.log("Name gefunden");
+        }
+        else{
+          console.log("Name nicht gefunden");
+        }
+            auswaehlen();
+    });
+  }
+  if(befehl==2){
+    rl.question('Suchbegriff: ',function suchen(begriff){
+        m.loeschen(dataArray, begriff)
+            auswaehlen();
+    });
+  }
+  if(befehl==4){
+    console.log(dataArray);
+  }
+  });
+}
 
-    m.loeschen(dataArray, suchbegriff)
-
-
-          });
-
+auswaehlen();
+console.log("test")
   }
 });
