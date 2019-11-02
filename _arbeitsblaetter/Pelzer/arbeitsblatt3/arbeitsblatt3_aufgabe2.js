@@ -8,24 +8,51 @@ let data = fs.readFile('cities.json', (err, data)=>{
     console.log("Fehler");
   }
   else{
-    console.log(data.toString());
-    var dataArray = JSON.parse(data)
+    var dataArray = JSON.parse(data);
 
-    function search(dataArray){
-      rl.question('Suchbegriff: ',function search(suchbegriff){
+
+    //suchen
+    function search(dataArray, begriff){
+
+        var nichtgefunden = 0;
+
         for(let i = 0; i < 10; i++){
-        if (suchbegriff==dataArray.cities[i].name){
-          console.log("Gefunden");
-          break;
+        if (begriff==dataArray.cities[i].name){
+          return true;
         }
         else{
-          console.log("...")
+          nichtgefunden++;
         }
       }
-      });
+      return false;
     }
 
-    search(dataArray);
+    //löschen
+    function loeschen(dataArray, begriff){
+      if(search(dataArray, begriff)==true)
+
+      for(let i = 0; i < 10; i++){
+      if (begriff==dataArray.cities[i].name){
+        delete dataArray.cities[i];
+        console.log("deleted")
+      }
+    }
+  }
+
+
+
+rl.question('Suchbegriff: ',function suchen(suchbegriff){
+    if(search(dataArray, suchbegriff)==true){
+      console.log("Name gefunden");
+    }
+    else{
+      console.log("Name nicht gefunden");
+    }
+
+    loeschen(dataArray, suchbegriff)
+
+
+          });
 
   }
 });
