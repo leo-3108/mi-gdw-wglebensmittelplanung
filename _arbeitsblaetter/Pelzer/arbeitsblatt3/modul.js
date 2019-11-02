@@ -1,7 +1,4 @@
 exports.search = function(dataArray, begriff){
-
-    var nichtgefunden = 0;
-
     for(let i = 0; i < dataArray.cities.length; i++){
     if (begriff==dataArray.cities[i].name){
       return true;
@@ -10,7 +7,6 @@ exports.search = function(dataArray, begriff){
   return false;
 }
 
-//löschen
 exports.loeschen = function(dataArray, name){
   if(this.search(dataArray, name)==true)
 
