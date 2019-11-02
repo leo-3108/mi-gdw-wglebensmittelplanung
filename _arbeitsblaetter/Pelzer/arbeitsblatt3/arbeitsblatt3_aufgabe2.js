@@ -12,7 +12,11 @@ let data = fs.readFile('cities.json', (err, data)=>{
     var dataArray = JSON.parse(data);
 
 function auswaehlen(){
-rl.question('1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->',function suchen(befehl){
+rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->',function suchen(befehl){
+  if(befehl==0){
+    console.log(dataArray);
+    auswaehlen();
+  }
   if(befehl==1){
     rl.question('Suchbegriff: ',function suchen(suchbegriff){
         if(m.search(dataArray, suchbegriff)==true){
@@ -37,6 +41,6 @@ rl.question('1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->',function suc
 }
 
 auswaehlen();
-console.log("test")
+//console.log("test")
   }
 });
