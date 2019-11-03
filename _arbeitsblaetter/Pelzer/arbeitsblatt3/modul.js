@@ -18,7 +18,6 @@ exports.loeschen = function(dataArray, name){
   }
 }
 
-//hinzufuegen
 exports.hinzufuegen = function(dataArray, name, einwohneranzahl, bundesland){
   dataArray.cities.push({name, einwohneranzahl, bundesland});
 }
