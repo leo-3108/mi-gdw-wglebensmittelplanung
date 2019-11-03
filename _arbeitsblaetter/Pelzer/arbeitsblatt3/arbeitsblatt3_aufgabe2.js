@@ -25,13 +25,23 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->'
         else{
           console.log("Name nicht gefunden");
         }
-            auswaehlen();
+        auswaehlen();
+    });
+  }
+  if(befehl==3){
+    rl.question('Name: ',function suchen(name){
+      rl.question('Einwohnerzahl: ',function suchen(einwohnerzahl){
+        rl.question('Budesland: ',function suchen(bundesland){
+        m.hinzufuegen(dataArray, name, einwohnerzahl, bundesland)
+        auswaehlen();
+        });
+      });
     });
   }
   if(befehl==2){
     rl.question('Suchbegriff: ',function suchen(begriff){
-        m.loeschen(dataArray, begriff)
-            auswaehlen();
+        m.loeschen(dataArray, begriff);
+        auswaehlen();
     });
   }
   if(befehl==4){
