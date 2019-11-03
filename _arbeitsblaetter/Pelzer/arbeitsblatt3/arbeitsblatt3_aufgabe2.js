@@ -20,10 +20,10 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden --> 
   if(befehl==1){
     rl.question('Suchbegriff: ',function suchen(suchbegriff){
         if(m.search(dataArray, suchbegriff)==true){
-          console.log("Name gefunden");
+          console.log("Name gefunden!");
         }
         else{
-          console.log("Name nicht gefunden");
+          console.log("Name nicht gefunden!");
         }
         auswaehlen();
     });
