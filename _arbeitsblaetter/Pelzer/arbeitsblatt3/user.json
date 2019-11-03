@@ -1,5 +1,5 @@
 {
 "user":[
-  {"vornamename":"Max", "nachname":"Mustermann", "email":"max.mustermann@gmail.com"}
+  {"vornamename":"Max", "nachname":"Mustermann", "email":"max.mustermann@gmail.com", "wohnort": "Köln"}
 ]
 }
