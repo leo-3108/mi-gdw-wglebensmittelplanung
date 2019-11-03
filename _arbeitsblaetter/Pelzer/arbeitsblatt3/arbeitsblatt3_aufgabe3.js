@@ -38,7 +38,7 @@ let data = fs.readFile('cities.json', (err, data)=>{
           rl.question('Name: ',function suchen(name){
             rl.question('Einwohnerzahl: ',function suchen(einwohnerzahl){
               rl.question('Budesland: ',function suchen(bundesland){
-                m.hinzufuegen(dataArray, name, einwohnerzahl, bundesland)
+                m.hinzufuegen(dataArray, name, einwohnerzahl, bundesland);
                 auswaehlen();
               });
             });
@@ -51,7 +51,6 @@ let data = fs.readFile('cities.json', (err, data)=>{
     }
     auswaehlen();
     }
-
   catch{
       console.log("Fehler");
       }
