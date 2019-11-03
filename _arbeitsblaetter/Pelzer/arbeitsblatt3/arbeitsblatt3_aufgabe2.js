@@ -38,7 +38,7 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden --> 
     rl.question('Name: ',function suchen(name){
       rl.question('Einwohnerzahl: ',function suchen(einwohnerzahl){
         rl.question('Budesland: ',function suchen(bundesland){
-        m.hinzufuegen(dataArray, name, einwohnerzahl, bundesland)
+        m.hinzufuegen(dataArray, name, einwohnerzahl, bundesland);
         auswaehlen();
         });
       });
@@ -49,7 +49,6 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden --> 
   }
   });
 }
-
 auswaehlen();
   }
 });
