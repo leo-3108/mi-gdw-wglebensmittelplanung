@@ -51,6 +51,5 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->'
 }
 
 auswaehlen();
-//console.log("test")
   }
 });
