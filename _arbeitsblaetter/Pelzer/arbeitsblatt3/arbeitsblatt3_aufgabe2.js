@@ -12,7 +12,7 @@ let data = fs.readFile('cities.json', (err, data)=>{
     var dataArray = JSON.parse(data);
 
 function auswaehlen(){
-rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->',function suchen(befehl){
+rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden --> ',function suchen(befehl){
   if(befehl==0){
     console.log(dataArray);
     auswaehlen();
@@ -28,6 +28,12 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->'
         auswaehlen();
     });
   }
+  if(befehl==2){
+    rl.question('Löschen: ',function suchen(begriff){
+        m.loeschen(dataArray, begriff);
+        auswaehlen();
+    });
+  }
   if(befehl==3){
     rl.question('Name: ',function suchen(name){
       rl.question('Einwohnerzahl: ',function suchen(einwohnerzahl){
@@ -36,12 +42,6 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden -->'
         auswaehlen();
         });
       });
-    });
-  }
-  if(befehl==2){
-    rl.question('Suchbegriff: ',function suchen(begriff){
-        m.loeschen(dataArray, begriff);
-        auswaehlen();
     });
   }
   if(befehl==4){
