@@ -11,7 +11,8 @@ let rating = new Object();
   rating.bewertung = neueBewertung =>{
         tmp = (this.anzahl*this.letzteBewertung+neueBewertung)/(++this.anzahl);
 
-        ausgeben(this.anzahl, tmp, neueBewertung)             //Ausgabe funktioniert noch nicht
+        //ausgeben(this.anzahl, tmp, neueBewertung)             //Ausgabe funktioniert noch nicht
+        console.log(rating)
         return tmp;
       }
 
@@ -19,7 +20,6 @@ let rating = new Object();
 const getRandom = function(min, max) {
       return Math.round(Math.random() * (max - min) + min);
 }
-
 
 //Ausgabe
 const ausgeben = function(anzahlBewertungen, tmp, neueBewertung){
