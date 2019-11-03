@@ -10,4 +10,17 @@ exports.search = (dataArray, name) => {
             return item
         }
     });
+
+    return false
+}
+
+exports.delete = (dataArray, name) => {
+    dataArray.forEach(function(item, index, array){
+        if(item.stadt_name == name){
+            array.splice(index, 1);
+            return array
+        }
+    });
+
+    return false
 }
