@@ -20,10 +20,10 @@ let data = fs.readFile('cities.json', (err, data)=>{
         if(befehl==1){
           rl.question('Suchbegriff: ',function suchen(suchbegriff){
             if(m.search(dataArray, suchbegriff)==true){
-              console.log("Name gefunden");
+              console.log("Name gefunden!");
             }
             else{
-          console.log("Name nicht gefunden");
+          console.log("Name nicht gefunden!");
           }
           auswaehlen();
           });
