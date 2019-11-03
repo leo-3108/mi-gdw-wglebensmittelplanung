@@ -4,7 +4,7 @@ Für eine zukünftige Webanwendung sollen Sie eine JSON-Datei mit dem Namen "cit
 
 
 ## Aufg. 2 – Module
-Die von Ihnen angelegte JSON Datei soll man nun mit Hilfe von Javascript bearbeiten können, damit Sie diese auch für die geplante Webanwendung verwenden können. Um Dateien in Node.js lesen zu können müssen Sie zuerst das Modul "fs" einbinden. Daraufhin können Sie die Datei über den Aufruf fs.readFile() lesen und mit fs.writeFile() speichern.
+Die von Ihnen angelegte JSON Datei soll man nun mit Hilfe von Javascript bearbeiten können, damit Sie diese auch für die geplante Webanwendung verwenden können. Um Dateien in Node.js lesen zu können müssen Sie zuerst das Modul "fs" einbinden. Daraufhin können Sie die Datei über den Aufruf `fs.readFile()` lesen und mit `fs.writeFile()` speichern.
 
 
 Schreiben Sie ein Modul, das die Manipulation dieser JSON Datei erlaubt. Schreiben Sie Funktionen mit denen Sie Städte anhand des Namens ﬁnden und löschen können. Außerdem soll eine Funktion zum Hinzufügen neuer Städte implementiert werden. Den Pfad zur Datei können Sie innerhalb des Moduls als String deﬁnieren oder durch eine entsprechende Funktion mit übergeben.
@@ -14,7 +14,7 @@ Das nun programmierte Modul soll in einer anderen Datei aufgerufen und verwendet
 
 
 ## Aufg. 3 – Errors
-Um mit JSON Daten zu arbeiten müssen Sie JSON.parse() und JSON.stringify() anwenden. Sollte es sich bei einem Aufruf von JSON.parse() nicht um valides JSON handeln erhalten Sie eine Exception. Schreiben Sie einen try/catch Block um fs.readFile() , welcher diese Fehler abfängt und eine entsprechende Nachricht auf der Konsole ausgibt.
+Um mit JSON Daten zu arbeiten müssen Sie `JSON.parse()` und `JSON.stringify()` anwenden. Sollte es sich bei einem Aufruf von `JSON.parse()` nicht um valides JSON handeln erhalten Sie eine Exception. Schreiben Sie einen try/catch Block um `fs.readFile()` , welcher diese Fehler abfängt und eine entsprechende Nachricht auf der Konsole ausgibt.
 
 
 Fällt Ihnen dabei etwas auf? Überprüfen Sie die Eigenschaften von try/catch in Javascript und überlegen Sie wie man dieses Problem lösen könnte.
@@ -24,7 +24,7 @@ Fällt Ihnen dabei etwas auf? Überprüfen Sie die Eigenschaften von try/catch i
 Legen Sie nun ein zweite Datei an, welche Informationen zu diversen Usern enthält. Dabei soll mindestens der Vorname, Nachname, eine E-Mail, sowie der Wohnort eines Users enthalten sein. Die Wohnorte sollen sich an den Namen der Städte der "cities.json" orientieren.
 
 
-Verwenden Sie für die Asynchrone Programmierung das Prinzip von Promises (6) und die Async Functions (7) mit Await().
+Verwenden Sie für die Asynchrone Programmierung das Prinzip von Promises und die Async Functions mit `Await()`.
 
 
 Lesen Sie nun die Städte und User mit Node.js ein und verbinden Sie die Daten zu einem Datensatz. Geben Sie diese Daten wie folgt auf der Konsole aus:
