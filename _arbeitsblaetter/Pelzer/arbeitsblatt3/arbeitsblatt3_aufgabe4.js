@@ -24,14 +24,16 @@ let cities = fs.readFile('cities.json', (err, cities)=>{
           for(let o = 0; o < cities.cities.length; o++){
             if (user.user[i].wohnort==cities.cities[i].name){
               user.user[i].push(cities.cities[i].einwohneranzahl, cities.cities[i].bundesland);
+
             }
           }
         }
+        console.log(user);
+
+
+
+        process.exit();
       }
-
-
-
-
     });
   }
 });
