@@ -46,6 +46,7 @@ let data = fs.readFile('cities.json', (err, data)=>{
         }
         if(befehl==4){
           console.log(dataArray);
+          process.exit();
         }
       });
     }
