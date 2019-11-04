@@ -1,14 +1,14 @@
 {
 "cities":[
-  {"name":"Berlin", "einwohnerzahl":3644826, "bundesland":"Berlin"},
-  {"name":"Hamburg", "einwohnerzahl":1841179, "bundesland":"Hamburg"},
-  {"name":"München", "einwohnerzahl":1471508, "bundesland":"Bayern"},
-  {"name":"Köln", "einwohnerzahl":1085664, "bundesland":"Nordrhein-Westfalen"},
-  {"name":"Frankfurt am Main", "einwohnerzahl":753056, "bundesland":"Hessen"},
-  {"name":"Stuttgart", "einwohnerzahl":634830, "bundesland":"Baden-Württemberg"},
-  {"name":"Düsseldorf", "einwohnerzahl":619294, "bundesland":"Nordrhein-Westfalen"},
-  {"name":"Leipzig", "einwohnerzahl":587857, "bundesland":"Sachsen"},
-  {"name":"Dortmund", "einwohnerzahl":587010, "bundesland":"Nordrhein-Westfalen"},
-  {"name":"Essen", "einwohnerzahl":583109, "bundesland":"Nordrhein-Westfalen"}
+  {"stadtname":"Berlin", "einwohnerzahl":3644826, "bundesland":"Berlin"},
+  {"stadtname":"Hamburg", "einwohnerzahl":1841179, "bundesland":"Hamburg"},
+  {"stadtname":"München", "einwohnerzahl":1471508, "bundesland":"Bayern"},
+  {"stadtname":"Köln", "einwohnerzahl":1085664, "bundesland":"Nordrhein-Westfalen"},
+  {"stadtname":"Frankfurt am Main", "einwohnerzahl":753056, "bundesland":"Hessen"},
+  {"stadtname":"Stuttgart", "einwohnerzahl":634830, "bundesland":"Baden-Württemberg"},
+  {"stadtname":"Düsseldorf", "einwohnerzahl":619294, "bundesland":"Nordrhein-Westfalen"},
+  {"stadtname":"Leipzig", "einwohnerzahl":587857, "bundesland":"Sachsen"},
+  {"stadtname":"Dortmund", "einwohnerzahl":587010, "bundesland":"Nordrhein-Westfalen"},
+  {"stadtname":"Essen", "einwohnerzahl":583109, "bundesland":"Nordrhein-Westfalen"}
 ]
 }
