@@ -46,6 +46,7 @@ rl.question('0: ausgeben; 1: suchen, 2: löschen, 3: hinzufügen 4: beenden --> 
   }
   if(befehl==4){
     console.log(dataArray);
+    process.exit();
   }
   });
 }
