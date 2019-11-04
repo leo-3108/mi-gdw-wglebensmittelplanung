@@ -4,32 +4,31 @@ var fs = require('fs');
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin,process.stdout);
 
-let cities = fs.readFile('cities.json', (err, cities)=>{
+let cityData = fs.readFile('cities.json', (err, cityData)=>{
   if(err){
     console.log("Fehler");
   }
   else{
-    var cities = JSON.parse(cities);
+    var cityData = JSON.parse(cityData);
 
-    let user = fs.readFile('user.json', (err, user)=>{
+    let userData = fs.readFile('user.json', (err, userData)=>{
       if(err){
         console.log("Fehler");
       }
       else{
-        var user = JSON.parse(user);
+        var userData = JSON.parse(userData);
 
         //Daten zusammenfügen
 
-        for(let i = 0; i < user.user.length; i++){
-          for(let o = 0; o < cities.cities.length; o++){
-            if (user.user[i].wohnort==cities.cities[i].name){
-              user.user[i].push(cities.cities[i].einwohneranzahl, cities.cities[i].bundesland);
-
+        let neu = [];
+        for(let i = 0; i < userData.user.length; i++){
+          for(let o = 0; o < cityData.cities.length; o++){
+            if (userData.user[i].wohnort == cityData.cities[o].name){
+              neu.push({userData.user[i].concat(cityData.cities[o])});
             }
           }
         }
-        console.log(user);
-
+        console.log(neu);
 
 
         process.exit();
