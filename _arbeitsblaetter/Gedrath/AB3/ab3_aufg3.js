@@ -44,7 +44,7 @@ fs.readFile('./cities.json', (error, data) => {
     fs.writeFile('./cities_new.json', JSON.stringify(dataArray), (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
+
+        process.exit();
     });
 });
-
-process.exit();
