@@ -23,7 +23,7 @@ let cityData = fs.readFile('cities.json', (err, cityData)=>{
         let neu = [];
         for(let i = 0; i < userData.user.length; i++){
           for(let o = 0; o < cityData.cities.length; o++){
-            if (userData.user[i].wohnort == cityData.cities[o].name){
+            if (userData.user[i].wohnort == cityData.cities[o].stadtname){
               neu.push(Object.assign(userData.user[i],cityData.cities[o]));
             }
           }
