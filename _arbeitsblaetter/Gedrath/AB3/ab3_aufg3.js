@@ -3,7 +3,7 @@
  * Grundlagen des Web (Medieninformatik Ba.)
  *
  * @author Finn Nils Gedrath
- * @arbeitsblatt 3 / 2
+ * @arbeitsblatt 3 / 3
  */
 
 /**
@@ -46,3 +46,5 @@ fs.readFile('./cities.json', (error, data) => {
         console.log('The file has been saved!');
     });
 });
+
+process.exit();

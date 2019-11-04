@@ -5,11 +5,11 @@
  * @return {Objekt|false}               Das Objekt mit der Stadt.
  */
 exports.search = (dataArray, name) => {
-    dataArray.forEach(function(item, index, array){
-        if(item.stadt_name == name){
-            return item
+    for(i in dataArray){
+        if(dataArray[i].stadt_name == name){
+            return dataArray[i]
         }
-    });
+    }
 
     return false
 }
@@ -21,12 +21,12 @@ exports.search = (dataArray, name) => {
  * @return {Array|false}                Das neue Array.
  */
 exports.delete = (dataArray, name) => {
-    dataArray.forEach(function(item, index, array){
-        if(item.stadt_name == name){
-            array.splice(index, 1);
-            return array
+    for(i in dataArray){
+        if(dataArray[i].stadt_name == name){
+            delete dataArray[i]
+            return dataArray
         }
-    });
+    }
 
     return false
 }

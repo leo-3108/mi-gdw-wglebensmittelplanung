@@ -22,20 +22,14 @@ Legen Sie nun ein zweite Datei an, welche Informationen zu diversen Usern enthä
 Verwenden Sie für die Asynchrone Programmierung das Prinzip von Promises (6) und die Async Functions (7) mit Await().
 Lesen Sie nun die Städte und User mit Node.js ein und verbinden Sie die Daten zu einem Datensatz. Geben Sie diese Daten wie folgt auf der Konsole aus:
 
+```
 Vorname: Max
-
 Nachname: Mustermann
-
 E-Mail: max@mustermann.de
-
 Wohnort: Köln
-
 Einwohner: 1061000
-
 Bundesland: Nordrhein Westfalen
-
---
-
+- - -
 Vorname: Hans
-
 ...
+```
