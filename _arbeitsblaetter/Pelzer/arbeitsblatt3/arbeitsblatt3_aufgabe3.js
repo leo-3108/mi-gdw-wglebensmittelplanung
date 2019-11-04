@@ -46,7 +46,12 @@ let data = fs.readFile('cities.json', (err, data)=>{
         }
         if(befehl==4){
           console.log(dataArray);
-          process.exit();
+
+          fs.writeFile('cities_new.json',  JSON.stringify(dataArray), (err) => {
+            if (err) throw err;
+            console.log('Saved!');
+            process.exit();
+            });
         }
       });
     }
