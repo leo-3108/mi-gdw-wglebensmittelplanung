@@ -46,3 +46,5 @@ fs.readFile('./cities.json', (error, data) => {
         console.log('The file has been saved!');
     });
 });
+
+process.exit();
