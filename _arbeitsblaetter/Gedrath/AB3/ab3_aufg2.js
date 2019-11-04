@@ -10,7 +10,7 @@
  * Modules
  */
 const fs = require('fs');
-const cm = require('./cities_module.js');
+const cm = require('./cities_module');
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -19,20 +19,20 @@ const rl = readline.createInterface({
 
 
 // Read File
-let cities = fs.readFile('./cities.json', (data, error) => {
-    if(error) throw error
+fs.readFile('./cities.json', (error, data) => {
+    if(error) throw error;
 
     let dataArray = JSON.parse(data);
 
     // suchen
-    single_item = cm.search(dataArray, 'Köln');
+    single_item = cm.search(dataArray.cities, 'Köln');
 
     // entfehrnen
-    dataArray = cm.delete(dataArray, 'Frankfurt am Main');
-    dataArray = cm.delete(dataArray, 'Stuttgart');
+    dataArray.cities = cm.delete(dataArray.cities, 'Frankfurt am Main');
+    dataArray.cities = cm.delete(dataArray.cities, 'Stuttgart');
 
     // hinzufügen
-    dataArray = cm.add(dataArray,
+    dataArray.cities = cm.add(dataArray.cities,
         'Bremen',
         569352,
         'Bremen'
