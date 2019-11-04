@@ -1,6 +1,6 @@
 {
 "user":[
-  {"vorname":"Max", "nachname":"Mustermann", "email":"max.mustermann@gmail.com", "wohnort": "Köln"},
-  {"vorname":"Berta", "nachname":"Beispiel", "email":"berta.beispiel@gmail.com", "wohnort": "Berlin"}
+  {"vorname":"Max", "nachname":"Mustermann", "email":"max.mustermann@gmail.com", "wohnort":"Köln"},
+  {"vorname":"Berta", "nachname":"Beispiel", "email":"berta.beispiel@gmail.com", "wohnort":"Berlin"}
 ]
 }
