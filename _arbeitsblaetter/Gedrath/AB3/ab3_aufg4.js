@@ -21,6 +21,8 @@ const rl = readline.createInterface({
  * Ausgabe der Datensätze
  */
 async function conData(){
+
+    // Helper Function
     const getJSON = (file) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, (error, data) => {
