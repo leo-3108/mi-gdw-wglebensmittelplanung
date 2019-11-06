@@ -56,4 +56,7 @@ async function conData(){
     }
 }
 
+/**
+ * Aufruf der Funktion
+ */
 conData();
