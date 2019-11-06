@@ -18,14 +18,11 @@ const rl = readline.createInterface({
 });
 
 async function getJSON(uri){
-    return fs.readFile(uri, (error, data) => {
-        if(error) reject(error);
-        try{
-            let dataArray = await JSON.parse(data);
-            return dataArray;
-        }
-        catch(error){
-            reject(error)
-        }
-    });
+    let data = await fs.promises.readFile(uri);
+
+    let json = await JSON.parse(data);
+
+    return json;
 }
+
+console.log(getJSON('./cities.json'))
