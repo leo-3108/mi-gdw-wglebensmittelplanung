@@ -30,20 +30,27 @@ async function conData(){
         });
     }
 
-    let cities = await getJSON('./cities.json');
-    let users = await getJSON('./users.json');
+    try{
+        let cities = await getJSON('./cities.json');
+        let users = await getJSON('./users.json');
 
-    for(i in users){
-        let city = cm.search(cities, users[i].wohnort);
+        for(i in users){
+            let city = cm.search(cities, users[i].wohnort);
 
-        // Ausgabe
-        console.log('Vorname: ' + users[i].vorname);
-        console.log('Nachname: ' + users[i].name);
-        console.log('E-Mail: ' + users[i].email);
-        console.log('Wohnort: ' + city.stadt_name);
-        console.log('Einwohner: ' + city.einwohner);
-        console.log('Bundesland: ' + city.bundesland);
-        console.log('- - -');
+            // Ausgabe
+            console.log('Vorname: ' + users[i].vorname);
+            console.log('Nachname: ' + users[i].name);
+            console.log('E-Mail: ' + users[i].email);
+            console.log('Wohnort: ' + city.stadt_name);
+            console.log('Einwohner: ' + city.einwohner);
+            console.log('Bundesland: ' + city.bundesland);
+            console.log('- - -');
+        }
+        process.exit();
+    }
+    catch(error){
+        console.error(error);
+        process.exit();
     }
 }
 
