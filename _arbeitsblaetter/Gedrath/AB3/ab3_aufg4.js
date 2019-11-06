@@ -21,7 +21,7 @@ const rl = readline.createInterface({
  * Helper Functions
  */
 async function conData(){
-    const readFile = (file) => {
+    const getJSON = (file) => {
         return new Promise((resolve, reject) => {
             fs.readFile(file, (error, data) => {
                 if(error) reject(error);
@@ -30,8 +30,8 @@ async function conData(){
         });
     }
 
-    let cities = await readFile('./cities.json');
-    let users = await readFile('./users.json');
+    let cities = await getJSON('./cities.json');
+    let users = await getJSON('./users.json');
 
     console.log(users);
 }
