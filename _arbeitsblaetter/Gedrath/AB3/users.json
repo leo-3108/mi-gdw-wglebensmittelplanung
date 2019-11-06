@@ -1,26 +1,26 @@
 [
     {
-        "name":     "Monaghan",
-        "vorname":  "Cindy",
-        "email":    "cid.monaghan@test.com",
-        "wohnort":  "Köln"
+        "name": "Bowes",
+        "vorname": "Kacie",
+        "email": "ka.bowes@test.de",
+        "wohnort": "Hamburg"
     },
     {
-        "name":     "Bowes",
-        "vorname":  "Kacie",
-        "email":    "ka.bowes@test.de",
-        "wohnort":  "Hamburg"
+        "name": "Green",
+        "vorname": "Simra",
+        "email": "s.green@wow.de",
+        "wohnort": "Berlin"
     },
     {
-        "name":     "Castro",
-        "vorname":  "Ciaron",
-        "email":    "c.castro@mail.de",
-        "wohnort":  "Essen"
+        "name": "Mustermann",
+        "vorname": "Max",
+        "email": "m.mustermann@test.de",
+        "wohnort": "Essen"
     },
     {
-        "name":     "Green",
-        "vorname":  "Simra",
-        "email":    "s.green@wow.de",
-        "wohnort":  "Berlin"
+        "name": "Beispiel",
+        "vorname": "Bertha",
+        "email": "b.beispiel@wow.de",
+        "wohnort": "Berlin"
     }
 ]
