@@ -20,16 +20,19 @@ const rl = readline.createInterface({
 /**
  * Helper Functions
  */
-const readFile = (file) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(file, (error, data) => {
-            if(error) reject(error);
-            resolve(JSON.parse(data));
+async function conData(){
+    const readFile = (file) => {
+        return new Promise((resolve, reject) => {
+            fs.readFile(file, (error, data) => {
+                if(error) reject(error);
+                resolve(JSON.parse(data));
+            });
         });
-    });
-}
+    }
 
-readFile('./cities.json').then(
-    data => console.log(data),
-    error => console.error(error)
-);
+    let cities = await readFile('./cities.json');
+    let users = await readFile('./users.json');
+
+    console.log(users);
+}
+conData();
