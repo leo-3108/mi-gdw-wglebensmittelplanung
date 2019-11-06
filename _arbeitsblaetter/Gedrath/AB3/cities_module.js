@@ -7,11 +7,11 @@
 exports.search = (dataArray, name) => {
     for(i in dataArray){
         if(dataArray[i].stadt_name == name){
-            return dataArray[i]
+            return dataArray[i];
         }
     }
 
-    return false
+    return false;
 }
 
 /**
@@ -23,8 +23,8 @@ exports.search = (dataArray, name) => {
 exports.delete = (dataArray, name) => {
     for(i in dataArray){
         if(dataArray[i].stadt_name == name){
-            delete dataArray[i]
-            return dataArray
+            delete dataArray[i];
+            return dataArray;
         }
     }
 
@@ -45,5 +45,5 @@ exports.add = (dataArray, stadt_name, einwohner, bundesland) => {
         "bundesland":   bundesland
     });
 
-    return dataArray
+    return dataArray;
 }
