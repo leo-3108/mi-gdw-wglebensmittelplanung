@@ -34,7 +34,7 @@ async function conData(){
         let cities = await getJSON('./cities.json');
         let users = await getJSON('./users.json');
 
-        for(i in users){
+        for(var i in users){
             let city = cm.search(cities, users[i].wohnort);
 
             // Ausgabe
