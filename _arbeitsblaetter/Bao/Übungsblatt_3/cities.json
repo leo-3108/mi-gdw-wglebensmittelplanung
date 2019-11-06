@@ -1,0 +1,35 @@
+//Aufgabe 1
+console.log("Aufgabe 1");
+
+[
+  {
+    "Berlin", 3.644.826, "Berlin"
+  },
+  {
+    "Hamburg", 1.841.179, "Hamburg"
+  },
+  {
+    "München",1.471.508, "Bayern"
+  },
+  {
+    "Köln", 1100000, "NRW"
+  },
+  {
+    "Stuttgart", 634.830, "Baden-Württemberg"
+  },
+  {
+    "Düsseldorf", 619.294, "NRW"
+  },
+  {
+    "Leipzig", 587.857, "Sachsen"
+  },
+  {
+    "Dortmund", 587.010, "NRW"
+  },
+  {
+    "Essen", 583.109, "NRW"
+  },
+  {
+    "Bremen", 569.352, "Bremen"
+  }
+]
