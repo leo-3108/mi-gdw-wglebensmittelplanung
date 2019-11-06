@@ -25,14 +25,14 @@ fs.readFile('./cities.json', (error, data) => {
     let dataArray = JSON.parse(data);
 
     // suchen
-    single_item = cm.search(dataArray.cities, 'Köln');
+    single_item = cm.search(dataArray, 'Köln');
 
     // entfehrnen
-    dataArray.cities = cm.delete(dataArray.cities, 'Frankfurt am Main');
-    dataArray.cities = cm.delete(dataArray.cities, 'Stuttgart');
+    dataArray = cm.delete(dataArray, 'Frankfurt am Main');
+    dataArray = cm.delete(dataArray, 'Stuttgart');
 
     // hinzufügen
-    dataArray.cities = cm.add(dataArray.cities,
+    dataArray = cm.add(dataArray,
         'Bremen',
         569352,
         'Bremen'
