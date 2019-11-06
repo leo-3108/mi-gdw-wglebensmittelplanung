@@ -3,24 +3,24 @@
         "name":     "Monaghan",
         "vorname":  "Cindy",
         "email":    "cid.monaghan@test.com",
-        "wohnort":  "Köln",
+        "wohnort":  "Köln"
     },
     {
         "name":     "Bowes",
         "vorname":  "Kacie",
         "email":    "ka.bowes@test.de",
-        "wohnort":  "Hamburg",
+        "wohnort":  "Hamburg"
     },
     {
         "name":     "Castro",
         "vorname":  "Ciaron",
         "email":    "c.castro@mail.de",
-        "wohnort":  "Essen",
+        "wohnort":  "Essen"
     },
     {
         "name":     "Green",
         "vorname":  "Simra",
         "email":    "s.green@wow.de",
-        "wohnort":  "Berlin",
-    },
+        "wohnort":  "Berlin"
+    }
 ]
