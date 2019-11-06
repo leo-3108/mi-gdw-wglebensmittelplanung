@@ -20,18 +20,18 @@ console.log("Finn Nils Gedrath");
 
 // Bewertungs-Definition
 const max_bewertung = 4;
-var ratings = {
-    name: "App-Bewertung",
-    anzahl: 0,
-    last_bw: 0,
-    bewertung: new_bw => {
-        let bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl); // DEBUG: Anzahl, last_bw bleibt undefineda
-        //logBewertung(this.anzahl, bw, new_bw);
-        console.log(ratings);
+function Ratings(name){
+    this.name = name,
+    this.anzahl = 0,
+    this.last_bw = 0,
+    this.bewertung = (new_bw) => {
+        this.last_bw = (this.last_bw * this.anzahl + new_bw) / (++this.anzahl);
+        logBewertung(this.anzahl, this.last_bw, new_bw);
 
-        return bw;
+        return this.last_bw;
     }
 }
+var ratings = new Ratings("App");
 
 // Zufällige Ganzzahl zw. [min] und [max]
 const getRandom = function(min, max){
