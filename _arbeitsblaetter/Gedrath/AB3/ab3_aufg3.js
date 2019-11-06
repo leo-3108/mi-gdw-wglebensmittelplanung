@@ -20,31 +20,36 @@ const rl = readline.createInterface({
 
 // Read File
 fs.readFile('./cities.json', (error, data) => {
-    if(error) throw error;
+    if(error) return;
+    try{
+        let dataArray = JSON.parse(data);
 
-    let dataArray = JSON.parse(data);
+        // suchen
+        single_item = cm.search(dataArray.cities, 'Köln');
 
-    // suchen
-    single_item = cm.search(dataArray.cities, 'Köln');
+        // entfehrnen
+        dataArray.cities = cm.delete(dataArray.cities, 'Frankfurt am Main');
+        dataArray.cities = cm.delete(dataArray.cities, 'Stuttgart');
 
-    // entfehrnen
-    dataArray.cities = cm.delete(dataArray.cities, 'Frankfurt am Main');
-    dataArray.cities = cm.delete(dataArray.cities, 'Stuttgart');
+        // hinzufügen
+        dataArray.cities = cm.add(dataArray.cities,
+            'Bremen',
+            569352,
+            'Bremen'
+        );
 
-    // hinzufügen
-    dataArray.cities = cm.add(dataArray.cities,
-        'Bremen',
-        569352,
-        'Bremen'
-    );
+        console.log(dataArray);
 
-    console.log(dataArray);
+        // write
+        fs.writeFile('./cities_new.json', JSON.stringify(dataArray), (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
 
-    // write
-    fs.writeFile('./cities_new.json', JSON.stringify(dataArray), (err) => {
-        if (err) throw err;
-        console.log('The file has been saved!');
-
+            process.exit();
+        });
+    }
+    catch(error){
+        console.log("Es ist ein Fehler bei der Datenveränderung aufgetreten.");
         process.exit();
-    });
+    }
 });
