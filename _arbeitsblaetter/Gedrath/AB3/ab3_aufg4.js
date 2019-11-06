@@ -17,12 +17,19 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-async function getJSON(uri){
-    let data = await fs.promises.readFile(uri);
-
-    let json = await JSON.parse(data);
-
-    return json;
+/**
+ * Helper Functions
+ */
+const readFile = (file) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(file, (error, data) => {
+            if(error) reject(error);
+            resolve(JSON.parse(data));
+        });
+    });
 }
 
-console.log(getJSON('./cities.json'))
+readFile('./cities.json').then(
+    data => console.log(data),
+    error => console.error(error)
+);
