@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Bowes",
+        "vorname": "Kacie",
+        "email": "ka.bowes@test.de",
+        "wohnort": "Hamburg"
+    },
+    {
+        "name": "Green",
+        "vorname": "Simra",
+        "email": "s.green@wow.de",
+        "wohnort": "Berlin"
+    },
+    {
+        "name": "Mustermann",
+        "vorname": "Max",
+        "email": "m.mustermann@test.de",
+        "wohnort": "Essen"
+    },
+    {
+        "name": "Beispiel",
+        "vorname": "Bertha",
+        "email": "b.beispiel@wow.de",
+        "wohnort": "Berlin"
+    }
+]

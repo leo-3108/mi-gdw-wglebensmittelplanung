@@ -25,8 +25,6 @@ var ratings = {
     last_bwt: 0
 }
 
-console.log("Länge des Arrays: " + ratings.length);
-
 // Zufällige Ganzzahl zw. [min] und [max]
 const getRandom = function(min, max){
     return Math.round(Math.random() * (max - min) + min);
