@@ -63,6 +63,8 @@
 | <step #> | <list of sub-variations> |
 | <step #> | <list of sub-variations> |
 
+***
+
 **Template (nach Cockburn):**
 
 ```
