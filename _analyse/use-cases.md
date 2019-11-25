@@ -5,7 +5,7 @@
 
 ***
 
-## Use Case 1: Bearbeitung der Einkaufsliste
+## Use Case 1: Hinzufügen von Einträgen zur Einkaufsliste
 
 - **Goal in Context:** Nutzer bearbeitet eine Einkaufsliste, was zu eventuellen Benachrichtigungen führt. Die anschließenden Ausgaben werden berechnet und auf die Mitbewohner aufgeteilt.
 - **Preconditions:** Wir kennen die Anzahl der Mitbewohner, Einkaufsmöglichkeiten in der Nähe und können diese kategorisieren.
@@ -34,7 +34,7 @@
 |   | -- |
 ***
 
-## Use Case 2: Abarbeitung der Einkaufsliste
+## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
 
 - **Goal in Context:** <a longer statement of the goal in context if needed>
 - **Scope:** <what system is being considered black box under design>
@@ -66,6 +66,37 @@
 ***
 
 ## Use Case 3: Kostenaufteilung
+
+- **Goal in Context:** <a longer statement of the goal in context if needed>
+- **Scope:** <what system is being considered black box under design>
+- **Level:** <one of: Summary, Primary task, Subfunction>
+- **Preconditions:** <what we expect is already the state of the world>
+- **Success End Condition:** <the state of the world upon successful completion>
+- **Failed End Condition:** <the state of the world if goal abandoned>
+- **Primary Actor:** <a role name for the primary actor, or description>
+- **Trigger:** <the action upon the system that starts the use case, may be time event>
+
+### Main Success Szenario
+| #   | Beschreibung |
+|:---:|--------------|
+| <step #> | <action description> |
+| <step #> | <action description> |
+
+### Erweiterungen
+| #   | Extension |
+|:---:|--------------|
+| <step #> | <action description> |
+| <step #> | <action description> |
+
+### Sub-Variationen
+| #   | Variationen |
+|:---:|--------------|
+| <step #> | <list of sub-variations> |
+| <step #> | <list of sub-variations> |
+
+***
+
+## Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes
 
 - **Goal in Context:** <a longer statement of the goal in context if needed>
 - **Scope:** <what system is being considered black box under design>
