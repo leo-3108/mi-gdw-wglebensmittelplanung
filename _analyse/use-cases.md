@@ -27,7 +27,7 @@
 
 ### Sub-Variationen
 | #   | Erweiterung |
-|:---:|--------------|
+| 1. | Nutzer verwendet eventuell: Mobiltelefon, Web |
 |   |  |
 ***
 
