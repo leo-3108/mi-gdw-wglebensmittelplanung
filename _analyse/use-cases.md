@@ -94,27 +94,27 @@
 
 ***
 
-## Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes
+## Use Case 4: Mitbewohner wird über Einkaufsmöglichkeit benachrichtigt
 
 - **Scope:** ???
 - **Level:** Primary Task
 - **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
 - **Success End Condition:** <the state of the world upon successful completion>
 - **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
+- **Primary Actor:** System
+- **Trigger:** Der User befindet sich in der Nähe eines Geschäfts, in dem ein Element erwerbar ist
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1. | Der  |
-| <step #> | <action description> |
+| 1. | Der Nutzer wird über Verfügbarkeit benachrichtigt. |
+| 2. | Der Nutzer bemerkt die Benachrichtigung. |
 
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 2a. | Der Nutzer entscheidet sich, das Produkt zu kaufen. |
+| 2a1. |   |
 
 ### Sub-Variationen
 | #   | Variationen |
