@@ -28,19 +28,15 @@
 ### Sub-Variationen
 | #   | Erweiterung |
 | 1. | Nutzer verwendet eventuell: Mobiltelefon, Web |
-|   |  |
 ***
 
 ## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
 
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
-- **Success End Condition:** <the state of the world upon successful completion>
-- **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
+- **Preconditions:** Es befinden sich Produkte in der Einkaufliste.
+- **Success End Condition:** Das nicht mehr benötigte Produkt wurde entfernt.
+- **Failed End Condition:** Das nicht mehr benötigte Produkte konnte nicht entfernt werden.
+- **Primary Actor:** WG-Mitbewohner
+- **Trigger:** Es soll ein Produkt entfernt werden.
 
 ### Main Success Szenario
 | #   | Beschreibung |
