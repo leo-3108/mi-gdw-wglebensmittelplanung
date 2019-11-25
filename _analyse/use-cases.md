@@ -65,6 +65,8 @@
 
 ***
 
+## Use Case 3: Abarbeitung der Einkaufsliste
+
 **Template (nach Cockburn):**
 
 ```
