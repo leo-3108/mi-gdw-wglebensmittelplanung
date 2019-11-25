@@ -3,7 +3,7 @@
 - [Use Case 2: Abarbeitung der Einkaufsliste](#use-case-2-entfernen-von-einträgen-in-der-einkaufsliste)
 - [Use Case 3: Kostenaufteilung](#use-case-3-kostenaufteilung)
 - [Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes](#use-case-4-mitbewohner-befindet-sich-in-der-nähe-eines-geschäftes)
-
+- [Use Case 4a: Zwei Mitbewohner kaufen gleichzeitig ein Produkt Geschäftes](#Zwei Mitbewohner kaufen gleichzeitig ein Produkt)
 ***
 
 ## Use Case 1: Hinzufügen von Einträgen zur Einkaufsliste
