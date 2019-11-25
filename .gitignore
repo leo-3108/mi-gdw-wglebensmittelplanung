@@ -62,3 +62,5 @@ typings/
 
 # next.js build output
 .next
+_apitest/test1.html
+_apitest/test1.js
