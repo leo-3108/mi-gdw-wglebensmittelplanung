@@ -41,8 +41,7 @@
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 1. | Der Nutzer prüft, ob das zu entfernende Produkt noch in der Einkaufliste ist. |
 
 ### Erweiterungen
 | #   | Extension |
