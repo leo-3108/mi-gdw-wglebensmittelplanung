@@ -8,32 +8,28 @@
 ***
 
 ## Use Case 1: Hinzufügen von Einträgen zur Einkaufsliste
-
-- **Goal in Context:** Nutzer bearbeitet eine Einkaufsliste, was zu eventuellen Benachrichtigungen führt. Die anschließenden Ausgaben werden berechnet und auf die Mitbewohner aufgeteilt.
-- **Preconditions:** Wir kennen die Anzahl der Mitbewohner, Einkaufsmöglichkeiten in der Nähe und können diese kategorisieren.
-- **Success End Condition:** Nutzer haben eine organisierte Einkaufsliste und die Ausgaben werden gerecht aufgeteilt.
-- **Failed End Condition:**
+- **Preconditions:** Es liegt eine Einkaufsliste vor.
+- **Success End Condition:** Der Nutzer hat Produkte hinzugefügt.
+- **Failed End Condition:** Das Produkt konnte nicht hinzugefügt werden.
 - **Primary Actor:** WG-Mitbewohner
-- **Trigger:** Nutzer erstellt eine Einkaufsliste.
+- **Trigger:** Der Nutzer benötigt ein Produkt.
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1.  | Ein Mitbewohner erstellt eine Einkaufliste. |
-| 3.  |--------------|
-| 4.  |--------------|
-| 5.  |--------------|
-| 6.  |--------------|
+| 1.  | Der Nutzer überprüft, ob das Produkt auf der Liste steht. |
 
 ### Erweiterungen
 | #   | Beschreibung |
 |:---:|--------------|
-|   | |
+| 1a. | Das Produkt befindet sich nicht auf der Liste. |
+| 1a1. | Der Nutzer fügt das Produkt hinzu. |
+
 
 ### Sub-Variationen
 | #   | Erweiterung |
 |:---:|--------------|
-|   | -- |
+|   |  |
 ***
 
 ## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
