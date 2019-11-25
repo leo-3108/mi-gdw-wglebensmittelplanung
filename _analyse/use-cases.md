@@ -29,6 +29,7 @@
 | #   | Erweiterung |
 |:---:|--------------|
 |   |  |
+
 ***
 
 ## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
@@ -95,10 +96,9 @@
 
 ## Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes
 
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
+- **Scope:** ???
+- **Level:** Primary Task
+- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
 - **Success End Condition:** <the state of the world upon successful completion>
 - **Failed End Condition:** <the state of the world if goal abandoned>
 - **Primary Actor:** <a role name for the primary actor, or description>
@@ -107,7 +107,7 @@
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| <step #> | <action description> |
+| 1. | Der  |
 | <step #> | <action description> |
 
 ### Erweiterungen
