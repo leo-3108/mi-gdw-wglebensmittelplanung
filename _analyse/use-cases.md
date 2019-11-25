@@ -31,7 +31,7 @@
 ### Sub-Variationen
 | #   | Erweiterung |
 |:---:|--------------|
-|   |  |
+|   | -- |
 ***
 
 ## Use Case 2: Abarbeitung der Einkaufsliste
