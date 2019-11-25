@@ -1,8 +1,9 @@
 **Übersicht:**
 - [Use Case 1: Bearbeitung der Einkaufsliste](#use-case-1-hinzufügen-von-einträgen-zur-einkaufsliste)
-- [Use Case 2: Abarbeitung der Einkaufsliste](#use-case-2-entfernen-von-einträgen-in-der-einkaufsliste)
-- [Use Case 3: Kostenaufteilung](#use-case-3-kostenaufteilung)
+- [Use Case 2: Abarbeitung der Einkaufsliste](#use-case-3-entfernen-von-einträgen-in-der-einkaufsliste)
+- [Use Case 3: Kostenaufteilung](#use-case-2-kostenaufteilung)
 - [Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes](#use-case-4-mitbewohner-befindet-sich-in-der-nähe-eines-geschäftes)
+- [Use Case 4a: Zwei Mitbewohner kaufen gleichzeitig ein Produkt Geschäftes](#Zwei Mitbewohner kaufen gleichzeitig ein Produkt)
 
 ***
 
@@ -27,27 +28,33 @@
 
 ### Sub-Variationen
 | #   | Erweiterung |
-| 1. | Nutzer verwendet eventuell: Mobiltelefon, Web |
+|:---:|--------------|
+|   |  |
+
 ***
 
 ## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
 
-- **Preconditions:** Es befinden sich Produkte in der Einkaufliste.
-- **Success End Condition:** Das nicht mehr benötigte Produkt wurde entfernt.
-- **Failed End Condition:** Das nicht mehr benötigte Produkte konnte nicht entfernt werden.
-- **Primary Actor:** WG-Mitbewohner
-- **Trigger:** Es soll ein Produkt entfernt werden.
+- **Goal in Context:** <a longer statement of the goal in context if needed>
+- **Scope:** <what system is being considered black box under design>
+- **Level:** <one of: Summary, Primary task, Subfunction>
+- **Preconditions:** <what we expect is already the state of the world>
+- **Success End Condition:** <the state of the world upon successful completion>
+- **Failed End Condition:** <the state of the world if goal abandoned>
+- **Primary Actor:** <a role name for the primary actor, or description>
+- **Trigger:** <the action upon the system that starts the use case, may be time event>
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1. | Der Nutzer prüft, ob das zu entfernende Produkt noch in der Einkaufliste ist. |
+| <step #> | <action description> |
+| <step #> | <action description> |
 
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| 1. | Das Produkt befindet sich in der Liste. |
-| 1a1. | Das Produkt wird entfernt. |
+| <step #> | <action description> |
+| <step #> | <action description> |
 
 ### Sub-Variationen
 | #   | Variationen |
@@ -85,28 +92,27 @@
 
 ***
 
-## Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes
+## Use Case 4: Mitbewohner wird über Einkaufsmöglichkeit benachrichtigt
 
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
+- **Scope:** ???
+- **Level:** Primary Task
+- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
 - **Success End Condition:** <the state of the world upon successful completion>
 - **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
+- **Primary Actor:** System
+- **Trigger:** Der User befindet sich in der Nähe eines Geschäfts, in dem ein Element erwerbar ist
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 1. | Der Nutzer wird über Verfügbarkeit benachrichtigt. |
+| 2. | Der Nutzer bemerkt die Benachrichtigung. |
 
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 2a. | Der Nutzer entscheidet sich, das Produkt zu kaufen. |
+| 2a1. |   |
 
 ### Sub-Variationen
 | #   | Variationen |
