@@ -46,21 +46,18 @@
 - **Trigger:** <the action upon the system that starts the use case, may be time event>
 
 ### Main Success Szenario
-<put here the steps of the scenario from trigger to goal delivery, and any cleanup after>
 | #   | Beschreibung |
 |:---:|--------------|
 | <step #> | <action description> |
 | <step #> | <action description> |
 
 ### Erweiterungen
-<put here there extensions, one at a time, each refering to the step of the main scenario>
 | #   | Extension |
 |:---:|--------------|
 | <step #> | <action description> |
 | <step #> | <action description> |
 
 ### Sub-Variationen
-<put here the sub-variations that will cause eventual bifurcation in the scenario>
 | #   | Variationen |
 |:---:|--------------|
 | <step #> | <list of sub-variations> |
