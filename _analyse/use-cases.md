@@ -46,8 +46,8 @@
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 1. | Das Produkt befindet sich in der Liste. |
+| 1a1. | Das Produkt wird entfernt. |
 
 ### Sub-Variationen
 | #   | Variationen |
