@@ -35,26 +35,22 @@
 
 ## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
 
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
-- **Success End Condition:** <the state of the world upon successful completion>
-- **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
+- **Preconditions:**  Es befinden sich Produkte in der Einkaufliste.
+- **Success End Condition:**  Es befinden sich Produkte in der Einkaufliste.
+- **Failed End Condition:** Das nicht mehr benötigte Produkte konnte nicht entfernt werden.
+- **Primary Actor:** WG-Mitbewohner
+- **Trigger:** Es soll ein Produkt entfernt werden.
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 1. | Der Nutzer prüft, ob das zu entfernende Produkt noch in der Einkaufliste ist. |
 
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 1. | Das Produkt befindet sich in der Liste. |
+| 1a1. | Das Produkt wird entfernt.  |
 
 ### Sub-Variationen
 | #   | Variationen |
@@ -70,7 +66,7 @@
 - **Success End Condition:** Eine faire Kostenaufteilung zwischen den Mitbewohnern wird gewährleistet.
 - **Failed End Condition:** Es konnte keine faire Kostenaufteilung durchgeführt werden.
 - **Primary Actor:** WG-Mitbewohner, (System)?
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
+- **Trigger:**
 
 ### Main Success Szenario
 | #   | Beschreibung |
