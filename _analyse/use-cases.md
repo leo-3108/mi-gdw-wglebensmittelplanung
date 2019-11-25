@@ -10,7 +10,7 @@
 - **Goal in Context:** Nutzer bearbeitet eine Einkaufsliste, was zu eventuellen Benachrichtigungen führt. Die anschließenden Ausgaben werden berechnet und auf die Mitbewohner aufgeteilt.
 - **Preconditions:** Wir kennen die Anzahl der Mitbewohner, Einkaufsmöglichkeiten in der Nähe und können diese kategorisieren.
 - **Success End Condition:** Nutzer haben eine organisierte Einkaufsliste und die Ausgaben werden gerecht aufgeteilt.
-- **Failed End Condition:** 
+- **Failed End Condition:**
 - **Primary Actor:** WG-Mitbewohner
 - **Trigger:** Nutzer erstellt eine Einkaufsliste.
 
@@ -65,7 +65,7 @@
 
 ***
 
-## Use Case 3: Abarbeitung der Einkaufsliste
+## Use Case 3: Kostenaufteilung
 
 **Template (nach Cockburn):**
 
