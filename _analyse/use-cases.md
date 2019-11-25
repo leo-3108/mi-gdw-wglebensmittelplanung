@@ -1,29 +1,24 @@
 **Übersicht:**
 
-- [Use Case 1: Bearbeitung der Einkaufsliste](#use-case-1-hinzufügen-von-einträgen-zur-einkaufsliste)
-- [Use Case 2: Abarbeitung der Einkaufsliste](#use-case-2-kostenaufteilung)
-- [Use Case 3: Kostenaufteilung](#use-case-3-entfernen-von-einträgen-in-der-einkaufsliste)
-- [Use Case 4: Abarbeitung der Einkaufsliste](#use-case-4-abarbeitung-der-einkaufsliste)
+- [Use Case 1: Bearbeitung der Einkaufsliste](#use-case-1-bearbeitung-der-einkaufsliste)
 
 ***
 
-## Use Case 1: Hinzufügen von Einträgen zur Einkaufsliste
+## Use Case 1: Hinzufügen der Einkaufsliste
 
-- **Goal in Context:** Nutzer bearbeitet eine Einkaufsliste, was zu eventuellen Benachrichtigungen führt. Die anschließenden Ausgaben werden berechnet und auf die Mitbewohner aufgeteilt.
-- **Preconditions:** Wir kennen die Anzahl der Mitbewohner, Einkaufsmöglichkeiten in der Nähe und können diese kategorisieren.
-- **Success End Condition:** Nutzer haben eine organisierte Einkaufsliste und die Ausgaben werden gerecht aufgeteilt.
-- **Failed End Condition:**
+- **Preconditions:** Es liegt eine Einkaufsliste vor.
+- **Success End Condition:** Der Nutzer hat Produkte hinzugefügt. 
+- **Failed End Condition:** Die Einkaufsliste ist leer.
 - **Primary Actor:** WG-Mitbewohner
-- **Trigger:** Nutzer erstellt eine Einkaufsliste.
+- **Trigger:** Der Nutzer erstellt eine Einkaufsliste.
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1.  | Ein Mitbewohner erstellt eine Einkaufliste. |
-| 3.  |--------------|
-| 4.  |--------------|
-| 5.  |--------------|
-| 6.  |--------------|
+| 1.  | Es liegt eine bereits erstellte Einkaufliste vor. |
+| 2.  | Wenn weitere Produkte benötigt werden, werden diese der Einkaufsliste hinzugefügt. |
+| 3.  |  |
+| 4.  |  |
 
 ### Erweiterungen
 | #   | Beschreibung |
@@ -33,106 +28,15 @@
 ### Sub-Variationen
 | #   | Erweiterung |
 |:---:|--------------|
-|   | -- |
+|   |  |
 ***
 
-## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
-
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
-- **Success End Condition:** <the state of the world upon successful completion>
-- **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
-
-### Main Success Szenario
-| #   | Beschreibung |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Erweiterungen
-| #   | Extension |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
-
-***
-
-## Use Case 3: Kostenaufteilung
-
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
-- **Success End Condition:** <the state of the world upon successful completion>
-- **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
-
-### Main Success Szenario
-| #   | Beschreibung |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Erweiterungen
-| #   | Extension |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
-
-***
-
-## Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes
-
-- **Goal in Context:** <a longer statement of the goal in context if needed>
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
-- **Success End Condition:** <the state of the world upon successful completion>
-- **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
-
-### Main Success Szenario
-| #   | Beschreibung |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Erweiterungen
-| #   | Extension |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
-
-***
+## Use Case 2: Abarbeitung der Einkaufsliste
 
 **Template (nach Cockburn):**
 
 ```
-## Use Case <#>: <the name is the goal as a short active verb phrase>
+# Use Case <#>: <the name is the goal as a short active verb phrase>
 
 - **Goal in Context:** <a longer statement of the goal in context if needed>
 - **Scope:** <what system is being considered black box under design>
