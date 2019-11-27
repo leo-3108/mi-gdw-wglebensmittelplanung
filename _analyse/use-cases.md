@@ -122,7 +122,7 @@
 
 - **Scope:** <what system is being considered black box under design>
 - **Level:** <one of: Summary, Primary task, Subfunction>
-- **Preconditions:** <what we expect is already the state of the world>
+- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
 - **Success End Condition:** <the state of the world upon successful completion>
 - **Failed End Condition:** <the state of the world if goal abandoned>
 - **Primary Actor:** <a role name for the primary actor, or description>
