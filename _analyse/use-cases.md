@@ -66,7 +66,7 @@
 - **Success End Condition:** Eine faire Kostenaufteilung zwischen den Mitbewohnern wird gewährleistet.
 - **Failed End Condition:** Es konnte keine faire Kostenaufteilung durchgeführt werden.
 - **Primary Actor:** WG-Mitbewohner, (System)?
-- **Trigger:**
+- **Trigger:** Es wurden Ausgaben getätigt, die gerecht aufgeteilt werden müssen.
 
 ### Main Success Szenario
 | #   | Beschreibung |
