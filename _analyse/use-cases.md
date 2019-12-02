@@ -5,10 +5,6 @@
 - [Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes](#use-case-4-mitbewohner-befindet-sich-in-der-nähe-eines-geschäftes)
 - [Use Case 4a: Zwei Mitbewohner kaufen gleichzeitig ein Produkt Geschäftes](#use-case-4a-zwei-mitbewohner-kaufen-gleichzeitig-ein-produkt)
 
-```
-Hello
-```
-
 ***
 
 ## Use Case 1: Hinzufügen von Einträgen zur Einkaufsliste
@@ -70,7 +66,7 @@ Hello
 - **Success End Condition:** Eine faire Kostenaufteilung zwischen den Mitbewohnern wird gewährleistet.
 - **Failed End Condition:** Es konnte keine faire Kostenaufteilung durchgeführt werden.
 - **Primary Actor:** WG-Mitbewohner, (System)?
-- **Trigger:**
+- **Trigger:** Es wurden Ausgaben getätigt, die gerecht aufgeteilt werden müssen.
 
 ### Main Success Szenario
 | #   | Beschreibung |
