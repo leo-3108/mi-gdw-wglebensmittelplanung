@@ -11,21 +11,21 @@
 
 - **Level:** Primary Task
 - **Preconditions:** Es liegt eine Einkaufsliste vor.
-- **Success End Condition:** Der Nutzer hat Produkte hinzugefügt.
+- **Success End Condition:** Der User hat Produkte hinzugefügt.
 - **Failed End Condition:** Das Produkt konnte nicht hinzugefügt werden.
 - **Primary Actor:** WG-Mitbewohner
-- **Trigger:** Der Nutzer benötigt ein Produkt.
+- **Trigger:** Der User benötigt ein Produkt.
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1.  | Der Nutzer überprüft, ob das Produkt auf der Liste steht. |
+| 1.  | Der User überprüft, ob das Produkt auf der Liste steht. |
 
 ### Erweiterungen
 | #   | Beschreibung |
 |:---:|--------------|
 | 1a. | Das Produkt befindet sich nicht auf der Liste. |
-| 1a1. | Der Nutzer fügt das Produkt hinzu. |
+| 1a1. | Der User fügt das Produkt hinzu. |
 
 ***
 
@@ -33,7 +33,7 @@
 
 - **Level:** Primary Task
 - **Preconditions:**  Es befinden sich Produkte in der Einkaufliste.
-- **Success End Condition:**  Es befinden sich Produkte in der Einkaufliste.
+- **Success End Condition:** Das Produkt wurde entfernt.
 - **Failed End Condition:** Das nicht mehr benötigte Produkte konnte nicht entfernt werden.
 - **Primary Actor:** WG-Mitbewohner
 - **Trigger:** Es soll ein Produkt entfernt werden.
@@ -41,7 +41,7 @@
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1. | Der Nutzer prüft, ob das zu entfernende Produkt noch in der Einkaufliste ist. |
+| 1. | Der User prüft, ob das zu entfernende Produkt noch in der Einkaufliste ist. |
 
 ### Erweiterungen
 | #   | Extension |
@@ -70,48 +70,41 @@
 |:---:|--------------|
 | 1. | Es liegen Ausgaben vor. |
 | 1a1. | Die Ausgaben werden gerecht berechnet.|
-| 2. | Die Nutzer teilen die berechneten Ausgaben untereinander auf. |
+| 2. | Die User teilen die berechneten Ausgaben untereinander auf. |
 
 ***
 
 ## Use Case 4: Mitbewohner wird über Einkaufsmöglichkeit benachrichtigt
 
 - **Level:** Primary Task
-- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
-- **Success End Condition:** 
-- **Failed End Condition:** <the state of the world if goal abandoned>
+- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element.
+- **Success End Condition:** Der User wir benachrichtigt.
+- **Failed End Condition:** Der User erhält keine Benachrichtigung.
 - **Primary Actor:** System
-- **Trigger:** Der User befindet sich in der Nähe eines Geschäfts, in dem ein Element erwerbar ist
+- **Trigger:** Der User befindet sich in der Nähe eines Geschäfts, in dem ein Element erwerbar ist.
 
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| 1. | Der Nutzer wird über Verfügbarkeit benachrichtigt. |
-| 2. | Der Nutzer bemerkt die Benachrichtigung. |
+| 1. | Der User wird über Verfügbarkeit benachrichtigt. |
+| 2. | Der User bemerkt die Benachrichtigung. |
 
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| 2a. | Der Nutzer entscheidet sich, das Produkt zu kaufen. |
-| 2a1. |   |
-
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
+| 2a. | Der User entscheidet sich, das Produkt zu kaufen. |
 
 ***
 
 ## Use Case 4a: Zwei Mitbewohner kaufen gleichzeitig ein Produkt
 
 - **Level:** Primary task
-- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
+- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element.
 - **Success End Condition:** <the state of the world upon successful completion>
 - **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** <a role name for the primary actor, or description>
-- **Trigger:** <the action upon the system that starts the use case, may be time event>
-
+- **Primary Actor:** System
+- **Trigger:** Ein Produkt wurde von mind. zwei Mitbewohnern gleichzeitig erworben.
+  
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
@@ -123,12 +116,6 @@
 |:---:|--------------|
 | <step #> | <action description> |
 | <step #> | <action description> |
-
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
 
 ***
 
