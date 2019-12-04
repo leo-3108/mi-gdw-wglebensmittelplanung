@@ -15,7 +15,7 @@ const options = { method: 'GET',
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
-  fs.writeFile('./output.json', JSON.stringify(body), (err) => {
+  fs.writeFile('./output_places.json', JSON.stringify(body), (err) => {
               if (err) throw err;
               console.log('The file has been saved!');
 
