@@ -8,6 +8,8 @@
 ***
 
 ## Use Case 1: Hinzufügen von Einträgen zur Einkaufsliste
+
+- **Level:** Primary Task
 - **Preconditions:** Es liegt eine Einkaufsliste vor.
 - **Success End Condition:** Der Nutzer hat Produkte hinzugefügt.
 - **Failed End Condition:** Das Produkt konnte nicht hinzugefügt werden.
@@ -25,16 +27,11 @@
 | 1a. | Das Produkt befindet sich nicht auf der Liste. |
 | 1a1. | Der Nutzer fügt das Produkt hinzu. |
 
-
-### Sub-Variationen
-| #   | Erweiterung |
-|:---:|--------------|
-|   |  |
-
 ***
 
 ## Use Case 2: Entfernen von Einträgen in der Einkaufsliste
 
+- **Level:** Primary Task
 - **Preconditions:**  Es befinden sich Produkte in der Einkaufliste.
 - **Success End Condition:**  Es befinden sich Produkte in der Einkaufliste.
 - **Failed End Condition:** Das nicht mehr benötigte Produkte konnte nicht entfernt werden.
@@ -52,16 +49,11 @@
 | 1. | Das Produkt befindet sich in der Liste. |
 | 1a1. | Das Produkt wird entfernt.  |
 
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
-
 ***
 
 ## Use Case 3: Kostenaufteilung
 
+- **Level:** Subfunction
 - **Preconditions:** Es liegen Ausgaben verschiedener Mitbewohner vor.
 - **Success End Condition:** Eine faire Kostenaufteilung zwischen den Mitbewohnern wird gewährleistet.
 - **Failed End Condition:** Es konnte keine faire Kostenaufteilung durchgeführt werden.
@@ -71,29 +63,22 @@
 ### Main Success Szenario
 | #   | Beschreibung |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+| 1. | Es wird geprüft, ob Ausgaben in der Einkaufsliste vorliegen. |
 
 ### Erweiterungen
 | #   | Extension |
 |:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
-### Sub-Variationen
-| #   | Variationen |
-|:---:|--------------|
-| <step #> | <list of sub-variations> |
-| <step #> | <list of sub-variations> |
+| 1. | Es liegen Ausgaben vor. |
+| 1a1. | Die Ausgaben werden gerecht berechnet.|
+| 2. | Die Nutzer teilen die berechneten Ausgaben untereinander auf. |
 
 ***
 
 ## Use Case 4: Mitbewohner wird über Einkaufsmöglichkeit benachrichtigt
 
-- **Scope:** ???
 - **Level:** Primary Task
 - **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
-- **Success End Condition:** <the state of the world upon successful completion>
+- **Success End Condition:** 
 - **Failed End Condition:** <the state of the world if goal abandoned>
 - **Primary Actor:** System
 - **Trigger:** Der User befindet sich in der Nähe eines Geschäfts, in dem ein Element erwerbar ist
@@ -120,8 +105,7 @@
 
 ## Use Case 4a: Zwei Mitbewohner kaufen gleichzeitig ein Produkt
 
-- **Scope:** <what system is being considered black box under design>
-- **Level:** <one of: Summary, Primary task, Subfunction>
+- **Level:** Primary task
 - **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element
 - **Success End Condition:** <the state of the world upon successful completion>
 - **Failed End Condition:** <the state of the world if goal abandoned>
