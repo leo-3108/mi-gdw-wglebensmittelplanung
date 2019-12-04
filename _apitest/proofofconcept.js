@@ -1,3 +1,5 @@
+//Places API; Einfache GET-Abfrage der Supermärkte in GM
+
 const fs = require('fs')
 const request = require("request");
 
@@ -13,13 +15,18 @@ const options = { method: 'GET',
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
-  //console.log(body);
-
   fs.writeFile('./output.json', JSON.stringify(body), (err) => {
               if (err) throw err;
               console.log('The file has been saved!');
 
               process.exit();
           });
-
 });
+
+//Weather API
+
+//Tracking API
+
+//Routing API
+
+//Traffic API
