@@ -1,1 +1,366 @@
-"{\"results\":[{\"title\":\"supermarket\",\"highlightedTitle\":\"<b>supermarket</b>\",\"category\":\"food-drink\",\"href\":\"https://places.cit.api.here.com/places/v1/autosuggest/search;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTAmYXQ9NTEuMDI0OTYwNzUxODM2MjklMkM3LjU2MTY1Mjk2NTI3NzA3NA?filters=category%3Asupermarket%2Cvi%3Aautosuggest&app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:search\",\"resultType\":\"category\"},{\"title\":\"Dornseifer Frischemarkt, \\\"Frischekuche\\\"\",\"highlightedTitle\":\"Dornseifer Frischemarkt, \\\"Frischekuche\\\"\",\"vicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"position\":[51.02431,7.56481],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276jx7ps-f328c8b3804705b9361843f5081126d7;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276jx7ps-f328c8b3804705b9361843f5081126d7\",\"distance\":233},{\"title\":\"Vom Fass\",\"highlightedTitle\":\"Vom Fass\",\"vicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"position\":[51.02431,7.56481],\"category\":\"shop\",\"categoryTitle\":\"Shop\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276jx7ps-64741487e9940b642bd76e89f440f08a;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTI?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276jx7ps-64741487e9940b642bd76e89f440f08a\",\"distance\":233},{\"title\":\"REWE\",\"highlightedTitle\":\"REWE\",\"vicinity\":\"Wiesenstraße<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Wiesenstraße<br/>51643 Gummersbach\",\"position\":[51.02051,7.573],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6k-91b2b48de5f5444488a6f17d24cbe437;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTM?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6k-91b2b48de5f5444488a6f17d24cbe437\",\"distance\":938,\"chainIds\":[\"1192\"]},{\"title\":\"REWE\",\"highlightedTitle\":\"REWE\",\"vicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"position\":[51.02472,7.5649],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6k-9885d8e5913b44a596e0be78df740c51;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTQ?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6k-9885d8e5913b44a596e0be78df740c51\",\"distance\":229,\"chainIds\":[\"1192\"]},{\"title\":\"Chocolate Company\",\"highlightedTitle\":\"Chocolate Company\",\"vicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Steinmüllerallee 5<br/>51643 Gummersbach\",\"position\":[51.02431,7.56481],\"category\":\"shop\",\"categoryTitle\":\"Shop\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276jx7ps-86f2070038c70bb75bc0acf152bcb84a;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTU?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276jx7ps-86f2070038c70bb75bc0acf152bcb84a\",\"distance\":233},{\"title\":\"Netto Marken-Discount\",\"highlightedTitle\":\"Netto Marken-Discount\",\"vicinity\":\"Wilhelm-Heidbreder-Straße<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Wilhelm-Heidbreder-Straße<br/>51643 Gummersbach\",\"position\":[51.02431,7.56751],\"category\":\"shop\",\"categoryTitle\":\"Shop\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6k-783e8d34366d4f3a936c5a1afef8cd52;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTY?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6k-783e8d34366d4f3a936c5a1afef8cd52\",\"distance\":417},{\"title\":\"LIDL, Industriestraße\",\"highlightedTitle\":\"LIDL, Industriestraße\",\"vicinity\":\"Industriestraße<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Industriestraße<br/>51643 Gummersbach\",\"position\":[51.02182,7.57305],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6k-5c14797b7b1b46419a5447935746625f;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTc?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6k-5c14797b7b1b46419a5447935746625f\",\"distance\":873,\"chainIds\":[\"1201\"]},{\"title\":\"Metzgerei Hans-Friedrich Gries\",\"highlightedTitle\":\"Metzgerei Hans-Friedrich Gries\",\"vicinity\":\"Marktstraße 1<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Marktstraße 1<br/>51643 Gummersbach\",\"position\":[51.02807,7.56296],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6k-f22b8727dbf24a78a5d2f4eb1381cd97;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTg?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6k-f22b8727dbf24a78a5d2f4eb1381cd97\",\"distance\":358},{\"title\":\"ALDI\",\"highlightedTitle\":\"ALDI\",\"vicinity\":\"Hückeswagener Straße 30<br/>Windhagen, 51647 Gummersbach\",\"highlightedVicinity\":\"Hückeswagener Straße 30<br/>Windhagen, 51647 Gummersbach\",\"position\":[51.04192,7.55196],\"category\":\"shop\",\"categoryTitle\":\"Shop\",\"href\":\"https://places.cit.api.here.com/places/v1/places/2768lxx5-48daa20c6db7082684da31839ab33933;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTk?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"2768lxx5-48daa20c6db7082684da31839ab33933\",\"distance\":2005,\"chainIds\":[\"1182\"]},{\"title\":\"Spar Markt Klein\",\"highlightedTitle\":\"Spar Markt Klein\",\"vicinity\":\"Bismarckstraße 1<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Bismarckstraße 1<br/>51643 Gummersbach\",\"position\":[51.02822,7.56713],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6k-ded7056a97cf452faa75ddcb368c3ed9;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTEw?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6k-ded7056a97cf452faa75ddcb368c3ed9\",\"distance\":528},{\"title\":\"ALDI\",\"highlightedTitle\":\"ALDI\",\"vicinity\":\"Islandstraße<br/>Niederseßmar, 51645 Gummersbach\",\"highlightedVicinity\":\"Islandstraße<br/>Niederseßmar, 51645 Gummersbach\",\"position\":[51.00753,7.57271],\"category\":\"shop\",\"categoryTitle\":\"Shop\",\"href\":\"https://places.cit.api.here.com/places/v1/places/2768lxx5-377430b36a8c0ec4c5d384f4e93972d8;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTEx?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"2768lxx5-377430b36a8c0ec4c5d384f4e93972d8\",\"distance\":2089,\"chainIds\":[\"1182\"]},{\"title\":\"Edeka Gruhle\",\"highlightedTitle\":\"Edeka Gruhle\",\"vicinity\":\"Hömerichstraße 3<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Hömerichstraße 3<br/>51643 Gummersbach\",\"position\":[51.0241,7.55171],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j67-7e6d3a2f60ee4d058798118664a494f0;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTEy?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j67-7e6d3a2f60ee4d058798118664a494f0\",\"distance\":704,\"chainIds\":[\"1188\"]},{\"title\":\"ALDI\",\"highlightedTitle\":\"ALDI\",\"vicinity\":\"Im Tal 29<br/>Strombach, 51643 Gummersbach\",\"highlightedVicinity\":\"Im Tal 29<br/>Strombach, 51643 Gummersbach\",\"position\":[51.02112,7.5268],\"category\":\"shop\",\"categoryTitle\":\"Shop\",\"href\":\"https://places.cit.api.here.com/places/v1/places/2768lxx5-2b066dea0b3605f8dbf54e192a575074;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTEz?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"2768lxx5-2b066dea0b3605f8dbf54e192a575074\",\"distance\":2482,\"chainIds\":[\"1182\"]},{\"title\":\"ALDI\",\"highlightedTitle\":\"ALDI\",\"vicinity\":\"Krummenohler Straße 2<br/>Niederseßmar, 51645 Gummersbach\",\"highlightedVicinity\":\"Krummenohler Straße 2<br/>Niederseßmar, 51645 Gummersbach\",\"position\":[51.00379,7.57117],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276jx7ps-64eb43236c46028cdafe6e92365cb21f;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE0?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276jx7ps-64eb43236c46028cdafe6e92365cb21f\",\"distance\":2448,\"chainIds\":[\"1182\",\"25336\"]},{\"title\":\"Café Dietmar Berges\",\"highlightedTitle\":\"Café Dietmar Berges\",\"vicinity\":\"Robertstraße 1<br/>51643 Gummersbach\",\"highlightedVicinity\":\"Robertstraße 1<br/>51643 Gummersbach\",\"position\":[51.02928,7.55577],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j67-4b400398230c4f5bbcb7ae76b7dfd4df;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE1?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j67-4b400398230c4f5bbcb7ae76b7dfd4df\",\"distance\":633},{\"title\":\"Netto Marken-Discount\",\"highlightedTitle\":\"Netto Marken-Discount\",\"vicinity\":\"Im Tal 29<br/>Strombach, 51643 Gummersbach\",\"highlightedVicinity\":\"Im Tal 29<br/>Strombach, 51643 Gummersbach\",\"position\":[51.02112,7.5268],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j67-277524c86e8f4531aa6bacf803dd65b1;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE2?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j67-277524c86e8f4531aa6bacf803dd65b1\",\"distance\":2482,\"chainIds\":[\"20368\"]},{\"title\":\"Edeka Krumme\",\"highlightedTitle\":\"Edeka Krumme\",\"vicinity\":\"Im Tal 3<br/>Strombach, 51643 Gummersbach\",\"highlightedVicinity\":\"Im Tal 3<br/>Strombach, 51643 Gummersbach\",\"position\":[51.0235,7.52886],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j67-58b747cb02c541698f05e8b2ff81a2a0;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE3?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j67-58b747cb02c541698f05e8b2ff81a2a0\",\"distance\":2307,\"chainIds\":[\"1188\"]},{\"title\":\"Schneider Bäckerei-Konditorei\",\"highlightedTitle\":\"Schneider Bäckerei-Konditorei\",\"vicinity\":\"Hückeswagener Straße 68<br/>Windhagen, 51647 Gummersbach\",\"highlightedVicinity\":\"Hückeswagener Straße 68<br/>Windhagen, 51647 Gummersbach\",\"position\":[51.04543,7.54894],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j67-68b0dd87a37044d187c97559c73c96e5;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE4?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j67-68b0dd87a37044d187c97559c73c96e5\",\"distance\":2446},{\"title\":\"Extra Verbrauchermarkt\",\"highlightedTitle\":\"Extra Verbrauchermarkt\",\"vicinity\":\"Kölner Straße 288<br/>Niederseßmar, 51645 Gummersbach\",\"highlightedVicinity\":\"Kölner Straße 288<br/>Niederseßmar, 51645 Gummersbach\",\"position\":[51.00449,7.57336],\"category\":\"food-drink\",\"categoryTitle\":\"Food & Drink\",\"href\":\"https://places.cit.api.here.com/places/v1/places/276u1j6h-9d9fc4b6ea5d407ca5f4c9279cdd2a2b;context=Zmxvdy1pZD0yMThjZTMwNC04NDdlLTVhMTItOTE1MC1jYzc0ZTc2NmFmODhfMTU3NTMwNzUxNTM3M185NTg5XzMwMyZyYW5rPTE5?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig\",\"type\":\"urn:nlp-types:place\",\"resultType\":\"place\",\"id\":\"276u1j6h-9d9fc4b6ea5d407ca5f4c9279cdd2a2b\",\"distance\":2421}]}"
+{
+  "results": [
+    {
+      "title": "supermarket",
+      "highlightedTitle": "<b>supermarket</b>",
+      "category": "food-drink",
+      "href": "https://places.cit.api.here.com/places/v1/autosuggest/search;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0wJmF0PTUxLjAyNDk2MDc1MTgzNjI5JTJDNy41NjE2NTI5NjUyNzcwNzQ?filters=category%3Asupermarket%2Cvi%3Aautosuggest&app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:search",
+      "resultType": "category"
+    },
+    {
+      "title": "Dornseifer Frischemarkt, \"Frischekuche\"",
+      "highlightedTitle": "Dornseifer Frischemarkt, \"Frischekuche\"",
+      "vicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "highlightedVicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "position": [
+        51.02431,
+        7.56481
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276jx7ps-f328c8b3804705b9361843f5081126d7;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0x?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276jx7ps-f328c8b3804705b9361843f5081126d7",
+      "distance": 233
+    },
+    {
+      "title": "Vom Fass",
+      "highlightedTitle": "Vom Fass",
+      "vicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "highlightedVicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "position": [
+        51.02431,
+        7.56481
+      ],
+      "category": "shop",
+      "categoryTitle": "Shop",
+      "href": "https://places.cit.api.here.com/places/v1/places/276jx7ps-64741487e9940b642bd76e89f440f08a;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0y?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276jx7ps-64741487e9940b642bd76e89f440f08a",
+      "distance": 233
+    },
+    {
+      "title": "REWE",
+      "highlightedTitle": "REWE",
+      "vicinity": "Wiesenstraße<br/>51643 Gummersbach",
+      "highlightedVicinity": "Wiesenstraße<br/>51643 Gummersbach",
+      "position": [
+        51.02051,
+        7.573
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6k-91b2b48de5f5444488a6f17d24cbe437;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0z?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6k-91b2b48de5f5444488a6f17d24cbe437",
+      "distance": 938,
+      "chainIds": [
+        "1192"
+      ]
+    },
+    {
+      "title": "REWE",
+      "highlightedTitle": "REWE",
+      "vicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "highlightedVicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "position": [
+        51.02472,
+        7.5649
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6k-9885d8e5913b44a596e0be78df740c51;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz00?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6k-9885d8e5913b44a596e0be78df740c51",
+      "distance": 229,
+      "chainIds": [
+        "1192"
+      ]
+    },
+    {
+      "title": "Chocolate Company",
+      "highlightedTitle": "Chocolate Company",
+      "vicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "highlightedVicinity": "Steinmüllerallee 5<br/>51643 Gummersbach",
+      "position": [
+        51.02431,
+        7.56481
+      ],
+      "category": "shop",
+      "categoryTitle": "Shop",
+      "href": "https://places.cit.api.here.com/places/v1/places/276jx7ps-86f2070038c70bb75bc0acf152bcb84a;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz01?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276jx7ps-86f2070038c70bb75bc0acf152bcb84a",
+      "distance": 233
+    },
+    {
+      "title": "Netto Marken-Discount",
+      "highlightedTitle": "Netto Marken-Discount",
+      "vicinity": "Wilhelm-Heidbreder-Straße<br/>51643 Gummersbach",
+      "highlightedVicinity": "Wilhelm-Heidbreder-Straße<br/>51643 Gummersbach",
+      "position": [
+        51.02431,
+        7.56751
+      ],
+      "category": "shop",
+      "categoryTitle": "Shop",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6k-783e8d34366d4f3a936c5a1afef8cd52;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz02?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6k-783e8d34366d4f3a936c5a1afef8cd52",
+      "distance": 417
+    },
+    {
+      "title": "LIDL, Industriestraße",
+      "highlightedTitle": "LIDL, Industriestraße",
+      "vicinity": "Industriestraße<br/>51643 Gummersbach",
+      "highlightedVicinity": "Industriestraße<br/>51643 Gummersbach",
+      "position": [
+        51.02182,
+        7.57305
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6k-5c14797b7b1b46419a5447935746625f;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz03?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6k-5c14797b7b1b46419a5447935746625f",
+      "distance": 873,
+      "chainIds": [
+        "1201"
+      ]
+    },
+    {
+      "title": "Metzgerei Hans-Friedrich Gries",
+      "highlightedTitle": "Metzgerei Hans-Friedrich Gries",
+      "vicinity": "Marktstraße 1<br/>51643 Gummersbach",
+      "highlightedVicinity": "Marktstraße 1<br/>51643 Gummersbach",
+      "position": [
+        51.02807,
+        7.56296
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6k-f22b8727dbf24a78a5d2f4eb1381cd97;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz04?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6k-f22b8727dbf24a78a5d2f4eb1381cd97",
+      "distance": 358
+    },
+    {
+      "title": "ALDI",
+      "highlightedTitle": "ALDI",
+      "vicinity": "Hückeswagener Straße 30<br/>Windhagen, 51647 Gummersbach",
+      "highlightedVicinity": "Hückeswagener Straße 30<br/>Windhagen, 51647 Gummersbach",
+      "position": [
+        51.04192,
+        7.55196
+      ],
+      "category": "shop",
+      "categoryTitle": "Shop",
+      "href": "https://places.cit.api.here.com/places/v1/places/2768lxx5-48daa20c6db7082684da31839ab33933;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz05?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "2768lxx5-48daa20c6db7082684da31839ab33933",
+      "distance": 2005,
+      "chainIds": [
+        "1182"
+      ]
+    },
+    {
+      "title": "Spar Markt Klein",
+      "highlightedTitle": "Spar Markt Klein",
+      "vicinity": "Bismarckstraße 1<br/>51643 Gummersbach",
+      "highlightedVicinity": "Bismarckstraße 1<br/>51643 Gummersbach",
+      "position": [
+        51.02822,
+        7.56713
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6k-ded7056a97cf452faa75ddcb368c3ed9;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xMA?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6k-ded7056a97cf452faa75ddcb368c3ed9",
+      "distance": 528
+    },
+    {
+      "title": "ALDI",
+      "highlightedTitle": "ALDI",
+      "vicinity": "Islandstraße<br/>Niederseßmar, 51645 Gummersbach",
+      "highlightedVicinity": "Islandstraße<br/>Niederseßmar, 51645 Gummersbach",
+      "position": [
+        51.00753,
+        7.57271
+      ],
+      "category": "shop",
+      "categoryTitle": "Shop",
+      "href": "https://places.cit.api.here.com/places/v1/places/2768lxx5-377430b36a8c0ec4c5d384f4e93972d8;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xMQ?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "2768lxx5-377430b36a8c0ec4c5d384f4e93972d8",
+      "distance": 2089,
+      "chainIds": [
+        "1182"
+      ]
+    },
+    {
+      "title": "Edeka Gruhle",
+      "highlightedTitle": "Edeka Gruhle",
+      "vicinity": "Hömerichstraße 3<br/>51643 Gummersbach",
+      "highlightedVicinity": "Hömerichstraße 3<br/>51643 Gummersbach",
+      "position": [
+        51.0241,
+        7.55171
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j67-7e6d3a2f60ee4d058798118664a494f0;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xMg?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j67-7e6d3a2f60ee4d058798118664a494f0",
+      "distance": 704,
+      "chainIds": [
+        "1188"
+      ]
+    },
+    {
+      "title": "ALDI",
+      "highlightedTitle": "ALDI",
+      "vicinity": "Im Tal 29<br/>Strombach, 51643 Gummersbach",
+      "highlightedVicinity": "Im Tal 29<br/>Strombach, 51643 Gummersbach",
+      "position": [
+        51.02112,
+        7.5268
+      ],
+      "category": "shop",
+      "categoryTitle": "Shop",
+      "href": "https://places.cit.api.here.com/places/v1/places/2768lxx5-2b066dea0b3605f8dbf54e192a575074;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xMw?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "2768lxx5-2b066dea0b3605f8dbf54e192a575074",
+      "distance": 2482,
+      "chainIds": [
+        "1182"
+      ]
+    },
+    {
+      "title": "ALDI",
+      "highlightedTitle": "ALDI",
+      "vicinity": "Krummenohler Straße 2<br/>Niederseßmar, 51645 Gummersbach",
+      "highlightedVicinity": "Krummenohler Straße 2<br/>Niederseßmar, 51645 Gummersbach",
+      "position": [
+        51.00379,
+        7.57117
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276jx7ps-64eb43236c46028cdafe6e92365cb21f;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xNA?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276jx7ps-64eb43236c46028cdafe6e92365cb21f",
+      "distance": 2448,
+      "chainIds": [
+        "1182",
+        "25336"
+      ]
+    },
+    {
+      "title": "Café Dietmar Berges",
+      "highlightedTitle": "Café Dietmar Berges",
+      "vicinity": "Robertstraße 1<br/>51643 Gummersbach",
+      "highlightedVicinity": "Robertstraße 1<br/>51643 Gummersbach",
+      "position": [
+        51.02928,
+        7.55577
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j67-4b400398230c4f5bbcb7ae76b7dfd4df;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xNQ?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j67-4b400398230c4f5bbcb7ae76b7dfd4df",
+      "distance": 633
+    },
+    {
+      "title": "Netto Marken-Discount",
+      "highlightedTitle": "Netto Marken-Discount",
+      "vicinity": "Im Tal 29<br/>Strombach, 51643 Gummersbach",
+      "highlightedVicinity": "Im Tal 29<br/>Strombach, 51643 Gummersbach",
+      "position": [
+        51.02112,
+        7.5268
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j67-277524c86e8f4531aa6bacf803dd65b1;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xNg?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j67-277524c86e8f4531aa6bacf803dd65b1",
+      "distance": 2482,
+      "chainIds": [
+        "20368"
+      ]
+    },
+    {
+      "title": "Edeka Krumme",
+      "highlightedTitle": "Edeka Krumme",
+      "vicinity": "Im Tal 3<br/>Strombach, 51643 Gummersbach",
+      "highlightedVicinity": "Im Tal 3<br/>Strombach, 51643 Gummersbach",
+      "position": [
+        51.0235,
+        7.52886
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j67-58b747cb02c541698f05e8b2ff81a2a0;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xNw?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j67-58b747cb02c541698f05e8b2ff81a2a0",
+      "distance": 2307,
+      "chainIds": [
+        "1188"
+      ]
+    },
+    {
+      "title": "Schneider Bäckerei-Konditorei",
+      "highlightedTitle": "Schneider Bäckerei-Konditorei",
+      "vicinity": "Hückeswagener Straße 68<br/>Windhagen, 51647 Gummersbach",
+      "highlightedVicinity": "Hückeswagener Straße 68<br/>Windhagen, 51647 Gummersbach",
+      "position": [
+        51.04543,
+        7.54894
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j67-68b0dd87a37044d187c97559c73c96e5;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xOA?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j67-68b0dd87a37044d187c97559c73c96e5",
+      "distance": 2446
+    },
+    {
+      "title": "Extra Verbrauchermarkt",
+      "highlightedTitle": "Extra Verbrauchermarkt",
+      "vicinity": "Kölner Straße 288<br/>Niederseßmar, 51645 Gummersbach",
+      "highlightedVicinity": "Kölner Straße 288<br/>Niederseßmar, 51645 Gummersbach",
+      "position": [
+        51.00449,
+        7.57336
+      ],
+      "category": "food-drink",
+      "categoryTitle": "Food & Drink",
+      "href": "https://places.cit.api.here.com/places/v1/places/276u1j6h-9d9fc4b6ea5d407ca5f4c9279cdd2a2b;context=Zmxvdy1pZD05MzE1ZTUzOS1kMWNhLTViMTktOThmYy0yOTVjYmMxNDZkMmVfMTU3NTYyNzEzNzEzNF8zMDQxXzk1OTkmcmFuaz0xOQ?app_id=hDr78BRUEK7XFKrLIm2j&app_code=7eGjD8JcxivXumb6wdzvig",
+      "type": "urn:nlp-types:place",
+      "resultType": "place",
+      "id": "276u1j6h-9d9fc4b6ea5d407ca5f4c9279cdd2a2b",
+      "distance": 2421
+    }
+  ]
+}
