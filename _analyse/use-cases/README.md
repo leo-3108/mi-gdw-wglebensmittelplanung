@@ -105,10 +105,10 @@
 - **Primary Actor:** Mitbewohner
 - **Trigger:** Zwei Mitbewohner wollen das gleiche Produkt kaufen.
 
-![Kommunikationsdiagram UC-4a](UC_4a.png "Kommunikationsdiagram UC-4a")
+[![Kommunikationsdiagram UC-4a](https://github.com/leo-3108/GDW_WS1920_Bao_Gedrath_Pelzer/tree/master/_analyse/use-cases/UC_4a.png "Kommunikationsdiagram UC-4a")](https://github.com/leo-3108/GDW_WS1920_Bao_Gedrath_Pelzer/tree/master/_analyse/use-cases/UC_4a.pdf)
   
 ### Alternatives Use Case (Lösung des Doppelten-Einkaufs-Problem)
-![Kommunikationsdiagram UC-4a-alt](UC_4a-alt.png "Kommunikationsdiagram UC-4a-alt")
+[![Kommunikationsdiagram UC-4a-alt](https://github.com/leo-3108/GDW_WS1920_Bao_Gedrath_Pelzer/tree/master/_analyse/use-cases/UC_4a-alt.png "Kommunikationsdiagram UC-4a-alt")](https://github.com/leo-3108/GDW_WS1920_Bao_Gedrath_Pelzer/tree/master/_analyse/use-cases/UC_4a-alt.pdf)
 
 ***
 
