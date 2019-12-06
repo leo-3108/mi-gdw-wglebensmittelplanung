@@ -1,0 +1,42 @@
+{
+  "coord": {
+    "lon": 7.56,
+    "lat": 51.03
+  },
+  "weather": [
+    {
+      "id": 311,
+      "main": "Drizzle",
+      "description": "drizzle rain",
+      "icon": "09n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 279.19,
+    "pressure": 1008,
+    "humidity": 93,
+    "temp_min": 277.04,
+    "temp_max": 280.93
+  },
+  "visibility": 9000,
+  "wind": {
+    "speed": 3.1,
+    "deg": 180
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1575663324,
+  "sys": {
+    "type": 1,
+    "id": 1271,
+    "country": "DE",
+    "sunrise": 1575616626,
+    "sunset": 1575645870
+  },
+  "timezone": 3600,
+  "id": 2913761,
+  "name": "Gummersbach",
+  "cod": 200
+}
