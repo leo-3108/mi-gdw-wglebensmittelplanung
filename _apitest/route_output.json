@@ -1,7 +1,7 @@
 {
   "response": {
     "metaInfo": {
-      "timestamp": "2019-12-06T10:11:25Z",
+      "timestamp": "2019-12-06T20:15:03Z",
       "mapVersion": "8.30.103.151",
       "moduleVersion": "7.2.201948-5892",
       "interfaceVersion": "2.6.74",
@@ -96,7 +96,7 @@
               "source": "user"
             },
             "length": 59048,
-            "travelTime": 9571,
+            "travelTime": 9586,
             "maneuver": [
               {
                 "position": {
@@ -137,7 +137,7 @@
                   "longitude": 7.5661683
                 },
                 "instruction": "Go to the station <span class=\"station\">Gummersbach Bf</span> and take the <span class=\"transit\">train</span> <span class=\"line\">RB25</span> toward <span class=\"destination\">Köln, Hansaring</span>. <span class=\"distance-description\">Follow for <span class=\"stops\">12 stations</span>.</span>",
-                "travelTime": 8140,
+                "travelTime": 8155,
                 "length": 57649,
                 "id": "M4",
                 "stopName": "Gummersbach Bf",
@@ -247,14 +247,14 @@
         ],
         "summary": {
           "distance": 59048,
-          "baseTime": 9571,
+          "baseTime": 9586,
           "flags": [
             "noThroughRoad",
             "builtUpArea"
           ],
           "text": "The trip takes <span class=\"length\">59.0 km</span> and <span class=\"time\">2:40 h</span>.",
-          "travelTime": 9571,
-          "departure": "2019-12-06T11:11:25+01:00",
+          "travelTime": 9586,
+          "departure": "2019-12-06T21:15:03+01:00",
           "_type": "PublicTransportRouteSummaryType"
         }
       }
