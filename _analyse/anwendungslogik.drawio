@@ -1,9 +1,105 @@
-<mxfile host="www.draw.io" modified="2019-12-06T14:45:01.604Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="8FN-izpEMR9PyEEScd35" version="12.3.7" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-12-06T15:09:41.086Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="d-Y1HyeooGO16SPE6Jp2" version="12.3.7" type="github" pages="1">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="1186" dy="685" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-35" value="1.: sendet Standort" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-1" target="3ZGIEo6XNX662Ywo_EqQ-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="511.5" y="590"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-1" value="Client des Mitbewohners" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="536.5" y="560" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-28" value="2.: stellt Anfrage (EMs in Nähe)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-26" target="3ZGIEo6XNX662Ywo_EqQ-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="351.5" y="260"/>
+              <mxPoint x="351.5" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-50" value="5.: Berechne Wege" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-26" target="3ZGIEo6XNX662Ywo_EqQ-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="340"/>
+              <mxPoint x="380" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-53" value="8. sende Routen-Optionen" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-26" target="3ZGIEo6XNX662Ywo_EqQ-1">
+          <mxGeometry x="-0.3844" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="601.5" y="590"/>
+            </Array>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-26" value="Webservice" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="461.5" y="240" width="170" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-27" target="3ZGIEo6XNX662Ywo_EqQ-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="411.5" y="300"/>
+              <mxPoint x="411.5" y="300"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-39" value="&lt;font style=&quot;font-size: 11px&quot;&gt;3.: liefert mögliche&lt;br&gt;Einkaufsmöglichkeiten&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="3ZGIEo6XNX662Ywo_EqQ-38">
+          <mxGeometry x="0.0778" y="-22" relative="1" as="geometry">
+            <mxPoint x="-22" y="-21" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-51" value="6.: liefert Routen" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-27" target="3ZGIEo6XNX662Ywo_EqQ-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="451.5" y="370"/>
+              <mxPoint x="451.5" y="370"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-27" value="Externer&lt;br&gt;Webservice&lt;br&gt;&lt;i&gt;HERE REST API&lt;/i&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="141.5" y="230" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-29" target="3ZGIEo6XNX662Ywo_EqQ-27">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-29" value="Einkaufsmöglichkeit (EM)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="129" y="550" width="175" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-34" value="&lt;b&gt;Vorraussetzung:&lt;/b&gt;&amp;nbsp;Einkaufsliste muss mind 1 Element haben" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="180" width="340" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-42" value="4.: Berechnung:&lt;br&gt;a.) Webservice filtert EM raus,&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;die Produkt nicht anbieten&lt;br&gt;b.) Berechnet den Weg zu allen möglichen EMs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;align=left;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-26" target="3ZGIEo6XNX662Ywo_EqQ-26">
+          <mxGeometry x="0.1445" y="10" relative="1" as="geometry">
+            <mxPoint x="591.5" y="210" as="sourcePoint"/>
+            <mxPoint x="607.5" y="370" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="621.5" y="230"/>
+              <mxPoint x="691.5" y="230"/>
+              <mxPoint x="691.5" y="290"/>
+            </Array>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-52" value="7.: Berechnung:&lt;br&gt;a.) Wenn Route unter bestimmter Zeit,&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;dann Nutzer benachrichtigen" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;align=left;" edge="1" parent="1" source="3ZGIEo6XNX662Ywo_EqQ-26" target="3ZGIEo6XNX662Ywo_EqQ-26">
+          <mxGeometry x="0.1445" y="10" relative="1" as="geometry">
+            <mxPoint x="631.5" y="283.5421901205575" as="sourcePoint"/>
+            <mxPoint x="638.0685424949238" y="300" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="671.5" y="315"/>
+              <mxPoint x="671.5" y="350"/>
+            </Array>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3ZGIEo6XNX662Ywo_EqQ-55" value="Anwendungslogik" style="shape=umlFrame;whiteSpace=wrap;html=1;shadow=0;width=160;height=30;" vertex="1" parent="1">
+          <mxGeometry x="90" y="170" width="880" height="510" as="geometry"/>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
