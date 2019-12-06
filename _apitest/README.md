@@ -2,7 +2,7 @@
 
 Umgebung zum Testen der Erforderlichen APIs.
 
-**Verwendete APIS**
+**Verwendete APIs:**
 
 - Places API (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis
   > Get global information on 150 million parks, businesses, attractions and more, including addresses, categories and contact info.
