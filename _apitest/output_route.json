@@ -1,0 +1,264 @@
+{
+  "response": {
+    "metaInfo": {
+      "timestamp": "2019-12-06T10:11:25Z",
+      "mapVersion": "8.30.103.151",
+      "moduleVersion": "7.2.201948-5892",
+      "interfaceVersion": "2.6.74",
+      "availableMapVersion": [
+        "8.30.103.151"
+      ]
+    },
+    "route": [
+      {
+        "waypoint": [
+          {
+            "linkId": "-1216095280",
+            "mappedPosition": {
+              "latitude": 51.0249687,
+              "longitude": 7.561713
+            },
+            "originalPosition": {
+              "latitude": 51.0249607,
+              "longitude": 7.5616529
+            },
+            "type": "stopOver",
+            "spot": 0.88,
+            "sideOfStreet": "right",
+            "mappedRoadName": "Rospestraße",
+            "label": "Rospestraße",
+            "shapeIndex": 0,
+            "source": "user"
+          },
+          {
+            "linkId": "+51640424",
+            "mappedPosition": {
+              "latitude": 50.9409081,
+              "longitude": 6.958342
+            },
+            "originalPosition": {
+              "latitude": 50.941278,
+              "longitude": 6.9582809
+            },
+            "type": "stopOver",
+            "spot": 0.5882353,
+            "sideOfStreet": "left",
+            "mappedRoadName": "Roncalliplatz",
+            "label": "Roncalliplatz",
+            "shapeIndex": 658,
+            "source": "user"
+          }
+        ],
+        "mode": {
+          "type": "fastest",
+          "transportModes": [
+            "publicTransport"
+          ],
+          "trafficMode": "disabled",
+          "feature": []
+        },
+        "leg": [
+          {
+            "start": {
+              "linkId": "-1216095280",
+              "mappedPosition": {
+                "latitude": 51.0249687,
+                "longitude": 7.561713
+              },
+              "originalPosition": {
+                "latitude": 51.0249607,
+                "longitude": 7.5616529
+              },
+              "type": "stopOver",
+              "spot": 0.88,
+              "sideOfStreet": "right",
+              "mappedRoadName": "Rospestraße",
+              "label": "Rospestraße",
+              "shapeIndex": 0,
+              "source": "user"
+            },
+            "end": {
+              "linkId": "+51640424",
+              "mappedPosition": {
+                "latitude": 50.9409081,
+                "longitude": 6.958342
+              },
+              "originalPosition": {
+                "latitude": 50.941278,
+                "longitude": 6.9582809
+              },
+              "type": "stopOver",
+              "spot": 0.5882353,
+              "sideOfStreet": "left",
+              "mappedRoadName": "Roncalliplatz",
+              "label": "Roncalliplatz",
+              "shapeIndex": 658,
+              "source": "user"
+            },
+            "length": 59048,
+            "travelTime": 9571,
+            "maneuver": [
+              {
+                "position": {
+                  "latitude": 51.0249687,
+                  "longitude": 7.561713
+                },
+                "instruction": "Head <span class=\"heading\">south</span> on <span class=\"street\">Rospestraße</span>. <span class=\"distance-description\">Go for <span class=\"length\">85 m</span>.</span>",
+                "travelTime": 86,
+                "length": 85,
+                "id": "M1",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 51.0242307,
+                  "longitude": 7.5618875
+                },
+                "instruction": "Take the street on the <span class=\"direction\">right</span>, <span class=\"next-street\">Rospestraße</span>. <span class=\"distance-description\">Go for <span class=\"length\">345 m</span>.</span>",
+                "travelTime": 355,
+                "length": 345,
+                "id": "M2",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 51.0216129,
+                  "longitude": 7.5617802
+                },
+                "instruction": "Walk <span class=\"direction\">left</span> around the roundabout and turn at the <span class=\"exit\">2nd street</span> <span class=\"next-street\">Hubert-Sülzer-Straße</span>. <span class=\"distance-description\">Go for <span class=\"length\">510 m</span>.</span>",
+                "travelTime": 521,
+                "length": 510,
+                "id": "M3",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 51.0230613,
+                  "longitude": 7.5661683
+                },
+                "instruction": "Go to the station <span class=\"station\">Gummersbach Bf</span> and take the <span class=\"transit\">train</span> <span class=\"line\">RB25</span> toward <span class=\"destination\">Köln, Hansaring</span>. <span class=\"distance-description\">Follow for <span class=\"stops\">12 stations</span>.</span>",
+                "travelTime": 8140,
+                "length": 57649,
+                "id": "M4",
+                "stopName": "Gummersbach Bf",
+                "_type": "PublicTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9429812,
+                  "longitude": 6.9585943
+                },
+                "instruction": "Get off at <span class=\"station\">Köln, Dom / Hbf</span>.",
+                "travelTime": 0,
+                "length": 0,
+                "id": "M5",
+                "stopName": "Köln, Dom / Hbf",
+                "nextRoadName": "Bahnhofsvorplatz",
+                "_type": "PublicTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9429812,
+                  "longitude": 6.9585943
+                },
+                "instruction": "Head <span class=\"heading\">west</span> on <span class=\"street\">Bahnhofsvorplatz</span>. <span class=\"distance-description\">Go for <span class=\"length\">110 m</span>.</span>",
+                "travelTime": 110,
+                "length": 110,
+                "id": "M6",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9425843,
+                  "longitude": 6.9575214
+                },
+                "instruction": "Continue straight onto <span class=\"next-street\">Dompropst-Ketzer-Straße</span>. <span class=\"distance-description\">Go for <span class=\"length\">90 m</span>.</span>",
+                "travelTime": 100,
+                "length": 90,
+                "id": "M7",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9417796,
+                  "longitude": 6.9574463
+                },
+                "instruction": "Turn <span class=\"direction\">right</span> onto <span class=\"next-street\">Trankgasse</span>. <span class=\"distance-description\">Go for <span class=\"length\">44 m</span>.</span>",
+                "travelTime": 44,
+                "length": 44,
+                "id": "M8",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9417474,
+                  "longitude": 6.9568241
+                },
+                "instruction": "Turn <span class=\"direction\">left</span> onto <span class=\"next-street\">Treppen</span>. <span class=\"distance-description\">Go for <span class=\"length\">5 m</span>.</span>",
+                "travelTime": 5,
+                "length": 5,
+                "id": "M9",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9417045,
+                  "longitude": 6.9567919
+                },
+                "instruction": "Head <span class=\"heading\">south</span> on <span class=\"street\">Domkloster</span>. <span class=\"distance-description\">Go for <span class=\"length\">150 m</span>.</span>",
+                "travelTime": 150,
+                "length": 150,
+                "id": "M10",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.940814,
+                  "longitude": 6.9575
+                },
+                "instruction": "Turn <span class=\"direction\">left</span> onto <span class=\"next-street\">Roncalliplatz</span>. <span class=\"distance-description\">Go for <span class=\"length\">60 m</span>.</span>",
+                "travelTime": 60,
+                "length": 60,
+                "id": "M11",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 50.9409081,
+                  "longitude": 6.958342
+                },
+                "instruction": "Arrive at <span class=\"street\">Roncalliplatz</span>. Your destination is on the left.",
+                "travelTime": 0,
+                "length": 0,
+                "id": "M12",
+                "_type": "PrivateTransportManeuverType"
+              }
+            ]
+          }
+        ],
+        "publicTransportLine": [
+          {
+            "lineName": "RB25",
+            "companyName": "",
+            "destination": "Köln, Hansaring",
+            "type": "trainRegional",
+            "id": "L1"
+          }
+        ],
+        "summary": {
+          "distance": 59048,
+          "baseTime": 9571,
+          "flags": [
+            "noThroughRoad",
+            "builtUpArea"
+          ],
+          "text": "The trip takes <span class=\"length\">59.0 km</span> and <span class=\"time\">2:40 h</span>.",
+          "travelTime": 9571,
+          "departure": "2019-12-06T11:11:25+01:00",
+          "_type": "PublicTransportRouteSummaryType"
+        }
+      }
+    ],
+    "language": "en-us"
+  }
+}
