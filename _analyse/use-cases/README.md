@@ -100,22 +100,15 @@
 
 - **Level:** Primary task
 - **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element.
-- **Success End Condition:** <the state of the world upon successful completion>
-- **Failed End Condition:** <the state of the world if goal abandoned>
-- **Primary Actor:** System
-- **Trigger:** Ein Produkt wurde von mind. zwei Mitbewohnern gleichzeitig erworben.
-  
-### Main Success Szenario
-| #   | Beschreibung |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+- **Success End Condition:** Produkt wurde reserviert und nur einmal gekauft.
+- **Failed End Condition:** Produkt wurde zweimal gekauft.
+- **Primary Actor:** Mitbewohner
+- **Trigger:** Zwei Mitbewohner wollen das gleiche Produkt kaufen.
 
-### Erweiterungen
-| #   | Extension |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+![Kommunikationsdiagram UC-4a](UC_4a.png "Kommunikationsdiagram UC-4a")
+  
+### Alternatives Use Case (Lösung des Doppelten-Einkaufs-Problem)
+![Kommunikationsdiagram UC-4a-alt](UC_4a-alt.png "Kommunikationsdiagram UC-4a-alt")
 
 ***
 
