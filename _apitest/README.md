@@ -21,8 +21,8 @@ Umgebung zum Testen der erforderlichen APIs.
 - Weather API (Angeboten von OpenWeatherMap) - https://openweathermap.org \
   _Access current weather data for any location including over 200,000 cities_
 
-  ```js
-  {
-    API_Key: 'fa05354691c1ad9808f0381d24e2af5d'
-  }
-  ```
+```js
+{
+  API_Key: 'fa05354691c1ad9808f0381d24e2af5d'
+}
+```
