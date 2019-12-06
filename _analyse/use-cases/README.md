@@ -112,10 +112,7 @@
 | <step #> | <action description> |
 
 ### Erweiterungen
-| #   | Extension |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
+![Kommunikationsdiagram UC-4a-alt](UC_4a-alt.png "Kommunikationsdiagram UC-4a-alt")
 
 ***
 
