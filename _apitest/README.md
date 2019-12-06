@@ -6,8 +6,8 @@ Umgebung zum Testen der Erforderlichen APIs.
 
 - Places API (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis
   > Get global information on 150 million parks, businesses, attractions and more, including addresses, categories and contact info.
-- Weather API (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis
-  > Get current weather reports or weather forecasts and check for severe weather alerts at a specific location.
+- Routing API (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis
+  > Complete complex journeys more efficiently with advanced routing algorithms including truck routing, large scale matrix routing and traffic-enabled routing. Get accurate ETAs and routing instructions in over 108 languages.
 
 
 ```js
