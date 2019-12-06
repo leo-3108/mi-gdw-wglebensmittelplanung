@@ -105,12 +105,6 @@
 - **Primary Actor:** System
 - **Trigger:** Ein Produkt wurde von mind. zwei Mitbewohnern gleichzeitig erworben.
   
-### Main Success Szenario
-| #   | Beschreibung |
-|:---:|--------------|
-| <step #> | <action description> |
-| <step #> | <action description> |
-
 ### Erweiterungen
 ![Kommunikationsdiagram UC-4a-alt](UC_4a-alt.png "Kommunikationsdiagram UC-4a-alt")
 
