@@ -26,3 +26,13 @@ Umgebung zum Testen der erforderlichen APIs.
   API_Key: 'fa05354691c1ad9808f0381d24e2af5d'
 }
 ```
+
+# Restriktionen
+
+HERE API:
+- Transactions: 250.000 per month
+- 2.5 GB Data transfer per month
+- 5 GB Database Storage per month
+
+OpenWeatherMap:
+- Calls per Minute: 60
