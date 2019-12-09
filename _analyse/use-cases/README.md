@@ -1,5 +1,7 @@
 # Use Cases
 
+Alle Use Cases befinden sich im Lösungsraum.
+
 **Übersicht:**
 - [Use Case 1: Bearbeitung der Einkaufsliste](#use-case-1-hinzufügen-von-einträgen-zur-einkaufsliste)
 - [Use Case 2: Abarbeitung der Einkaufsliste](#use-case-3-entfernen-von-einträgen-in-der-einkaufsliste)
@@ -28,6 +30,7 @@
 |:---:|--------------|
 | 1a. | Das Produkt befindet sich nicht auf der Liste. |
 | 1a1. | Der User fügt das Produkt hinzu. |
+| 1a2. | Alle anderen Mitbewohner werden benachrichtigt. |
 
 ***
 
@@ -50,6 +53,7 @@
 |:---:|--------------|
 | 1. | Das Produkt befindet sich in der Liste. |
 | 1a1. | Das Produkt wird entfernt.  |
+| 1a2. | Alle anderen Mitbewohner werden benachrichtigt. |
 
 ***
 
