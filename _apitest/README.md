@@ -4,10 +4,10 @@ Umgebung zum Testen der erforderlichen APIs.
 
 **Verwendete APIs:**
 
-- Places API (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis \
+- **Places API** (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis \
   _Get global information on 150 million parks, businesses, attractions and more, including addresses, categories and contact info._
 
-- Routing API (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis \
+- **Routing API** (Angeboten von der HERE REST API) - https://developer.here.com/develop/rest-apis \
   _Complete complex journeys more efficiently with advanced routing algorithms including truck routing, large scale matrix routing and traffic-enabled routing. Get accurate ETAs and routing instructions in over 108 languages._
 
 
@@ -18,7 +18,7 @@ Umgebung zum Testen der erforderlichen APIs.
 }
 ```
 
-- Weather API (Angeboten von OpenWeatherMap) - https://openweathermap.org \
+- **Weather API** (Angeboten von OpenWeatherMap) - https://openweathermap.org \
   _Access current weather data for any location including over 200,000 cities_
 
 ```js
@@ -29,10 +29,10 @@ Umgebung zum Testen der erforderlichen APIs.
 
 # Restriktionen
 
-HERE API:
+**HERE API**:
 - Transactions: 250.000 per month
 - 2.5 GB Data transfer per month
 - 5 GB Database Storage per month
 
-OpenWeatherMap:
+**OpenWeatherMap**:
 - Calls per Minute: 60
