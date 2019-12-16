@@ -3,8 +3,8 @@
 Entwicklung einer REST-Schnittstelle im Rahmen des Moduls
 
 **Grundlagen des Web (GDW)**\
-**Gruppe 1: Benjamin Krumnow (Raum 3.111)**\
-Medieninformatik Ba.
+_Gruppe 1: Benjamin Krumnow (Raum 3.111)_\
+Medieninformatik Ba. \
 Wintersemester 2019/20
 
 TH Köln, \
