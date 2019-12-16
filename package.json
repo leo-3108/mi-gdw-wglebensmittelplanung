@@ -1,7 +1,7 @@
 {
   "name": "gdw_ws1920_bao_gedrath_pelzer",
   "version": "1.0.0",
-  "description": "**Gruppe 1: Benjamin Krumnow (Raum 3.111)**",
+  "description": "Gruppe 1: Benjamin Krumnow (Raum 3.111)",
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
