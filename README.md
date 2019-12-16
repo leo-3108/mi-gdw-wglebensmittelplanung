@@ -1,8 +1,24 @@
-# GDW Projekt: Bao, Gedrath, Pelzer (WS 2019/20)
+# WG-Lebensmittelplaner
 
-**Gruppe 1: Benjamin Krumnow (Raum 3.111)**
+Entwicklung einer REST-Schnittstelle im Rahmen des Moduls
+
+**Grundlagen des Web (GDW)**\
+**Gruppe 1: Benjamin Krumnow (Raum 3.111)**\
+Medieninformatik Ba.
+Wintersemester 2019/20
+
+TH Köln, \
+Campus Gummersbach
 
 ## Team
-- Lining Bao
-- Finn Nils Gedrath
-- Leonard Pelzer
+- [Lining Bao](https://github.com/Libao1)
+- [Finn Nils Gedrath](https://github.com/finnge)
+- [Leonard Pelzer](https://github.com/leo-3108)
+
+## Testen der REST-Schnittstelle
+
+**Compiling via Node.js**
+
+```console
+$ node App.js
+``
