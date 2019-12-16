@@ -17,5 +17,5 @@ const endpoints = require('./app/endpoints');
 endpoints.create(app);
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('WG-Lebensmittelplaner listening on port 3000!');
 });
