@@ -1,0 +1,8 @@
+## CODEOWNERS
+##
+## @see https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
+
+# Arbeitsblaetter
+/_arbeitsblaetter/Bao/          @Libao1
+/_arbeitsblaetter/Gedrath/      @finnge
+/_arbeitsblaetter/Pelzer/       @leo-3108
