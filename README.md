@@ -20,7 +20,7 @@ Campus Gummersbach
 1. Check if Node.js and Express.js are installed. If not install.
 
 ```console
-$ npm install express
+$ npm install
 ```
 
 2. Compiling via Node.js
