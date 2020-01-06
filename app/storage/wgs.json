@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Test-WG",
+      "adresse": {
+        "Strasse": "Im Merheimer Felde",
+        "Hausnummer": "14a",
+        "PLZ": "51067",
+        "Stadt": "Köln",
+        "Land": "Deutschland"
+      },
+    "Telefonnummer": 1230940218
+  }
+]
