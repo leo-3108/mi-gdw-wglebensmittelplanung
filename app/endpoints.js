@@ -1,6 +1,6 @@
 exports.create = (app) => {
     app.get('/', function (req, res) {
-      res.send('Hello World!');
+      res.send('Hello World! :D');
     });
 
     app.get('/wg', function(req, res){
