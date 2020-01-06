@@ -1,3 +1,5 @@
+//Funktioniert nicht :(
+
 import { JsonDB } from '/jsonDB/db';
 
 var db = new JsonDB(new Config("myDataBase", true, false, '/'));
