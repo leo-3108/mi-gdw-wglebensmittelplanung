@@ -10,7 +10,7 @@ exports.create = (app) => {
     app.get('/wg', function(req, res){
 
         res.contentType("application/json");
-        res.send(JSON.stringify([]))
+        res.send(JSON.stringify(db.getData("/wgs/testwg")))
     });
 
 }
