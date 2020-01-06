@@ -1,3 +1,7 @@
+/**
+ * Erstellt alle REST-Ressourcen
+ */
+
 exports.create = (app) => {
     app.get('/', function (req, res) {
       res.send('Hello World! :D');
