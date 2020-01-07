@@ -1,3 +1,7 @@
+/**
+ * Modul zum Speichern der Daten
+ */
+
 const JsonDB = require('node-json-db').JsonDB;
 const Config = require('node-json-db/dist/lib/JsonDBConfig').Config;
 
