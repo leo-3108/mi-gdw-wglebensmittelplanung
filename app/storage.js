@@ -1,38 +1,20 @@
-const fs = require('fs');
+const JsonDB = require('node-json-db').JsonDB;
+const Config = require('node-json-db/dist/lib/JsonDBConfig').Config;
 
-const folder = 'storage';
+exports.init = () => {
+    const db = new JsonDB(new Config("app/storage/db", true, true, '/'));
 
-/**
- * Helper Functions
- */
-const getJSON = (file) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(file, (error, data) => {
-            if(error) reject(error);
-            resolve(JSON.parse(data));
-        });
-    });
-}
+    db.push("/wgs/testwg",{
+        Name: "String",
+        Adresse: {
+            Strasse: "String",
+            Hausnummer: "String",
+            PLZ: "String",
+            Stadt: "String",
+            Land: "String"
+        },
+        Telefonnummer: "Int"
+    })
 
-const getData = (datamodel) => {
-    return await getJSON('./' + folder + '/' + datamodel + '.json');
-}
-
-/**
- * Export functions
- */
-exports.get = (datamodel) => {
-    let data = getData(datamodel)
-}
-
-exports.post = (datamodel) => {
-    let data = getData(datamodel)
-}
-
-exports.put = (datamodel) => {
-    let data = getData(datamodel)
-}
-
-exports.delete = (datamodel) => {
-    let data = getData(datamodel)
+    return db;
 }
