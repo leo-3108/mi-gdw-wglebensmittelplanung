@@ -1,0 +1,15 @@
+{
+    "wgs": {
+        "testwg": {
+            "Name": "String",
+            "Adresse": {
+                "Strasse": "String",
+                "Hausnummer": "String",
+                "PLZ": "String",
+                "Stadt": "String",
+                "Land": "String"
+            },
+            "Telefonnummer": "Int"
+        }
+    }
+}
