@@ -1,17 +1,20 @@
-//Funktioniert nicht :(
+const JsonDB = require('node-json-db').JsonDB;
+const Config = require('node-json-db/dist/lib/JsonDBConfig').Config;
 
-import { JsonDB } from '/jsonDB/db';
+exports.init = () => {
+    const db = new JsonDB(new Config("app/storage/db", true, true, '/'));
 
-var db = new JsonDB(new Config("myDataBase", true, false, '/'));
+    db.push("/wgs/testwg",{
+        Name: "String",
+        Adresse: {
+            Strasse: "String",
+            Hausnummer: "String",
+            PLZ: "String",
+            Stadt: "String",
+            Land: "String"
+        },
+        Telefonnummer: "Int"
+    })
 
-db.push("/wgs/testwg",{
-   Name: "String",
-   Adresse: {
-      Strasse: "String",
-      Hausnummer: "String",
-      PLZ: "String",
-      Stadt: "String",
-      Land: "String"
-   },
-   Telefonnummer: "Int"
-})
+    return db;
+}

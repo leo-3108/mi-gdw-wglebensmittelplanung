@@ -12,9 +12,14 @@
 const express = require('express');
 const app = express();
 const endpoints = require('./app/endpoints');
+const database = require('./app/database');
+
+// Create Database
+const db = database.init();
 
 // Create Endpoints
 endpoints.create(app);
+
 
 app.listen(3000, function () {
   console.log('WG-Lebensmittelplaner listening on port 3000!');
