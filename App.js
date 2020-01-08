@@ -12,10 +12,10 @@
 const express = require('express');
 const app = express();
 const endpoints = require('./app/endpoints');
-const database = require('./app/database');
+const storage = require('./app/storage');
 
 // Create Database
-const db = database.init();
+const db = storage.init();
 
 // Create Endpoints
 endpoints.create(app);
