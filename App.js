@@ -15,10 +15,10 @@ const endpoints = require('./app/endpoints');
 const storage = require('./app/storage');
 
 // Create Database
-const db = storage.init();
+storage.init();
 
 // Create Endpoints
-endpoints.create(app);
+endpoints.create(app, storage.db);
 
 
 app.listen(3000, function () {

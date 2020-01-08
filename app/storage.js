@@ -12,7 +12,7 @@ exports.init = () => {
 }
 
 exports.reset = (storage = this.db) => {
-    storage.push("/wgs/1",{
+    storage.push("/wgs/1", {
         Name: "String",
         Adresse: {
             Strasse: "String",
