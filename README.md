@@ -17,7 +17,7 @@ Campus Gummersbach
 
 ## Testen der REST-Schnittstelle
 
-1. Check if Node.js and Express.js are installed. If not install.
+1. Install Dependencies
 
 ```console
 $ npm install
