@@ -5,10 +5,14 @@
 const JsonDB = require('node-json-db').JsonDB;
 const Config = require('node-json-db/dist/lib/JsonDBConfig').Config;
 
-exports.init = () => {
-    const db = new JsonDB(new Config("app/storage/db", true, true, '/'));
+exports.db = new JsonDB(new Config("app/storage/db", true, true, '/'));
 
-    db.push("/wgs/testwg",{
+exports.init = () => {
+    this.reset()
+}
+
+exports.reset = (storage = this.db) => {
+    storage.push("/wgs/1",{
         Name: "String",
         Adresse: {
             Strasse: "String",
@@ -19,6 +23,17 @@ exports.init = () => {
         },
         Telefonnummer: "Int"
     })
+}
 
-    return db;
+
+exports.insert = (req, res, storage = this.db) => {
+
+}
+
+exports.get = (req, res, storage = this.db) => {
+
+}
+
+exports.list = (req, res, storage = this.db) => {
+
 }
