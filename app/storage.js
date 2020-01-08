@@ -13,6 +13,7 @@ exports.init = () => {
 
 exports.reset = (db) => {
     if (!db.wgs.find().length){
+        // Test
         this.insert({
             Name: "String",
             Adresse: {
