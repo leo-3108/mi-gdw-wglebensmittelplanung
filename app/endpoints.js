@@ -8,9 +8,30 @@ exports.create = (app, db) => {
         res.send('Hello World! :D');
     });
 
-    app.get('/wgs', function(req, res){
+    /**
+     * WG
+     */
+
+    app.get('/wg', function(req, res){
         res.contentType("application/json");
         res.send(JSON.stringify(db.getData("/wgs")))
     });
 
+    /**
+     * Einkaufsliste
+     */
+
+
+    /**
+     * Event
+     */
+
+
+    /**
+     * Mitbewohner
+     */
+
+    /**
+     * Einkaufsmöglichkeit
+     */
 }
