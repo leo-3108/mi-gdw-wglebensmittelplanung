@@ -14,7 +14,7 @@ exports.create = (app, db) => {
 
     app.get('/wg', function(req, res){
         res.contentType("application/json");
-        res.send(JSON.stringify(db.getData("/wgs")))
+        res.send(JSON.stringify(db.wgs.find()));
     });
 
     /**
@@ -35,5 +35,5 @@ exports.create = (app, db) => {
     /**
      * Einkaufsmöglichkeit
      */
-    
+
 }
