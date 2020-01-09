@@ -13,8 +13,7 @@ exports.create = (app, db) => {
      */
 
     app.get('/wg', function(req, res){
-        res.contentType("application/json");
-        res.send(JSON.stringify(db.wgs.find()));
+        res.json(db.wgs.find());
     });
 
     /**
