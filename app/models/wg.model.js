@@ -7,6 +7,10 @@ export class WGS {
     }
 
     public add(data){
-        
+
+    }
+
+    public get(data){
+
     }
 }
