@@ -31,8 +31,13 @@ exports.create = (app, db) => {
      * Mitbewohner
      */
 
+<<<<<<< HEAD
 
     /**
      * Einkaufsmöglichkeiten
+=======
+    /**
+     * Einkaufsmöglichkeit
+>>>>>>> 5103af4ad1925f19bab6133af59e61e12eb86485
      */
 }
