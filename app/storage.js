@@ -1,39 +1,41 @@
 /**
  * Modul zum Speichern der Daten
  */
-
-const JsonDB = require('node-json-db').JsonDB;
-const Config = require('node-json-db/dist/lib/JsonDBConfig').Config;
-
-exports.db = new JsonDB(new Config("app/storage/db", true, true, '/'));
+const db = require('diskdb');
 
 exports.init = () => {
-    this.reset()
+    db.connect('./app/storage', ['wgs']);
+
+    this.reset(db);
+
+    return db
 }
 
-exports.reset = (storage = this.db) => {
-    storage.push("/wgs/1", {
-        Name: "String",
-        Adresse: {
-            Strasse: "String",
-            Hausnummer: "String",
-            PLZ: "String",
-            Stadt: "String",
-            Land: "String"
-        },
-        Telefonnummer: "Int"
-    })
+exports.reset = (db) => {
+    if (!db.wgs.find().length){
+        // Test
+        this.insert({
+            Name: "String",
+            Adresse: {
+                Strasse: "String",
+                Hausnummer: "String",
+                PLZ: "String",
+                Stadt: "String",
+                Land: "String"
+            },
+            Telefonnummer: "Int"
+        }, db.wgs)
+    }
 }
 
 
-exports.insert = (req, res, storage = this.db) => {
+exports.insert = (data, collection) => {
+    // add ID
+    data.ID = collection.count();
 
+    collection.save(data);
 }
 
-exports.get = (req, res, storage = this.db) => {
-
-}
-
-exports.list = (req, res, storage = this.db) => {
+exports.get = (id, storage = this.db) => {
 
 }

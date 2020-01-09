@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "app/storage/*"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leo-3108/GDW_WS1920_Bao_Gedrath_Pelzer.git"
@@ -17,8 +22,8 @@
   },
   "homepage": "https://github.com/leo-3108/GDW_WS1920_Bao_Gedrath_Pelzer#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "diskdb": "^0.1.17",
     "express-validator": "^6.3.1",
-    "node-json-db": "^1.0.3"
+    "express": "^4.17.1"
   }
 }
