@@ -4,7 +4,7 @@
 const db = require('diskdb');
 
 exports.init = () => {
-    db.connect('./app/storage', ['wgs']);
+    db.connect('./app/storage', ['wg']);
 
     this.reset(db);
 
@@ -12,7 +12,7 @@ exports.init = () => {
 }
 
 exports.reset = (db) => {
-    if (!db.wgs.find().length){
+    if (!db.wg.find().length){
         // Test
         this.insert({
             Name: "String",
@@ -24,7 +24,7 @@ exports.reset = (db) => {
                 Land: "String"
             },
             Telefonnummer: "Int"
-        }, db.wgs)
+        }, db.wg)
     }
 }
 

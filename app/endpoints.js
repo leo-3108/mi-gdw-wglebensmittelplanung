@@ -13,7 +13,7 @@ exports.create = (app, db) => {
      */
 
     app.get('/wg', function(req, res){
-        res.json(db.wgs.find());
+        res.json(db.wg.find());
     });
 
     /**
