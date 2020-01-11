@@ -36,11 +36,7 @@ exports.reset = (db) => {
         // Test
         this.insert({
             Titel: "String",
-            Element: {
-              Produktname: "String",
-              Produktart: "String",
-              Geschäft: "String",
-              Anmerkung: "String"
+            Elemente: {
             },
         }, db.ek)
     }
