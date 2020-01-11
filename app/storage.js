@@ -5,6 +5,10 @@ const db = require('diskdb');
 
 exports.init = () => {
     db.connect('./app/storage', ['wg']);
+    db.connect('./app/storage', ['ek']);
+    db.connect('./app/storage', ['ekm']);
+    db.connect('./app/storage', ['mb']);
+    db.connect('./app/storage', ['event']);
 
     this.reset(db);
 
@@ -26,6 +30,20 @@ exports.reset = (db) => {
             Telefonnummer: "Int"
         }, db.wg)
     }
+
+    if (!db.ek.find().length){
+        // Test
+        this.insert({
+            Titel: "String",
+            Element: {
+              Produktname: "String",
+              Produktart: "String",
+              Geschäft: "String",
+              Anmerkung: "String"
+            },
+        }, db.ek)
+    }
+
 }
 
 

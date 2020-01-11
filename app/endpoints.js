@@ -26,6 +26,11 @@ exports.create = (app, db) => {
      * Einkaufsliste
      */
 
+     app.get('/wg/:wg_id/liste', function(req, res){
+       res.json(db.ek.find(
+           {ID: req.params.wg_id}
+       ));
+     });
 
     /**
      * Event
