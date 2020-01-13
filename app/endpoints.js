@@ -40,15 +40,15 @@ exports.create = (app, db) => {
      * Einkaufsliste
      */
 
-     app.get('/wg/:wg_id/liste', function(req, res){
-       res.json(db.ek.find(
+    app.get('/wg/:wg_id/liste', function(req, res){
+        res.json(db.ek.find(
            {WG_ID: req.params.wg_id}
-       ));
-     });
+        ));
+    });
 
-     app.post('/wg/:wg_id/liste', function(req, res){
-       res.
-     }
+    app.post('/wg/:wg_id/liste', function(req, res){
+        res.json()
+    });
 
     /**
      * Event
