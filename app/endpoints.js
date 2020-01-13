@@ -27,7 +27,7 @@ exports.create = (app, db) => {
      */
 
      app.get('/wg/:wg_id/liste', function(req, res){
-       res.json(db..find(
+       res.json(db.ek.find(
            {ID: req.params.wg_id}
        ));
      });
@@ -37,7 +37,7 @@ exports.create = (app, db) => {
      */
 
      app.get('/wg/', function(req, res){
-       res.json(db..find(
+       res.json(db.event.find(
            {ID: req.params.wg_id}
        ));
      });
@@ -47,7 +47,7 @@ exports.create = (app, db) => {
      */
 
      app.get('/wg/', function(req, res){
-       res.json(db..find(
+       res.json(db.mb.find(
            {ID: req.params.wg_id}
        ));
      });
@@ -57,7 +57,7 @@ exports.create = (app, db) => {
      */
 
      app.get('/wg/', function(req, res){
-       res.json(db..find(
+       res.json(db.ekm.find(
            {ID: req.params.wg_id}
        ));
      });
