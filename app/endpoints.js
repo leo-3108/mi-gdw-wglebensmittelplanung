@@ -22,6 +22,15 @@ exports.create = (app, db) => {
         ));
     });
 
+    app.post('/wg', function(req, res){
+      res.
+    }
+
+    app.delete('/wg', function(req, res){
+      res.json(db.wg.remove());
+      )
+    }
+
     /**
      * Einkaufsliste
      */
@@ -32,34 +41,50 @@ exports.create = (app, db) => {
        ));
      });
 
+     app.post('/wg/:wg_id/liste', function(req, res){
+       res.
+     }
+
     /**
      * Event
      */
 
-     app.get('/wg/', function(req, res){
+     app.get('/wg/:wg_id/events', function(req, res){
        res.json(db.event.find(
            {ID: req.params.wg_id}
        ));
      });
 
+     app.post('/wg', function(req, res){
+       res.
+     }
+
     /**
      * Mitbewohner
      */
 
-     app.get('/wg/', function(req, res){
+     app.get('/wg/:id/mitbewohner', function(req, res){
        res.json(db.mb.find(
            {ID: req.params.wg_id}
        ));
      });
 
+     app.post('/wg', function(req, res){
+       res.
+     }
+
     /**
      * Einkaufsmöglichkeit
      */
 
-     app.get('/wg/', function(req, res){
+     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
        res.json(db.ekm.find(
            {ID: req.params.wg_id}
        ));
      });
+
+     app.post('/wg', function(req, res){
+       res.
+     }
 
 }
