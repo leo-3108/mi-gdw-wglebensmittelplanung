@@ -27,7 +27,7 @@ exports.create = (app, db) => {
      */
 
      app.get('/wg/:wg_id/liste', function(req, res){
-       res.json(db.ek.find(
+       res.json(db..find(
            {ID: req.params.wg_id}
        ));
      });
@@ -36,14 +36,30 @@ exports.create = (app, db) => {
      * Event
      */
 
+     app.get('/wg/', function(req, res){
+       res.json(db..find(
+           {ID: req.params.wg_id}
+       ));
+     });
 
     /**
      * Mitbewohner
      */
 
+     app.get('/wg/', function(req, res){
+       res.json(db..find(
+           {ID: req.params.wg_id}
+       ));
+     });
 
     /**
      * Einkaufsmöglichkeit
      */
+
+     app.get('/wg/', function(req, res){
+       res.json(db..find(
+           {ID: req.params.wg_id}
+       ));
+     });
 
 }
