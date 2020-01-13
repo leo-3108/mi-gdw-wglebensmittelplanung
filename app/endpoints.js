@@ -23,7 +23,7 @@ exports.create = (app, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-      res.json(db.wg.remove(ID: req.params.wg_id));
+      res.json(db.wg.remove({ID: req.params.wg_id}));
     });
 
     app.post('/wg', function(req, res){
