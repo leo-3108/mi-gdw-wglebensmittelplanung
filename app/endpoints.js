@@ -23,7 +23,7 @@ exports.create = (app, db) => {
 
     app.get('/wg/:wg_id', function(req, res){
         res.json(db.wg.find(
-            {ID: req.params.wg_id}
+            {ID: parseInt(req.params.wg_id)}
         ));
     });
 
