@@ -22,13 +22,12 @@ exports.create = (app, db) => {
         ));
     });
 
+    app.delete('/wg/:wg_id', function(req, res){
+      res.json(db.wg.remove(ID: req.params.wg_id));
+    });
+
     app.post('/wg', function(req, res){
       res.
-    }
-
-    app.delete('/wg', function(req, res){
-      res.json(db.wg.remove());
-      )
     }
 
     /**
@@ -72,6 +71,7 @@ exports.create = (app, db) => {
      app.post('/wg', function(req, res){
        res.
      }
+
 
     /**
      * Einkaufsmöglichkeit
