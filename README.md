@@ -28,3 +28,9 @@ $ npm install
 ```console
 $ node App.js
 ```
+
+3. Access API via Browser, Terminal, Postman etc.
+
+```
+http://localhost:3000/
+```
