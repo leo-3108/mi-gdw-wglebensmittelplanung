@@ -27,7 +27,7 @@ exports.create = (app, db) => {
     });
 
     app.post('/wg', function(req, res){
-      res.
+      res.json()
     }
 
     /**
