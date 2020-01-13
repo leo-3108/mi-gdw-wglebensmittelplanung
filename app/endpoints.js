@@ -27,25 +27,14 @@ exports.create = (app, db) => {
         ));
     });
 
-<<<<<<< HEAD
     app.put('/wg', function(req, res){
         //...
         res.send('POST request to homepage')
     });
 
-    app.delete('/wg', function (req, res) {
-      //...
-      res.send('DELETE request to homepage')
-    })
-=======
     app.delete('/wg/:wg_id', function(req, res){
       res.json(db.wg.remove({ID: req.params.wg_id}));
     });
-
-    app.post('/wg', function(req, res){
-      res.
-    }
->>>>>>> f0e240864794160288e7bc541f99e0211e382629
 
     /**
      * Einkaufsliste
