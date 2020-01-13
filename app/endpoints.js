@@ -84,8 +84,9 @@ exports.create = (app, db) => {
         ));
     });
 
-    app.post('/wg', function(req, res){
-        res.json()
+    app.post('/wg/:wg_id/events', function(req, res){
+        //...
+        res.send('POST request to homepage')
     });
 
     /**
