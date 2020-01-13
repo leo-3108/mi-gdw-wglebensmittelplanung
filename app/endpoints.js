@@ -16,11 +16,26 @@ exports.create = (app, db) => {
         res.json(db.wg.find());
     });
 
+    app.post('/wg', function(req, res){
+        //...
+        res.send('POST request to homepage')
+    });
+
     app.get('/wg/:wg_id', function(req, res){
         res.json(db.wg.find(
             {ID: req.params.wg_id}
         ));
     });
+
+    app.put('/wg', function(req, res){
+        //...
+        res.send('POST request to homepage')
+    });
+
+    app.delete('/wg', function (req, res) {
+      //...
+      res.send('DELETE request to homepage')
+    })
 
     /**
      * Einkaufsliste
@@ -28,7 +43,7 @@ exports.create = (app, db) => {
 
      app.get('/wg/:wg_id/liste', function(req, res){
        res.json(db.ek.find(
-           {ID: req.params.wg_id}
+           {WG_ID: req.params.wg_id}
        ));
      });
 
