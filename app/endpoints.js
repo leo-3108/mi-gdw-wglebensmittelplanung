@@ -32,10 +32,6 @@ exports.create = (app, db) => {
         res.send('POST request to homepage')
     });
 
-    app.post('/wg', function(req, res){
-      res.json()
-    });
-
     app.delete('/wg/:wg_id', function(req, res){
       res.json(db.wg.remove({ID: req.params.wg_id}));
     });
