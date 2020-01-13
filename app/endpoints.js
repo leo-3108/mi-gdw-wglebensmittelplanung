@@ -13,6 +13,7 @@ exports.create = (app, db) => {
      */
 
     app.get('/wg', function(req, res){
+      //Muss noch überarbeitet werden; Hier sollen alle WGs ausgegeben werden. Danke Tschüss!
         res.json(db.wg.find());
     });
 
