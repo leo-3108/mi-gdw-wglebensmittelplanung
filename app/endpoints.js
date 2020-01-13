@@ -51,14 +51,19 @@ exports.create = (app, db) => {
         res.json()
     });
 
+    app.delete('/wg/:wg_id/liste', function(req, res){
+      res.json(db.wg.remove({ID: req.params.wg_id}));
+    });
+
     /**
      * Element der Einkaufsliste
      */
 
-
-
-
-
+     app.get('/wg/:wg_id/liste:element_id', function(req, res){
+         res.json(db.element.find(
+            {WG_ID: req.params.wg_id, ELEMENT_ID: req.params.element_id}
+         ));
+     });
 
     /**
      * Event
