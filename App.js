@@ -21,6 +21,6 @@ const db = storage.init();
 endpoints.create(app, db);
 
 
-app.listen(3000, function () {
-  console.log('WG-Lebensmittelplaner listening on port 3000!');
+app.listen(3000, '0.0.0.0', function () {
+  console.log('WG-Lebensmittelplaner listening on port 3000 on any IPv4-Adress!');
 });
