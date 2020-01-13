@@ -34,7 +34,7 @@ exports.create = (app, db) => {
 
     app.post('/wg', function(req, res){
       res.json()
-    }
+    });
 
     app.delete('/wg/:wg_id', function(req, res){
       res.json(db.wg.remove({ID: req.params.wg_id}));
