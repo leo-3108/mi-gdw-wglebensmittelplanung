@@ -4,12 +4,8 @@
 const db = require('diskdb');
 
 exports.init = () => {
-    db.connect('./app/storage', ['wg']);
-    db.connect('./app/storage/einkaufsliste', ['ek']);
-    db.connect('./app/storage/einkaufsliste', ['element']);
-    db.connect('./app/storage', ['ekm']);
-    db.connect('./app/storage', ['mb']);
-    db.connect('./app/storage', ['event']);
+    db.connect('./app/storage', ['wg', 'ekm', 'mb', 'event']);
+    db.connect('./app/storage/einkaufsliste', ['ek', 'element']);
 
     this.reset(db);
 
