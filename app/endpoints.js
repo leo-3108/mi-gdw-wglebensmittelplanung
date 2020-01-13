@@ -55,6 +55,15 @@ exports.create = (app, db) => {
     });
 
     /**
+     * Element der Einkaufsliste
+     */
+
+
+
+
+
+
+    /**
      * Event
      */
 
