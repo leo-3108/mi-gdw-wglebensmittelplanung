@@ -1,0 +1,10 @@
+[
+    {
+        "ID": 0,
+        "ID_Liste": 0,
+        "Produktname": "String",
+        "Produktart": "String",
+        "Geschäft": "String",
+        "Anmerkung": "String?"
+    }
+]
