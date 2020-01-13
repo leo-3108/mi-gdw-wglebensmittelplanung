@@ -65,6 +65,15 @@ exports.create = (app, db) => {
          ));
      });
 
+     app.put('/wg/:wg_id/liste:element_id', function(req, res){
+         //...
+         res.send('POST request to homepage')
+     });
+
+     app.delete('/wg/:wg_id/liste:element_id', function(req, res){
+       res.json(db.wg.remove({WG_ID: req.params.wg_id, ELEMENT_ID: req.params.element_id});
+     });
+
     /**
      * Event
      */
