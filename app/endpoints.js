@@ -32,9 +32,15 @@ exports.create = (app, db) => {
         res.send('POST request to homepage')
     });
 
+<<<<<<< HEAD
+    app.post('/wg', function(req, res){
+      res.json()
+    }
+=======
     app.delete('/wg/:wg_id', function(req, res){
       res.json(db.wg.remove({ID: req.params.wg_id}));
     });
+>>>>>>> 83a7b8d4a651cc5e445936fc4f6c249356cf5af5
 
     /**
      * Einkaufsliste
