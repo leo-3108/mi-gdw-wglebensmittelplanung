@@ -32,7 +32,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-        res.json(db.wg.remove({ID: req.params.wg_id}));
+        res.json(db.wg.remove({id: req.params.wg_id}));
     });
 
     /**
@@ -43,7 +43,7 @@ exports.create = (app, storage, db) => {
 
         // bug
         res.json(db.ek.find(
-           {WG_ID: req.params.wg_id}
+           {wg_id: req.params.wg_id}
         ));
     });
 
@@ -54,7 +54,7 @@ exports.create = (app, storage, db) => {
 
     app.delete('/wg/:wg_id/liste', function(req, res){
         // bug
-        res.json(db.wg.remove({ID: req.params.wg_id}));
+        res.json(db.wg.remove({id: req.params.wg_id}));
     });
 
     /**
@@ -63,7 +63,7 @@ exports.create = (app, storage, db) => {
 
     app.get('/wg/:wg_id/liste:element_id', function(req, res){
         res.json(db.listenelement.find(
-            {WG_ID: req.params.wg_id, ELEMENT_ID: req.params.element_id}
+            {wg_id: req.params.wg_id, ELEMENT_id: req.params.element_id}
         ));
     });
 
@@ -75,8 +75,8 @@ exports.create = (app, storage, db) => {
     app.delete('/wg/:wg_id/liste:element_id', function(req, res){
         res.json(db.wg.remove(
             {
-                WG_ID: req.params.wg_id,
-                ELEMENT_ID: req.params.element_id
+                wg_id: req.params.wg_id,
+                ELEMENT_id: req.params.element_id
             }
         ));
     });
@@ -87,7 +87,7 @@ exports.create = (app, storage, db) => {
 
     app.get('/wg/:id/mitbewohner', function(req, res){
         res.json(db.bewohner.find(
-            {ID: req.params.wg_id}
+            {id: req.params.wg_id}
         ));
     });
 
@@ -102,7 +102,7 @@ exports.create = (app, storage, db) => {
 
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
         res.json(db.ekmoeglichkeiten.find(
-            {ID: req.params.wg_id}
+            {id: req.params.wg_id}
         ));
     });
 }

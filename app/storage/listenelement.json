@@ -1,7 +1,7 @@
 [
     {
-        "ID": 0,
-        "ID_Liste": 0,
+        "id": 0,
+        "id_liste": 0,
         "Produktname": "String",
         "Produktart": "String",
         "Geschäft": "String",

@@ -6,6 +6,6 @@
    "Rolle": "String",
    "Telefonnummer": "Int",
    "Auto": "Boolean",
-   "ID":
+   "id":
  }
 ]
