@@ -13,7 +13,6 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg', function(req, res){
-      //Muss noch überarbeitet werden; Hier sollen alle WGs ausgegeben werden. Danke Tschüss!
         res.json(storage.readall(db.wg));
     });
 
@@ -32,7 +31,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-        res.json(db.wg.remove({id: req.params.wg_id}));
+        res.json(storage.delete(db.wg, eq.params.wg_id));
     });
 
     /**
@@ -40,11 +39,7 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:wg_id/liste', function(req, res){
-
-        // bug
-        res.json(db.ek.find(
-           {wg_id: req.params.wg_id}
-        ));
+        res.json(storage.readone(db.ek, req.params.wg_id));
     });
 
     app.post('/wg/:wg_id/liste', function(req, res){
@@ -53,8 +48,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id/liste', function(req, res){
-        // bug
-        res.json(db.wg.remove({id: req.params.wg_id}));
+        res.json(storage.delete(db.wg, req.params.wg_id));
     });
 
     /**
