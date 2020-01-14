@@ -57,23 +57,6 @@ exports.create = (app, db) => {
 
 
 
-
-
-
-    /**
-     * Event
-     */
-
-    app.get('/wg/:wg_id/events', function(req, res){
-        res.json(db.event.find(
-           {ID: req.params.wg_id}
-        ));
-    });
-
-    app.post('/wg', function(req, res){
-        res.json()
-    });
-
     /**
      * Mitbewohner
      */

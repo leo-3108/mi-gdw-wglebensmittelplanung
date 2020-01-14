@@ -4,8 +4,7 @@
 const db = require('diskdb');
 
 exports.init = () => {
-    db.connect('./app/storage', ['wg', 'ekm', 'mb', 'event']);
-    db.connect('./app/storage/einkaufsliste', ['ek', 'element']);
+    db.connect('./app/storage', ['wg', 'ekmoeglichkeiten', 'listenelement']);
 
     this.reset(db);
 
@@ -27,16 +26,6 @@ exports.reset = (db) => {
             Telefonnummer: "Int"
         }, db.wg)
     }
-
-    if (!db.ek.find().length){
-        // Test
-        this.insert({
-            Titel: "String",
-            Elemente: {
-            },
-        }, db.ek)
-    }
-
 }
 
 
