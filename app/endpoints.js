@@ -102,8 +102,4 @@ exports.create = (app, db) => {
             {ID: req.params.wg_id}
         ));
     });
-
-    app.post('/wg', function(req, res){
-        res.json();
-    });
 }
