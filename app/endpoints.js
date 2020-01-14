@@ -34,7 +34,7 @@ exports.create = (app, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-      res.json(db.wg.remove({ID: req.params.wg_id}));
+        res.json(db.wg.remove({ID: req.params.wg_id}));
     });
 
     /**
@@ -42,27 +42,48 @@ exports.create = (app, db) => {
      */
 
     app.get('/wg/:wg_id/liste', function(req, res){
+
+        // bug
         res.json(db.ek.find(
            {WG_ID: req.params.wg_id}
         ));
     });
 
     app.post('/wg/:wg_id/liste', function(req, res){
+        // bug
         res.json()
+    });
+
+    app.delete('/wg/:wg_id/liste', function(req, res){
+        // bug
+        res.json(db.wg.remove({ID: req.params.wg_id}));
     });
 
     /**
      * Element der Einkaufsliste
      */
 
+    app.get('/wg/:wg_id/liste:element_id', function(req, res){
+        res.json(db.listenelement.find(
+            {WG_ID: req.params.wg_id, ELEMENT_ID: req.params.element_id}
+        ));
+    });
 
+    app.put('/wg/:wg_id/liste:element_id', function(req, res){
+        //...
+        res.send('POST request to homepage')
+    });
+
+    app.delete('/wg/:wg_id/liste:element_id', function(req, res){
+        res.json(db.wg.remove({WG_ID: req.params.wg_id, ELEMENT_ID: req.params.element_id});
+    });
 
     /**
      * Mitbewohner
      */
 
     app.get('/wg/:id/mitbewohner', function(req, res){
-        res.json(db.mb.find(
+        res.json(db.bewohner.find(
             {ID: req.params.wg_id}
         ));
     });
@@ -77,7 +98,7 @@ exports.create = (app, db) => {
      */
 
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
-        res.json(db.ekm.find(
+        res.json(db.ekmoeglichkeiten.find(
             {ID: req.params.wg_id}
         ));
     });
