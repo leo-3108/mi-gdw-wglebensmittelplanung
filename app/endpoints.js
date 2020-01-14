@@ -53,11 +53,11 @@ exports.create = (app, storage, db) => {
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res){
-        res.json(storage.update(db.listenelement, req.params.wg_id, eq.params.element_id));
+        res.json(storage.update2(db.listenelement, req.params.wg_id, eq.params.element_id, req.body));
     });
 
     app.delete('/wg/:wg_id/liste/:element_id', function(req, res){
-        res.json(storage.delete(db.listenelement, req.params.wg_id, eq.params.element_id));
+        res.json(storage.delete2(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
     /**
@@ -65,15 +65,24 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:id/mitbewohner', function(req, res){
-        res.json(db.bewohner.find(
-            {id: req.params.wg_id}
-        ));
+        res.json(storage.readall(db.bewohner, req.params.wg_id));
     });
 
     app.post('/wg', function(req, res){
-        res.json();
+        res.json(storage.create(db.bewohner, req.body));
     });
 
+    app.get('/wg/:id/mitbewohner/:mitbewohner_id'){
+        res.json(storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
+    }
+
+    app.put('/wg/:id/mitbewohner/:mitbewohner_id'){
+        res.json(storage.update2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
+    }
+
+    app.delete('/wg/:id/mitbewohner/:mitbewohner_id'){
+        res.json(storage.delete2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
+    }
 
     /**
      * Einkaufsmöglichkeit
