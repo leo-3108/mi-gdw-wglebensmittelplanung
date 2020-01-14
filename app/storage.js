@@ -39,19 +39,20 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
-    console.log('Adding new item from: ', data);
-
     // Add id
     data.id = collection.count();
 
     // Save
     collection.save(data);
 
-    return id;
+    // Log
+    console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
+
+    return data.id;
 }
 
 exports.readone = (collection, id) => {
-    console.log('Adding new item from: ', id);
+    console.log('Read item from: ', id);
 
     const items = collection.find({id: parseInt(id)});
 
@@ -64,20 +65,36 @@ exports.readone = (collection, id) => {
     else{
         return { message: "404 Error" }
     }
+
+    // Log
+    console.log('> Read item #', data.id,' from ', collection.collectionName);
 }
 
 exports.readall = (collection) => {
-    return collection.find();
+
+    const items = collection.find();
+
+    // Remove intern id
+    for(item in items){
+        delete item._id
+    }
+
+    // Log
+    console.log('> Read all items from ', collection.collectionName);
+
+    return items;
 }
 
 exports.update = (collection, id, data) => {
-    console.log("Editing item: ", id, " to be ", data);
+    // Log
+    console.log('> Editing item #', data.id,' from ', collection.collectionName, ' to be: ', data);
 
     return collection.update({id: parseInt(id), data})
 }
 
 exports.delete = (collection, id) => {
-    console.log("Delete item with id: ", itemId);
+    // Log
+    console.log('> Editing item #', data.id,' from ', collection.collectionName);
 
     return db.movies.remove({id: parseInt(id)});
 }
