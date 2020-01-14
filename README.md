@@ -19,13 +19,13 @@ Campus Gummersbach
 
 1. Install Dependencies
 
-```console
+```bash
 $ npm install
 ```
 
 2. Compiling via Node.js
 
-```console
+```bash
 $ node App.js
 ```
 
