@@ -89,8 +89,6 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
-        res.json(db.ekmoeglichkeiten.find(
-            {id: req.params.wg_id}
-        ));
+        //...
     });
 }
