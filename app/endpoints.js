@@ -17,17 +17,15 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg', function(req, res){
-        //...
-        res.send('POST request to homepage')
+        res.json(storage.create(db.wg, req.body))
     });
 
     app.get('/wg/:wg_id', function(req, res){
         res.json(storage.readone(db.wg, req.params.wg_id));
     });
 
-    app.put('/wg', function(req, res){
-        //...
-        res.send('POST request to homepage')
+    app.put('/wg/:wg_id', function(req, res){
+        res.json(storage.update(db.wg, req.params.wg_id, req.body))
     });
 
     app.delete('/wg/:wg_id', function(req, res){
@@ -39,38 +37,27 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:wg_id/liste', function(req, res){
-        res.json(storage.readone(db.ek, req.params.wg_id));
+        res.json(storage.readone(db.wg, req.params.wg_id));
     });
 
     app.post('/wg/:wg_id/liste', function(req, res){
-        // bug
-        res.json()
+        res.json(storage.create(db.wg, req.params.wg_id, req.body))
     });
 
     app.delete('/wg/:wg_id/liste', function(req, res){
         res.json(storage.delete(db.wg, req.params.wg_id));
     });
 
-    /**
-     * Element der Einkaufsliste
-     */
-
-    app.get('/wg/:wg_id/liste:element_id', function(req, res){
+    app.get('/wg/:wg_id/liste/:element_id', function(req, res){
         res.json(storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
-    app.put('/wg/:wg_id/liste:element_id', function(req, res){
-        //...
-        res.send('POST request to homepage')
+    app.put('/wg/:wg_id/liste/:element_id', function(req, res){
+        res.json(storage.update(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
-    app.delete('/wg/:wg_id/liste:element_id', function(req, res){
-        res.json(db.wg.remove(
-            {
-                wg_id: req.params.wg_id,
-                ELEMENT_id: req.params.element_id
-            }
-        ));
+    app.delete('/wg/:wg_id/liste/:element_id', function(req, res){
+        res.json(storage.delete(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
     /**
