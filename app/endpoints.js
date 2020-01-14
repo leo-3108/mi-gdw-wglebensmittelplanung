@@ -56,9 +56,7 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:wg_id/liste:element_id', function(req, res){
-        res.json(db.listenelement.find(
-            {wg_id: req.params.wg_id, ELEMENT_id: req.params.element_id}
-        ));
+        res.json(storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
     app.put('/wg/:wg_id/liste:element_id', function(req, res){

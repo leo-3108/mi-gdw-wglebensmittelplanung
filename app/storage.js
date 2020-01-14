@@ -70,6 +70,22 @@ exports.readone = (collection, id) => {
     console.log('> Read item #', data.id,' from ', collection.collectionName);
 }
 
+exports.readone2 = (collection, id1, id2) => {                   //Für den Fall, dass 2 IDs
+    console.log('Adding new item from: ', id1, id2);             //als Suchkriterium vorhanden sind
+
+    const items = collection.find({id1: parseInt(id1), id2: parseInt(id2)});
+
+    if(items.length){
+        // Remove intern id
+        delete items[0]._id;
+
+        return items;
+    }
+    else{
+        return { message: "404 Error" }
+    }
+}
+
 exports.readall = (collection) => {
 
     const items = collection.find();
