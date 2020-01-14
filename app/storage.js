@@ -17,7 +17,6 @@ exports.init = () => {
 }
 
 exports.reset = (db) => {
-    db.
     if (!db.wg.find().length){
         // Test
         this.insert({
@@ -40,24 +39,45 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
-    // add ID
-    data.ID = collection.count();
+    console.log('Adding new item from: ', data);
 
+    // Add id
+    data.id = collection.count();
+
+    // Save
     collection.save(data);
+
+    return id;
 }
 
 exports.readone = (collection, id) => {
+    console.log('Adding new item from: ', id);
 
+    const items = collection.find({id: parseInt(id)});
+
+    if(items.length){
+        // Remove intern id
+        delete items[0]._id;
+
+        return items;
+    }
+    else{
+        return { message: "404 Error" }
+    }
 }
 
 exports.readall = (collection) => {
-
+    return collection.find();
 }
 
 exports.update = (collection, id, data) => {
+    console.log("Editing item: ", id, " to be ", data);
 
+    return collection.update({id: parseInt(id), data})
 }
 
 exports.delete = (collection, id) => {
+    console.log("Delete item with id: ", itemId);
 
+    return db.movies.remove({id: parseInt(id)});
 }
