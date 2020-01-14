@@ -69,7 +69,7 @@ exports.readone = (collection, id) => {
 
 // Für den Fall, dass 2 IDs als Suchkriterium vorhanden sind
 exports.readone2 = (collection, id, id_liste) => {
-    const items = collection.find({id: parseInt(id1), id_liste: parseInt(id2)});
+    const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
 
     if(items.length){
         // Remove intern id
@@ -107,9 +107,23 @@ exports.update = (collection, id, data) => {
     return collection.update({id: parseInt(id), data})
 }
 
+exports.update2 = (collection, id, id_liste, data) => {
+    // Log (Muss evtl. noch angepasst werden)
+    console.log('> Editing item #', data.id_liste,' from ', collection.collectionName, ' to be: ', data);
+
+    return collection.update({id: parseInt(id), id_liste: parseInt(id_liste), data})
+}
+
 exports.delete = (collection, id) => {
     // Log
     console.log('> Editing item #', data.id,' from ', collection.collectionName);
 
     return db.movies.remove({id: parseInt(id)});
+}
+
+exports.delete2 = (collection, id, id_liste) => {
+    // Log
+    console.log('> Editing item #', data.id_liste,' from ', collection.collectionName);
+
+    return db.movies.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
 }
