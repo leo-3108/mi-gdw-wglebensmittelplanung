@@ -4,7 +4,12 @@
 const db = require('diskdb');
 
 exports.init = () => {
-    db.connect('./app/storage', ['wg', 'ekmoeglichkeiten', 'listenelement']);
+    db.connect('./app/storage', [
+        'wg',
+        'bewohner',
+        'ekmoeglichkeiten',
+        'listenelement'
+    ]);
 
     this.reset(db);
 
@@ -12,6 +17,7 @@ exports.init = () => {
 }
 
 exports.reset = (db) => {
+    db.
     if (!db.wg.find().length){
         // Test
         this.insert({
@@ -28,14 +34,30 @@ exports.reset = (db) => {
     }
 }
 
+/**
+ * CRUD-Befehle
+ * @throws HTTP-Errors
+ */
 
-exports.insert = (data, collection) => {
+exports.create = (collection, data) => {
     // add ID
     data.ID = collection.count();
 
     collection.save(data);
 }
 
-exports.get = (id, storage = this.db) => {
+exports.readone = (collection, id) => {
+
+}
+
+exports.readall = (collection) => {
+
+}
+
+exports.update = (collection, id, data) => {
+
+}
+
+exports.delete = (collection, id) => {
 
 }
