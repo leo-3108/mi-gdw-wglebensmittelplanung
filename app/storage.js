@@ -52,8 +52,6 @@ exports.create = (collection, data) => {
 }
 
 exports.readone = (collection, id) => {
-    console.log('Read item from: ', id);
-
     const items = collection.find({id: parseInt(id)});
 
     if(items.length){
@@ -66,14 +64,12 @@ exports.readone = (collection, id) => {
         return { message: "404 Error" }
     }
 
-    // Log
-    console.log('> Read item #', data.id,' from ', collection.collectionName);
+
 }
 
-exports.readone2 = (collection, id1, id2) => {                   //Für den Fall, dass 2 IDs
-    console.log('Adding new item from: ', id1, id2);             //als Suchkriterium vorhanden sind
-
-    const items = collection.find({id1: parseInt(id1), id2: parseInt(id2)});
+// Für den Fall, dass 2 IDs als Suchkriterium vorhanden sind
+exports.readone2 = (collection, id, id_liste) => {
+    const items = collection.find({id: parseInt(id1), id_liste: parseInt(id2)});
 
     if(items.length){
         // Remove intern id
@@ -84,6 +80,9 @@ exports.readone2 = (collection, id1, id2) => {                   //Für den Fall
     else{
         return { message: "404 Error" }
     }
+
+    // Log
+    console.log('> Read item #', id,' #', id_liste' from ', collection.collectionName);
 }
 
 exports.readall = (collection) => {
