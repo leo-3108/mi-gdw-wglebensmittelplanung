@@ -3,7 +3,7 @@
  */
 const { checkSchema } = require('express-validator');
 
-exports.create = (app, db) => {
+exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
         res.send('Hello World! :D');
     });
@@ -23,9 +23,7 @@ exports.create = (app, db) => {
     });
 
     app.get('/wg/:wg_id', function(req, res){
-        res.json(db.wg.find(
-            {ID: parseInt(req.params.wg_id)}
-        ));
+        res.json(storage.readone(db.wg, req.params.wg_id));
     });
 
     app.put('/wg', function(req, res){

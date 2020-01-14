@@ -11,14 +11,14 @@
 
 const express = require('express');
 const app = express();
-const endpoints = require('./app/endpoints');
 const storage = require('./app/storage');
+const endpoints = require('./app/endpoints');
 
 // Create Database
 const db = storage.init();
 
 // Create Endpoints
-endpoints.create(app, db);
+endpoints.create(app, storage, db);
 
 
 app.listen(3000, '0.0.0.0', function () {
