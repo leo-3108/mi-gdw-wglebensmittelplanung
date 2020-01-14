@@ -14,7 +14,7 @@ exports.create = (app, storage, db) => {
 
     app.get('/wg', function(req, res){
       //Muss noch überarbeitet werden; Hier sollen alle WGs ausgegeben werden. Danke Tschüss!
-        res.json(db.wg.find());
+        res.json(storage.readall(db.wg));
     });
 
     app.post('/wg', function(req, res){
