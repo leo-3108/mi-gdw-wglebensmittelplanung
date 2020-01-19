@@ -48,6 +48,10 @@ exports.create = (app, storage, db) => {
         res.json(storage.delete(db.wg, req.params.wg_id));
     });
 
+    /**
+     * Listenelement
+     */
+
     app.get('/wg/:wg_id/liste/:element_id', function(req, res){
         res.json(storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
@@ -89,6 +93,6 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
-        //...
+        res.json(storage.readall(db.einkaufsmoeglichkeiten, req.params.wg_id));
     });
 }
