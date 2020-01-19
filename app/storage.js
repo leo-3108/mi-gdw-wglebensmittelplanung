@@ -82,7 +82,7 @@ exports.readone2 = (collection, id, id_liste) => {
     }
 
     // Log
-    console.log('> Read item #', id,' #', id_liste' from ', collection.collectionName);
+    console.log('> Read item #', id,' # from ', collection.collectionName);
 }
 
 exports.readall = (collection) => {

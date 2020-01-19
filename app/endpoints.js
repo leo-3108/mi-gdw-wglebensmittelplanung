@@ -72,17 +72,17 @@ exports.create = (app, storage, db) => {
         res.json(storage.create(db.bewohner, req.body));
     });
 
-    app.get('/wg/:id/mitbewohner/:mitbewohner_id'){
+    app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
         res.json(storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
-    }
+    });
 
-    app.put('/wg/:id/mitbewohner/:mitbewohner_id'){
+    app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
         res.json(storage.update2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
-    }
+    });
 
-    app.delete('/wg/:id/mitbewohner/:mitbewohner_id'){
+    app.delete('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
         res.json(storage.delete2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
-    }
+    });
 
     /**
      * Einkaufsmöglichkeit
