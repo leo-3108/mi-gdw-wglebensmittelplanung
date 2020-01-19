@@ -1,10 +1,10 @@
 [
-    {
-        "id": 0,
-        "id_liste": 0,
-        "Produktname": "String",
-        "Produktart": "String",
-        "Geschäft": "String",
-        "Anmerkung": "String?"
-    }
+  {
+    "id": 0,
+    "id_liste": 0,
+    "Produktname": "String",
+    "Produktart": "String",
+    "Geschäft": "String",
+    "Anmerkung": "String?"
+  }
 ]
