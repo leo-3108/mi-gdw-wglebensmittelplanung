@@ -2,6 +2,27 @@ const {
     checkSchema
 } = require('express-validator');
 
+exports.create = (collection, data) => {
+
+    try{
+        // Add id
+        data.id = collection.count();
+
+        // Save
+        collection.save(data);
+    }
+    catch(e){
+        console.log(data)
+        throw new error.InternalServerError('db-create', 'Internal Server Error')
+    }
+
+
+    // Log
+    console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
+
+    return data.id;
+}
+
 exports.readall = (collection) => {
 
     const items = collection.find();
