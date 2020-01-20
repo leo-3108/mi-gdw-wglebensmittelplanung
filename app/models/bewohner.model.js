@@ -12,3 +12,46 @@ exports.create = (collection, data, wg_id) => {
     return data.id;
 
 }
+
+exports.readall = (collection) => {
+
+    const items = collection.find();
+
+    // Remove intern id
+    for(item in items){
+        delete item._id
+    }
+
+    // Log
+    console.log('> Read all items from ', collection.collectionName);
+
+    return items;
+}
+
+exports.readone = (collection, id) => {
+
+    // Log
+    console.log('> Read item #', id,' from ', collection.collectionName);
+
+    const items = collection.find({id: parseInt(id)});
+
+    if(items.length){
+        // Remove intern id
+        delete items[0]._id;
+    }
+    return items;
+}
+
+exports.update = (collection, id, id_liste, data) => {
+    // Log (Muss evtl. noch angepasst werden)
+    console.log('> Editing item #', data.id_liste,' from ', collection.collectionName, ' to be: ', data);
+
+    return collection.update({id: parseInt(id), id_liste: parseInt(id_liste), data})
+}
+
+exports.delete = (collection, id, id_liste) => {
+    // Log
+    console.log('> Editing item #', id_liste,' from ', collection.collectionName);
+
+    return collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
+}
