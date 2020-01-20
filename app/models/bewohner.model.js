@@ -7,19 +7,18 @@ const {
  * @throws HTTP-Errors
  */
 
-exports.create = (collection, data, wg_id) => { //ID klappt noch nicht
+exports.create = (collection, data, wg_id) => {         //ID klappt noch nicht
     // Add id
-
     var tmp = collection.find({
         wg_id: wg_id
     })
-    data.id = tmp.length;
+    //console.log(collection.find(wg_id))
+    data.id = tmp.length+1;
     data.wgid = parseInt(wg_id);
     // Save
     collection.save(data);
 
     return data.id;
-
 }
 
 exports.readall = (collection) => {
