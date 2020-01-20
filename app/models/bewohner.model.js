@@ -28,17 +28,18 @@ exports.readall = (collection) => {
     return items;
 }
 
-exports.readone = (collection, id) => {
+exports.readone = (collection, id, id_liste) => {
 
     // Log
-    console.log('> Read item #', id,' from ', collection.collectionName);
+    console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
 
-    const items = collection.find({id: parseInt(id)});
+    const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
 
     if(items.length){
         // Remove intern id
         delete items[0]._id;
     }
+
     return items;
 }
 

@@ -252,8 +252,8 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:id/mitbewohner', function(req, res){
         try{
             // access to Database
-            let wg = storage.readone(db.wg, req.params.wg_id)
-            let bw = storage.readall(db.bewohner, req.params.wg_id)
+            let wg = bewohner.readone(db.wg, req.params.wg_id)
+            let bw = bewohner.readall(db.bewohner, req.params.wg_id)
 
             let output = bw
 
@@ -292,8 +292,8 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
         try{
             // access to Database
-            let wg = storage.readone(db.wg, req.params.wg_id)
-            let bw = storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let wg = wg.readone(db.wg, req.params.wg_id)
+            let bw = bewohner.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
 
             let output = bw[0]
 
@@ -326,11 +326,11 @@ exports.create = (app, storage, db) => {
     });
 
     app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
-        res.json(storage.update2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
+        res.json(bewohner.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
     });
 
     app.delete('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
-        res.json(storage.delete2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
+        res.json(bewohner.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
     });
 
     /**
