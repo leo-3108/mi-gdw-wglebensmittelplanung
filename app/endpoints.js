@@ -56,7 +56,7 @@ exports.create = (app, storage, db) => {
             let wg_id = wg.create(db.wg, req.body);
 
             // output
-            let wg = storage.readone(db.wg, wg_id)
+            let wg = wg.readone(db.wg, wg_id)
             let output = {
                 response: {
                     status: 201,
