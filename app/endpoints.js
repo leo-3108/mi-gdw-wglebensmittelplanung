@@ -1,7 +1,9 @@
 /**
  * Erstellt alle REST-Ressourcen
  */
-const { checkSchema } = require('express-validator');
+const {
+    checkSchema
+} = require('express-validator');
 const error = require('rest-api-errors');
 
 const bewohnerModel = require('./models/bewohner.model.js');
@@ -10,7 +12,7 @@ const listenelement = require('./models/listenelement.model.js');
 const ekmoeglichkeiten = require('./models/ekmoeglichkeiten.model.js');
 
 exports.create = (app, storage, db) => {
-    app.get('/', function (req, res) {
+    app.get('/', function(req, res) {
         res.send('Hello World! :D');
     });
 
@@ -18,13 +20,13 @@ exports.create = (app, storage, db) => {
      * WG-------------------------------------------------------------------------
      */
 
-    app.get('/wg', function(req, res){
-        try{
+    app.get('/wg', function(req, res) {
+        try {
             // access to db
             let wgs = wgModel.readall(db.wg)
 
             // throw errors
-            if(!wgs.length){
+            if (!wgs.length) {
                 throw new error.NotFound(
                     'wg-get-404',
                     'Es konnten keine WGs gefunden werden.'
@@ -42,8 +44,7 @@ exports.create = (app, storage, db) => {
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -54,8 +55,8 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.post('/wg', function(req, res){
-        try{
+    app.post('/wg', function(req, res) {
+        try {
             // create
             let wg_id = wgModel.create(db.wg, req.body);
 
@@ -71,8 +72,7 @@ exports.create = (app, storage, db) => {
 
             // success
             res.status(201).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             console.error(e)
             // error handling
             res.status(e.status || 500).json({
@@ -84,16 +84,16 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.get('/wg/:wg_id', function(req, res){
-        try{
+    app.get('/wg/:wg_id', function(req, res) {
+        try {
             // access to db
             let wg = wgModel.readone(db.wg, req.params.wg_id)
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgSingle-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
 
@@ -108,8 +108,7 @@ exports.create = (app, storage, db) => {
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             console.error(e)
             // error handling
             res.status(e.status || 500).json({
@@ -121,8 +120,8 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.put('/wg/:wg_id', function(req, res){
-        try{
+    app.put('/wg/:wg_id', function(req, res) {
+        try {
             // change
             let changelog = wgModel.update(db.wg, req.params.wg_id, req.body);
 
@@ -138,17 +137,16 @@ exports.create = (app, storage, db) => {
             }
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgSingle-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -159,7 +157,7 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.delete('/wg/:wg_id', function(req, res){
+    app.delete('/wg/:wg_id', function(req, res) {
         res.json(wgModel.delete(db.wg, req.params.wg_id));
     });
 
@@ -167,8 +165,8 @@ exports.create = (app, storage, db) => {
      * Einkaufsliste-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:wg_id/liste', function(req, res){
-        try{
+    app.get('/wg/:wg_id/liste', function(req, res) {
+        try {
             // access to Database
             let wg = storage.readone(db.wg, req.params.wg_id)
             let le = storage.readone2(db.listenelement, req.params.wg_id, req.params.element_id)
@@ -176,17 +174,16 @@ exports.create = (app, storage, db) => {
             let output = le[0]
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -197,11 +194,11 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.post('/wg/:wg_id/liste', function(req, res){
+    app.post('/wg/:wg_id/liste', function(req, res) {
         res.json(storage.create(db.wg, req.params.wg_id, req.body))
     });
 
-    app.delete('/wg/:wg_id/liste', function(req, res){
+    app.delete('/wg/:wg_id/liste', function(req, res) {
         res.json(storage.delete(db.wg, req.params.wg_id));
     });
 
@@ -209,30 +206,29 @@ exports.create = (app, storage, db) => {
      * Listenelement-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:wg_id/liste/:element_id', function(req, res){
-        try{
+    app.get('/wg/:wg_id/liste/:element_id', function(req, res) {
+        try {
             // access to Database
             let wg = storage.readone(db.wg, req.params.wg_id)
             let le = storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id)
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
-            if(!le.length){
+            if (!le.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten keine Listenelement mit der ID #' +  req.params.element_id +' gefunden werden.'
+                    'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' gefunden werden.'
                 );
             }
 
             // success
             res.status(200).json(le[0]).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -243,11 +239,11 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.put('/wg/:wg_id/liste/:element_id', function(req, res){
+    app.put('/wg/:wg_id/liste/:element_id', function(req, res) {
         res.json(storage.update2(db.listenelement, req.params.wg_id, eq.params.element_id, req.body));
     });
 
-    app.delete('/wg/:wg_id/liste/:element_id', function(req, res){
+    app.delete('/wg/:wg_id/liste/:element_id', function(req, res) {
         res.json(storage.delete2(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
@@ -255,32 +251,31 @@ exports.create = (app, storage, db) => {
      * Mitbewohner-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:id/mitbewohner', function(req, res){
-        try{
+    app.get('/wg/:id/mitbewohner', function(req, res) {
+        try {
             // access to Database
-            let wg = bewohner.readone(db.wg, req.params.wg_id)
-            let bw = bewohner.readall(db.bewohner, req.params.wg_id)
+            let wg = bewohnerModel.readone(db.wg, req.params.wg_id)
+            let bw = bewohnerModel.readall(db.bewohner, req.params.wg_id)
 
             let output = bw
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
-            if(!bw.length){
+            if (!bw.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten kein Bewohner in der WG #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -291,36 +286,35 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.post('/wg/:wg_id/mitbewohner', function(req, res){
+    app.post('/wg/:wg_id/mitbewohner', function(req, res) {
         res.json(bewohnerModel.create(db.bewohner, req.body, req.params.wg_id));
     });
 
-    app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
-        try{
+    app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+        try {
             // access to Database
-            let wg = wg.readone(db.wg, req.params.wg_id)
-            let bw = bewohner.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
 
             let output = bw[0]
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
-            if(!bw.length){
+            if (!bw.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten kein Bewohner in der WG #' +  req.params.wg_id +' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
+                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -331,45 +325,46 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
-        res.json(bewohner.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
+    app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+        res.json(bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
     });
 
-    app.delete('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
-        res.json(bewohner.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
+    app.delete('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+        res.json(bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
     });
 
     /**
      * Einkaufsmöglichkeit-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
-        try{
+    app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res) {
+        try {
             // access to Database
             let wg = storage.readone(db.wg, req.params.wg_id)
             let bw = storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
 
             // throw errors
-            if(!wg.length){
+            if (!wg.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
-            if(!bw.length){
+            if (!bw.length) {
                 throw new error.NotFound(
                     'wgList-get-404',
-                    'Es konnten kein Bewohner in der WG #' +  req.params.wg_id +' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
+                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
 
             // anwendungslogik
-            let output = { api: 'error'};
+            let output = {
+                api: 'error'
+            };
 
             // success
             res.status(200).json(output).end()
-        }
-        catch(e){
+        } catch (e) {
             // error handling
             res.status(e.status || 500).json({
                 response: {
