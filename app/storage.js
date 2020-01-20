@@ -128,12 +128,12 @@ exports.delete = (collection, id) => {
     // Log
     console.log('> Editing item #', data.id,' from ', collection.collectionName);
 
-    return db.movies.remove({id: parseInt(id)});
+    return collection.remove({id: parseInt(id)});
 }
 
 exports.delete2 = (collection, id, id_liste) => {
     // Log
     console.log('> Editing item #', data.id_liste,' from ', collection.collectionName);
 
-    return db.movies.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
+    return collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
 }
