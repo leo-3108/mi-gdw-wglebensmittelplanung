@@ -3,6 +3,7 @@
  */
 const { checkSchema } = require('express-validator');
 const error = require('rest-api-errors');
+const bewohner = require('./models/bewohner.model.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
@@ -284,7 +285,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg/:wg_id/mitbewohner', function(req, res){
-        res.json(storage.create2(db.bewohner, req.body, req.params.wg_id));
+        res.json(bewohner.create(db.bewohner, req.body, req.params.wg_id));
     });
 
     app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
