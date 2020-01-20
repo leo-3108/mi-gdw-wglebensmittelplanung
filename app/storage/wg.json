@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 [{"Name":"String","Adresse":{"Strasse":"String","Hausnummer":"String","PLZ":"String","Stadt":"String","Land":"String"},"Telefonnummer":"Int","id":0,"_id":"212afafc8a064bcdb54b4b099b96f502"}]
+=======
+[
+]
+>>>>>>> 13fe23cfb96b7d61ad8ea9a948eff9dd4b23d2e0
