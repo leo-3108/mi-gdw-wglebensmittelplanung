@@ -24,7 +24,7 @@ exports.getEmsInNaehe = function(){
   request(options, function(error, response, body){
       if(error) throw new Error(error);
 
-      fs.writeFile('/einkaufsmoeglichkeiten', (body), (err) => {
+      fs.writeFile('./storage/einkaufsmoeglichkeiten', (body), (err) => {
           if (err) throw err;
           console.log('The file has been saved!');
           process.exit();
@@ -59,7 +59,7 @@ exports.getRoutes = function(){
   request(options, function(error, response, body){
       if(error) throw new Error(error);
 
-      fs.writeFile('./route_einkaufsmoeglichkeit', (body), (err) => {
+      fs.writeFile('./storage/route', (body), (err) => {
           if (err) throw err;
           console.log('The file has been saved!');
           process.exit();
