@@ -11,13 +11,13 @@ exports.init = () => {
         'listenelement'
     ]);
 
-    this.reset(db);
+    //this.reset(db);
 
     return db
 }
 
 exports.reset = (db) => {
-    if (!db.wg.find().length){
+    /*if (!db.wg.find().length){
         // Test
         this.insert({
             Name: "String",
@@ -30,7 +30,7 @@ exports.reset = (db) => {
             },
             Telefonnummer: "Int"
         }, db.wg)
-    }
+    }*/
 }
 
 /**
@@ -39,6 +39,8 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
+    //data = JSON.parse(data);
+
     // Add id
     data.id = collection.count();
 
@@ -50,6 +52,7 @@ exports.create = (collection, data) => {
 
     return data.id;
 }
+
 
 exports.readone = (collection, id) => {
     const items = collection.find({id: parseInt(id)});
