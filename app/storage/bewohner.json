@@ -1,11 +1,9 @@
-[
-  {
-   "Name": "String",
-   "Vorname": "String",
-   "Geburtsdatum": "Int",
-   "Rolle": "String",
-   "Telefonnummer": "Int",
-   "Auto": "Boolean",
-   "id":
- }
-]
+[{
+    "Name": "String",
+    "Vorname": "String",
+    "Geburtsdatum": "Int",
+    "Rolle": "String",
+    "Telefonnummer": "Int",
+    "Auto": "Boolean",
+    "id":
+}]

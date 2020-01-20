@@ -51,6 +51,15 @@ exports.create = (collection, data) => {
     return data.id;
 }
 
+exports.create2 = (collection, data, wgid) => {
+    // Add id
+    data.id = collection.count();
+    data.wgid = wgid
+    // Save
+    collection.save(data);
+
+    return data.id;
+}
 
 exports.readone = (collection, id) => {
     const items = collection.find({id: parseInt(id)});
