@@ -41,37 +41,33 @@ exports.create = (collection, data) => {
 }
 
 exports.readone = (collection, id) => {
+
+    // Log
+    console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
+    
     const items = collection.find({id: parseInt(id)});
 
     if(items.length){
         // Remove intern id
         delete items[0]._id;
-
-        return items;
     }
-    else{
-        return { message: "404 Error" }
-    }
-
-
+    return items;
 }
 
 // Für den Fall, dass 2 IDs als Suchkriterium vorhanden sind
 exports.readone2 = (collection, id, id_liste) => {
+
+    // Log
+    console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
+
     const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
 
     if(items.length){
         // Remove intern id
         delete items[0]._id;
-
-        return items;
-    }
-    else{
-        return { message: "404 Error" }
     }
 
-    // Log
-    console.log('> Read item #', id,' # from ', collection.collectionName);
+    return items;
 }
 
 exports.readall = (collection) => {
