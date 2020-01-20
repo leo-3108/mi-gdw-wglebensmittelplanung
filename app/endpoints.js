@@ -138,7 +138,7 @@ exports.create = (app, storage, db) => {
             }
 
             // success
-            res.status(201).json(output).end()
+            res.status(200).json(output).end()
         }
         catch(e){
             // error handling
