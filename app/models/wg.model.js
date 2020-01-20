@@ -2,6 +2,11 @@ const {
     checkSchema
 } = require('express-validator');
 
+/**
+ * CRUD-Befehle for WG
+ * @throws HTTP-Errors
+ */
+
 exports.create = (collection, data) => {
 
     try{
