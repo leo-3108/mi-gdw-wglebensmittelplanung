@@ -14,7 +14,7 @@ const error = require('rest-api-errors')
  * @return {[type]}              [description]
  */
 exports.main = (currLocation) => {
-    this.anfrage(
+    return this.anfrage(
         'GET',
         'https://places.cit.api.here.com/places/v1/autosuggest',
         {
@@ -45,7 +45,7 @@ exports.anfrage = (method, url, qs, fun) => {
     request(options, function(error, response, body){
         if(error) throw new error.InternalServerError('here-anfrage', 'InternalServerError')
 
-        fun(response, body)
+        return fun(response, body)
     })
 }
 
