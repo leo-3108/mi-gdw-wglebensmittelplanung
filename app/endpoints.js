@@ -196,7 +196,7 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.post('/wg/:id/mitbewohner', function(req, res){
+    app.post('/wg/:wg_id/mitbewohner', function(req, res){
         res.json(storage.create2(db.bewohner, req.body, req.params.wg_id));
     });
 

@@ -51,10 +51,10 @@ exports.create = (collection, data) => {
     return data.id;
 }
 
-exports.create2 = (collection, data, wgid) => {
+exports.create2 = (collection, data, wg_id) => {
     // Add id
     data.id = collection.count();
-    data.wgid = wgid;
+    data.wgid = parseInt(wg_id);
     // Save
     collection.save(data);
 

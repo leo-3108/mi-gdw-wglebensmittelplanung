@@ -1,9 +1,41 @@
 [{
-    "Name": "String",
-    "Vorname": "String",
-    "Geburtsdatum": "Int",
+    "Name": "Susi",
+    "Vorname": "Sonnenschein",
+    "Geburtsdatum": "12.12.1997",
     "Rolle": "String",
-    "Telefonnummer": "Int",
-    "Auto": "Boolean",
-    "id":
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "id": 0,
+    "wgid": 1,
+    "_id": "e5254c403ec44e4b9765f9dae39353e1"
+}, {
+    "Name": "Hanna",
+    "Vorname": "Heiter",
+    "Geburtsdatum": "12.12.1997",
+    "Rolle": "String",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "id": 1,
+    "wgid": 1,
+    "_id": "a4bf7171d7744f059bc484761d4e2cd5"
+}, {
+    "Name": "Max",
+    "Vorname": "Mustermann",
+    "Geburtsdatum": "12.12.1997",
+    "Rolle": "String",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "id": 2,
+    "wgid": 1,
+    "_id": "5103e8ad2a9c447fbd2f3b2476ea4dec"
+}, {
+    "Name": "Fridolin",
+    "Vorname": "Fröhlich",
+    "Geburtsdatum": "12.12.1997",
+    "Rolle": "String",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "id": 3,
+    "wgid": 0,
+    "_id": "baa712afbbab40a9b7b09da8efcd4861"
 }]
