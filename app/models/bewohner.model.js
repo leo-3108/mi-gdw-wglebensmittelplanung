@@ -1,6 +1,6 @@
 const { checkSchema } = require('express-validator');
 
-exports.create = (collection, data, wg_id) => {
+exports.create = (collection, data, wg_id) => { //ID klappt noch nicht
     // Add id
 
     var tmp = collection.find({wg_id: wg_id})

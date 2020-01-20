@@ -51,6 +51,19 @@ exports.create2 = (collection, data, wg_id) => {
     return data.id;
 }
 
+exports.create3 = (collection, data, wg_id) => { //ID klappt noch nicht
+    // Add id
+
+    var tmp = collection.find({wg_id: wg_id})
+    data.id = tmp.length;
+    data.wgid = parseInt(wg_id);
+    // Save
+    collection.save(data);
+
+    return data.id;
+
+}
+
 exports.readone = (collection, id) => {
 
     // Log
