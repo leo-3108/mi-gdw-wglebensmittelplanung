@@ -6,6 +6,8 @@ const error = require('rest-api-errors');
 
 const bewohnerModel = require('./models/bewohner.model.js');
 const wgModel = require('./models/wg.model.js');
+const listenelement = require('./models/listenelement.model.js');
+const ekmoeglichkeiten = require('./models/ekmoeglichkeiten.model.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
@@ -15,6 +17,7 @@ exports.create = (app, storage, db) => {
     /**
      * WG-------------------------------------------------------------------------
      */
+
     app.get('/wg', function(req, res){
         try{
             // access to db
@@ -57,7 +60,7 @@ exports.create = (app, storage, db) => {
             let wg_id = wgModel.create(db.wg, req.body);
 
             // output
-            let wg = wg.readone(db.wg, wg_id)
+            let wg = wgModel.readone(db.wg, wg_id)
             let output = {
                 response: {
                     status: 201,
@@ -84,7 +87,7 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id', function(req, res){
         try{
             // access to db
-            let wg = wg.readone(db.wg, req.params.wg_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
 
             // throw errors
             if(!wg.length){
@@ -121,10 +124,10 @@ exports.create = (app, storage, db) => {
     app.put('/wg/:wg_id', function(req, res){
         try{
             // change
-            let changelog = wg.update(db.wg, req.params.wg_id, req.body);
+            let changelog = wgModel.update(db.wg, req.params.wg_id, req.body);
 
             // output
-            let wg = wg.readone(db.wg, req.params.wg_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
             let output = {
                 response: {
                     status: 200,
@@ -157,7 +160,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-        res.json(wg.delete(db.wg, req.params.wg_id));
+        res.json(wgModel.delete(db.wg, req.params.wg_id));
     });
 
     /**
