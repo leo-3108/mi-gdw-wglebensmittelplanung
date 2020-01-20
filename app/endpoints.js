@@ -69,6 +69,7 @@ exports.create = (app, storage, db) => {
             res.status(201).json(output).end()
         }
         catch(e){
+            console.error(e)
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -105,6 +106,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         }
         catch(e){
+            console.error(e)
             // error handling
             res.status(e.status || 500).json({
                 response: {
