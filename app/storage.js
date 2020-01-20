@@ -39,8 +39,6 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
-    //data = JSON.parse(data);
-
     // Add id
     data.id = collection.count();
 
