@@ -14,7 +14,24 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg', function(req, res){
-        res.json(storage.readall(db.wg));
+        try{
+            // access to Database
+            let wgs = storage.readall(db.wg)
+
+            if(!wgs.length){
+                throw new error.NotFound(
+                    'wg-get-404',
+                    'Es konnten keine WGs gefunden werden');
+            }
+
+            res.status(200).json(wgs).end()
+        }
+        catch(e){
+            res.status(e.status).json({
+                status: e.status,
+                message: e.message
+            });
+        }
     });
 
     app.post('/wg', function(req, res){
