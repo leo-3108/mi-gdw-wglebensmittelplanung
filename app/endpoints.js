@@ -16,7 +16,6 @@ exports.create = (app, storage, db) => {
         try{
             // access to db
             let wgs = storage.readall(db.wg)
-            let output = wgs
 
             // throw errors
             if(!wgs.length){
@@ -25,6 +24,15 @@ exports.create = (app, storage, db) => {
                     'Es konnten keine WGs gefunden werden.'
                 );
             }
+            
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                },
+                data: wgs
+            }
 
             // success
             res.status(200).json(output).end()
@@ -32,8 +40,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -45,7 +55,13 @@ exports.create = (app, storage, db) => {
 
             // output
             let wg = storage.readone(db.wg, wg_id)
-            let output = wg[0]
+            let output = {
+                response: {
+                    status: 201,
+                    message: 'Created'
+                },
+                data: wg
+            }
 
             // success
             res.status(201).json(output).end()
@@ -53,8 +69,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -63,7 +81,6 @@ exports.create = (app, storage, db) => {
         try{
             // access to db
             let wg = storage.readone(db.wg, req.params.wg_id)
-            let output = wg[0]
 
             // throw errors
             if(!wg.length){
@@ -73,14 +90,25 @@ exports.create = (app, storage, db) => {
                 );
             }
 
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                },
+                data: wg
+            }
+
             // success
             res.status(200).json(output).end()
         }
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -119,8 +147,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -162,8 +192,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -207,8 +239,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -245,8 +279,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });
@@ -291,8 +327,10 @@ exports.create = (app, storage, db) => {
         catch(e){
             // error handling
             res.status(e.status || 500).json({
-                status: e.status || 500,
-                message: e.message
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
             });
         }
     });

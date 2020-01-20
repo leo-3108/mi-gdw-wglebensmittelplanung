@@ -54,7 +54,7 @@ exports.create2 = (collection, data, wgid) => {
 exports.readone = (collection, id) => {
 
     // Log
-    console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
+    console.log('> Read item #', id,' from ', collection.collectionName);
 
     const items = collection.find({id: parseInt(id)});
 
