@@ -2,6 +2,7 @@
  * Modul zum Speichern der Daten
  */
 const db = require('diskdb');
+const error = require('rest-api-errors');
 
 exports.init = () => {
     db.connect('./app/storage', [
@@ -11,26 +12,7 @@ exports.init = () => {
         'listenelement'
     ]);
 
-    //this.reset(db);
-
     return db
-}
-
-exports.reset = (db) => {
-    /*if (!db.wg.find().length){
-        // Test
-        this.insert({
-            Name: "String",
-            Adresse: {
-                Strasse: "String",
-                Hausnummer: "String",
-                PLZ: "String",
-                Stadt: "String",
-                Land: "String"
-            },
-            Telefonnummer: "Int"
-        }, db.wg)
-    }*/
 }
 
 /**
@@ -39,11 +21,19 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
-    // Add id
-    data.id = collection.count();
 
-    // Save
-    collection.save(data);
+    try{
+        // Add id
+        data.id = collection.count();
+
+        // Save
+        collection.save(data);
+    }
+    catch(e){
+        console.log(data)
+        throw new error.InternalServerError('db-create', 'Internal Server Error')
+    }
+
 
     // Log
     console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
@@ -62,37 +52,33 @@ exports.create2 = (collection, data, wg_id) => {
 }
 
 exports.readone = (collection, id) => {
+
+    // Log
+    console.log('> Read item #', id,' from ', collection.collectionName);
+
     const items = collection.find({id: parseInt(id)});
 
     if(items.length){
         // Remove intern id
         delete items[0]._id;
-
-        return items;
     }
-    else{
-        return { message: "404 Error" }
-    }
-
-
+    return items;
 }
 
 // Für den Fall, dass 2 IDs als Suchkriterium vorhanden sind
 exports.readone2 = (collection, id, id_liste) => {
+
+    // Log
+    console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
+
     const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
 
     if(items.length){
         // Remove intern id
         delete items[0]._id;
-
-        return items;
-    }
-    else{
-        return { message: "404 Error" }
     }
 
-    // Log
-    console.log('> Read item #', id,' # from ', collection.collectionName);
+    return items;
 }
 
 exports.readall = (collection) => {
@@ -112,9 +98,9 @@ exports.readall = (collection) => {
 
 exports.update = (collection, id, data) => {
     // Log
-    console.log('> Editing item #', data.id,' from ', collection.collectionName, ' to be: ', data);
+    console.log('> Editing item #', id,' from ', collection.collectionName, ' to be: ', data);
 
-    return collection.update({id: parseInt(id), data})
+    return collection.update({id: parseInt(id)}, data)
 }
 
 exports.update2 = (collection, id, id_liste, data) => {
