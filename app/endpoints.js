@@ -12,12 +12,13 @@ exports.create = (app, storage, db) => {
     /**
      * WG
      */
-
     app.get('/wg', function(req, res){
         try{
-            // access to Database
+            // access to db
             let wgs = storage.readall(db.wg)
+            let output = wgs
 
+            // throw errors
             if(!wgs.length){
                 throw new error.NotFound(
                     'wg-get-404',
@@ -25,11 +26,13 @@ exports.create = (app, storage, db) => {
                 );
             }
 
-            res.status(200).json(wgs).end()
+            // success
+            res.status(200).json(output).end()
         }
         catch(e){
-            res.status(e.status).json({
-                status: e.status,
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
                 message: e.message
             });
         }
@@ -41,9 +44,11 @@ exports.create = (app, storage, db) => {
 
     app.get('/wg/:wg_id', function(req, res){
         try{
-            // access to Database
+            // access to db
             let wg = storage.readone(db.wg, req.params.wg_id)
+            let output = wg[0]
 
+            // throw errors
             if(!wg.length){
                 throw new error.NotFound(
                     'wgSingle-get-404',
@@ -51,11 +56,13 @@ exports.create = (app, storage, db) => {
                 );
             }
 
-            res.status(200).json(wgs).end()
+            // success
+            res.status(200).json(output).end()
         }
         catch(e){
-            res.status(e.status).json({
-                status: e.status,
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
                 message: e.message
             });
         }
@@ -74,7 +81,31 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:wg_id/liste', function(req, res){
-        res.json(storage.readone(db.wg, req.params.wg_id));
+        try{
+            // access to Database
+            let wg = storage.readone(db.wg, req.params.wg_id)
+            let le = storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id)
+
+            let output = le[0]
+
+            // throw errors
+            if(!wg.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(200).json(output).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
+                message: e.message
+            });
+        }
     });
 
     app.post('/wg/:wg_id/liste', function(req, res){
@@ -88,9 +119,36 @@ exports.create = (app, storage, db) => {
     /**
      * Listenelement
      */
-
     app.get('/wg/:wg_id/liste/:element_id', function(req, res){
-        res.json(storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id));
+        try{
+            // access to Database
+            let wg = storage.readone(db.wg, req.params.wg_id)
+            let le = storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id)
+
+            // throw errors
+            if(!wg.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+            if(!le.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine Listenelement mit der ID #' +  req.params.element_id +' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(200).json(le[0]).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
+                message: e.message
+            });
+        }
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res){
@@ -104,17 +162,76 @@ exports.create = (app, storage, db) => {
     /**
      * Mitbewohner
      */
-
     app.get('/wg/:id/mitbewohner', function(req, res){
-        res.json(storage.readall(db.bewohner, req.params.wg_id));
+        try{
+            // access to Database
+            let wg = storage.readone(db.wg, req.params.wg_id)
+            let bw = storage.readall(db.bewohner, req.params.wg_id)
+
+            let output = bw
+
+            // throw errors
+            if(!wg.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+            if(!bw.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten kein Bewohner in der WG #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(200).json(output).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
+                message: e.message
+            });
+        }
     });
 
-    app.post('/wg', function(req, res){
+    app.post('/wg/:id/mitbewohner', function(req, res){
         res.json(storage.create(db.bewohner, req.body));
     });
 
     app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
-        res.json(storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
+        try{
+            // access to Database
+            let wg = storage.readone(db.wg, req.params.wg_id)
+            let bw = storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+
+            let output = bw[0]
+
+            // throw errors
+            if(!wg.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+            if(!bw.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten kein Bewohner in der WG #' +  req.params.wg_id +' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(200).json(output).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
+                message: e.message
+            });
+        }
     });
 
     app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
@@ -128,8 +245,38 @@ exports.create = (app, storage, db) => {
     /**
      * Einkaufsmöglichkeit
      */
-
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
-        res.json(storage.readall(db.einkaufsmoeglichkeiten, req.params.wg_id));
+        try{
+            // access to Database
+            let wg = storage.readone(db.wg, req.params.wg_id)
+            let bw = storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+
+            // throw errors
+            if(!wg.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+            if(!bw.length){
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten kein Bewohner in der WG #' +  req.params.wg_id +' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
+                );
+            }
+
+            // anwendungslogik
+            let output = { api: 'error'};
+
+            // success
+            res.status(200).json(output).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
+                message: e.message
+            });
+        }
     });
 }
