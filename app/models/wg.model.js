@@ -20,8 +20,6 @@ exports.create = (collection, data) => {
         console.log(data)
         throw new error.InternalServerError('db-create', 'Internal Server Error')
     }
-
-
     // Log
     console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
 
