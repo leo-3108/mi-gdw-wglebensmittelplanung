@@ -54,7 +54,7 @@ exports.create = (collection, data) => {
 exports.create2 = (collection, data, wgid) => {
     // Add id
     data.id = collection.count();
-    data.wgid = wgid
+    data.wgid = wgid;
     // Save
     collection.save(data);
 
