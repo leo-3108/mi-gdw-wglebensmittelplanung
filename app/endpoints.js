@@ -17,7 +17,8 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg', function(req, res){
-        res.json(storage.create(db.wg, req.body))
+        //console.log(req.body)
+        res.json(storage.create(db.wg,req.body))
     });
 
     app.get('/wg/:wg_id', function(req, res){

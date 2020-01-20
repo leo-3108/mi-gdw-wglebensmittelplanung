@@ -17,7 +17,7 @@ exports.init = () => {
 }
 
 exports.reset = (db) => {
-    if (!db.wg.find().length){
+    /*if (!db.wg.find().length){
         // Test
         this.insert({
             Name: "String",
@@ -30,7 +30,7 @@ exports.reset = (db) => {
             },
             Telefonnummer: "Int"
         }, db.wg)
-    }
+    }*/
 }
 
 /**
@@ -50,6 +50,7 @@ exports.create = (collection, data) => {
 
     return data.id;
 }
+
 
 exports.readone = (collection, id) => {
     const items = collection.find({id: parseInt(id)});
