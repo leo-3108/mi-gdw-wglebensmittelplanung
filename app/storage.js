@@ -126,14 +126,14 @@ exports.update2 = (collection, id, id_liste, data) => {
 
 exports.delete = (collection, id) => {
     // Log
-    console.log('> Editing item #', data.id,' from ', collection.collectionName);
+    console.log('> Editing item #', id,' from ', collection.collectionName);
 
     return collection.remove({id: parseInt(id)});
 }
 
 exports.delete2 = (collection, id, id_liste) => {
     // Log
-    console.log('> Editing item #', data.id_liste,' from ', collection.collectionName);
+    console.log('> Editing item #', id_liste,' from ', collection.collectionName);
 
     return collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
 }

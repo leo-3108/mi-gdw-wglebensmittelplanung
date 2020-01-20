@@ -73,7 +73,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-        res.json(storage.delete2(db.wg, req.params.wg_id));
+        res.json(storage.delete(db.wg, req.params.wg_id));
     });
 
     /**
