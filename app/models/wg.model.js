@@ -25,11 +25,13 @@ exports.create = (collection, data) => {
 
 exports.readall = (collection) => {
 
-    const items = collection.find();
+    console.log(collection)
+
+    let items = collection.find();
 
     // Remove intern id
-    for (item in items) {
-        delete item._id
+    for (n in items) {
+        delete items[n]._id
     }
 
     return items

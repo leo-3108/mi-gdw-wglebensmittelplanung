@@ -3,8 +3,9 @@
  */
 const { checkSchema } = require('express-validator');
 const error = require('rest-api-errors');
-const bewohner = require('./models/bewohner.model.js');
-const wg = require('./models/wg.model.js');
+
+const bewohnerModel = require('./models/bewohner.model.js');
+const wgModel = require('./models/wg.model.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
@@ -17,7 +18,7 @@ exports.create = (app, storage, db) => {
     app.get('/wg', function(req, res){
         try{
             // access to db
-            let wgs = wg.readall(db.wg)
+            let wgs = wgModel.readall(db.wg)
 
             // throw errors
             if(!wgs.length){
@@ -53,7 +54,7 @@ exports.create = (app, storage, db) => {
     app.post('/wg', function(req, res){
         try{
             // create
-            let wg_id = wg.create(db.wg, req.body);
+            let wg_id = wgModel.create(db.wg, req.body);
 
             // output
             let wg = storage.readone(db.wg, wg_id)
@@ -69,6 +70,7 @@ exports.create = (app, storage, db) => {
             res.status(201).json(output).end()
         }
         catch(e){
+            console.error(e)
             // error handling
             res.status(e.status || 500).json({
                 response: {
@@ -286,7 +288,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg/:wg_id/mitbewohner', function(req, res){
-        res.json(bewohner.create(db.bewohner, req.body, req.params.wg_id));
+        res.json(bewohnerModel.create(db.bewohner, req.body, req.params.wg_id));
     });
 
     app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res){
