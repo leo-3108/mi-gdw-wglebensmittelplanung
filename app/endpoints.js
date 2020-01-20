@@ -2,6 +2,7 @@
  * Erstellt alle REST-Ressourcen
  */
 const { checkSchema } = require('express-validator');
+const error = require('rest-api-errors');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
