@@ -10,7 +10,7 @@ exports.create = (app, storage, db) => {
     });
 
     /**
-     * WG
+     * WG-------------------------------------------------------------------------
      */
     app.get('/wg', function(req, res){
         try{
@@ -156,7 +156,7 @@ exports.create = (app, storage, db) => {
     });
 
     /**
-     * Einkaufsliste
+     * Einkaufsliste-------------------------------------------------------------------------
      */
 
     app.get('/wg/:wg_id/liste', function(req, res){
@@ -198,8 +198,9 @@ exports.create = (app, storage, db) => {
     });
 
     /**
-     * Listenelement
+     * Listenelement-------------------------------------------------------------------------
      */
+
     app.get('/wg/:wg_id/liste/:element_id', function(req, res){
         try{
             // access to Database
@@ -243,8 +244,9 @@ exports.create = (app, storage, db) => {
     });
 
     /**
-     * Mitbewohner
+     * Mitbewohner-------------------------------------------------------------------------
      */
+
     app.get('/wg/:id/mitbewohner', function(req, res){
         try{
             // access to Database
@@ -330,8 +332,9 @@ exports.create = (app, storage, db) => {
     });
 
     /**
-     * Einkaufsmöglichkeit
+     * Einkaufsmöglichkeit-------------------------------------------------------------------------
      */
+
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
         try{
             // access to Database
