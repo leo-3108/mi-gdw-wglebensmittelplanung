@@ -11,7 +11,7 @@ exports.init = () => {
         'listenelement'
     ]);
 
-    this.reset(db);
+    //this.reset(db);
 
     return db
 }
@@ -39,6 +39,8 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
+    //data = JSON.parse(data);
+
     // Add id
     data.id = collection.count();
 
