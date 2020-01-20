@@ -31,6 +31,8 @@ exports.readall = (collection) => {
     for (item in items) {
         delete item._id
     }
+
+    return items
 }
 
 exports.readone = (collection, id) => {
