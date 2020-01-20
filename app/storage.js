@@ -30,6 +30,7 @@ exports.create = (collection, data) => {
         collection.save(data);
     }
     catch(e){
+        console.log(data)
         throw new error.InternalServerError('db-create', 'Internal Server Error')
     }
 
@@ -44,7 +45,7 @@ exports.readone = (collection, id) => {
 
     // Log
     console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
-    
+
     const items = collection.find({id: parseInt(id)});
 
     if(items.length){

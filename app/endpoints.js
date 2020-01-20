@@ -39,7 +39,24 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg', function(req, res){
-        res.json(storage.create(db.wg, req.body))
+        try{
+            // create
+            let wg_id = storage.create(db.wg, req.body);
+
+            // output
+            let wg = storage.readone(db.wg, wg_id)
+            let output = wg[0]
+
+            // success
+            res.status(201).json(output).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                status: e.status || 500,
+                message: e.message
+            });
+        }
     });
 
     app.get('/wg/:wg_id', function(req, res){
