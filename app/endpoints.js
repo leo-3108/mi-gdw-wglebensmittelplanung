@@ -24,7 +24,7 @@ exports.create = (app, storage, db) => {
                     'Es konnten keine WGs gefunden werden.'
                 );
             }
-            
+
             // output
             let output = {
                 response: {
@@ -114,7 +114,41 @@ exports.create = (app, storage, db) => {
     });
 
     app.put('/wg/:wg_id', function(req, res){
-        res.json(storage.update(db.wg, req.params.wg_id, req.body))
+        try{
+            // change
+            let changelog = storage.update(db.wg, req.params.wg_id, req.body);
+
+            // output
+            let wg = storage.readone(db.wg, req.params.wg_id)
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'Updated'
+                },
+                changelog: changelog,
+                data: wg
+            }
+
+            // throw errors
+            if(!wg.length){
+                throw new error.NotFound(
+                    'wgSingle-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(201).json(output).end()
+        }
+        catch(e){
+            // error handling
+            res.status(e.status || 500).json({
+                response: {
+                    status: e.status || 500,
+                    message: e.message
+                }
+            });
+        }
     });
 
     app.delete('/wg/:wg_id', function(req, res){

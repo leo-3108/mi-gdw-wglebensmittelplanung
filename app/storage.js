@@ -98,9 +98,9 @@ exports.readall = (collection) => {
 
 exports.update = (collection, id, data) => {
     // Log
-    console.log('> Editing item #', data.id,' from ', collection.collectionName, ' to be: ', data);
+    console.log('> Editing item #', id,' from ', collection.collectionName, ' to be: ', data);
 
-    return collection.update({id: parseInt(id), data})
+    return collection.update({id: parseInt(id)}, data)
 }
 
 exports.update2 = (collection, id, id_liste, data) => {
