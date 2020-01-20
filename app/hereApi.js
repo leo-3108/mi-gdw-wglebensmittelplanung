@@ -1,5 +1,8 @@
-var app_id = 'hDr78BRUEK7XFKrLIm2j'
-var app_code = '7eGjD8JcxivXumb6wdzvig'
+/**
+ * HERE API
+ */
+const app_id = 'hDr78BRUEK7XFKrLIm2j'
+const app_code = '7eGjD8JcxivXumb6wdzvig'
 
 /**
 * API:         Places API der HERE REST API
