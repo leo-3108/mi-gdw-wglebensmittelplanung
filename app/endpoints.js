@@ -89,6 +89,5 @@ exports.create = (app, storage, db) => {
      */
 
     app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
-        //...
+        res.json(storage.redall(db.einkaufsmoeglichkeiten, req.params.wg_id, req.body, req.params.route))
     });
-}
