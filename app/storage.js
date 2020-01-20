@@ -2,6 +2,7 @@
  * Modul zum Speichern der Daten
  */
 const db = require('diskdb');
+const error = require('rest-api-errors');
 
 exports.init = () => {
     db.connect('./app/storage', [
@@ -11,26 +12,7 @@ exports.init = () => {
         'listenelement'
     ]);
 
-    //this.reset(db);
-
     return db
-}
-
-exports.reset = (db) => {
-    if (!db.wg.find().length){
-        // Test
-        this.insert({
-            Name: "String",
-            Adresse: {
-                Strasse: "String",
-                Hausnummer: "String",
-                PLZ: "String",
-                Stadt: "String",
-                Land: "String"
-            },
-            Telefonnummer: "Int"
-        }, db.wg)
-    }
 }
 
 /**
@@ -39,13 +21,18 @@ exports.reset = (db) => {
  */
 
 exports.create = (collection, data) => {
-    //data = JSON.parse(data);
 
-    // Add id
-    data.id = collection.count();
+    try{
+        // Add id
+        data.id = collection.count();
 
-    // Save
-    collection.save(data);
+        // Save
+        collection.save(data);
+    }
+    catch(e){
+        throw new error.InternalServerError('db-create', 'Internal Server Error')
+    }
+
 
     // Log
     console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
