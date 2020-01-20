@@ -21,7 +21,8 @@ exports.create = (app, storage, db) => {
             if(!wgs.length){
                 throw new error.NotFound(
                     'wg-get-404',
-                    'Es konnten keine WGs gefunden werden');
+                    'Es konnten keine WGs gefunden werden.'
+                );
             }
 
             res.status(200).json(wgs).end()
@@ -45,8 +46,9 @@ exports.create = (app, storage, db) => {
 
             if(!wg.length){
                 throw new error.NotFound(
-                    'wg-get-404',
-                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden');
+                    'wgSingle-get-404',
+                    'Es konnten keine WG mit der ID #' +  req.params.wg_id +' gefunden werden.'
+                );
             }
 
             res.status(200).json(wgs).end()
@@ -57,8 +59,6 @@ exports.create = (app, storage, db) => {
                 message: e.message
             });
         }
-
-        res.json(storage.readone(db.wg, req.params.wg_id));
     });
 
     app.put('/wg/:wg_id', function(req, res){
