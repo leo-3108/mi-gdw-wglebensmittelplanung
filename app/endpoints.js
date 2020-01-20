@@ -4,6 +4,7 @@
 const { checkSchema } = require('express-validator');
 const error = require('rest-api-errors');
 const bewohner = require('./models/bewohner.model.js');
+const wg = require('./models/wg.model.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
@@ -16,7 +17,7 @@ exports.create = (app, storage, db) => {
     app.get('/wg', function(req, res){
         try{
             // access to db
-            let wgs = storage.readall(db.wg)
+            let wgs = wg.readall(db.wg)
 
             // throw errors
             if(!wgs.length){
@@ -52,7 +53,7 @@ exports.create = (app, storage, db) => {
     app.post('/wg', function(req, res){
         try{
             // create
-            let wg_id = storage.create(db.wg, req.body);
+            let wg_id = wg.create(db.wg, req.body);
 
             // output
             let wg = storage.readone(db.wg, wg_id)
@@ -81,7 +82,7 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id', function(req, res){
         try{
             // access to db
-            let wg = storage.readone(db.wg, req.params.wg_id)
+            let wg = wg.readone(db.wg, req.params.wg_id)
 
             // throw errors
             if(!wg.length){
@@ -117,10 +118,10 @@ exports.create = (app, storage, db) => {
     app.put('/wg/:wg_id', function(req, res){
         try{
             // change
-            let changelog = storage.update(db.wg, req.params.wg_id, req.body);
+            let changelog = wg.update(db.wg, req.params.wg_id, req.body);
 
             // output
-            let wg = storage.readone(db.wg, req.params.wg_id)
+            let wg = wg.readone(db.wg, req.params.wg_id)
             let output = {
                 response: {
                     status: 200,
@@ -153,7 +154,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res){
-        res.json(storage.delete(db.wg, req.params.wg_id));
+        res.json(wg.delete(db.wg, req.params.wg_id));
     });
 
     /**
