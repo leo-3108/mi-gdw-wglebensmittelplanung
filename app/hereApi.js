@@ -4,12 +4,49 @@
 const app_id = 'hDr78BRUEK7XFKrLIm2j'
 const app_code = '7eGjD8JcxivXumb6wdzvig'
 
+const request = require('request')
+const error = require('rest-api-errors')
+
 
 /**
- *
+ * Gets
+ * @param  {[type]} currLocation [description]
+ * @return {[type]}              [description]
  */
-exports.main = function(currLocation){
+exports.main = (currLocation) => {
+    this.anfrage(
+        'GET',
+        'https://places.cit.api.here.com/places/v1/autosuggest',
+        {
+            at: '51.02496075183629,7.561652965277074',
+            q: 'Supermarkt'
+        },
+        (response, body) => {
+            return {
+                response: response,
+                body: body
+            }
+        }
+    )
+}
 
+exports.anfrage = (method, url, qs, fun) => {
+    // options
+    let options = {
+        method: method,
+        url: url,
+        qs: {
+            app_id: app_id,
+            app_code: app_code
+        }
+    }
+    options.qs = Object.assign(qs, options.qs)
+
+    request(options, function(error, response, body){
+        if(error) throw new error.InternalServerError('here-anfrage', 'InternalServerError')
+
+        fun(response, body)
+    })
 }
 
 /**

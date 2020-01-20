@@ -3,7 +3,7 @@
  */
 const { checkSchema } = require('express-validator');
 const error = require('rest-api-errors');
-const hereAPI = require('hereAPI.js');
+const hereAPI = require('./hereAPI.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
@@ -333,7 +333,7 @@ exports.create = (app, storage, db) => {
     /**
      * Einkaufsmöglichkeit
      */
-    app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res){
+    app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id/einkaufsmoeglichkeiten', function(req, res){
         try{
             // access to Database
             let wg = storage.readone(db.wg, req.params.wg_id)
@@ -368,5 +368,5 @@ exports.create = (app, storage, db) => {
                 }
             });
         }
-        res.json(storage.readall(db.einkaufsmoeglichkeiten, req.params.wg_id, req.body, req.params.route))
     });
+}
