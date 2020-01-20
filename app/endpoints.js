@@ -279,5 +279,5 @@ exports.create = (app, storage, db) => {
                 message: e.message
             });
         }
+        res.json(storage.readall(db.einkaufsmoeglichkeiten, req.params.wg_id, req.body, req.params.route))
     });
-}
