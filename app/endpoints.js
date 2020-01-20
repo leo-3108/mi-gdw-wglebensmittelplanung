@@ -3,6 +3,7 @@
  */
 const { checkSchema } = require('express-validator');
 const error = require('rest-api-errors');
+const hereAPI = require('hereAPI.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function (req, res) {
@@ -353,7 +354,7 @@ exports.create = (app, storage, db) => {
             }
 
             // anwendungslogik
-            let output = { api: 'error'};
+            let output = hereAPI.main();
 
             // success
             res.status(200).json(output).end()
