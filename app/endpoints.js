@@ -49,12 +49,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -76,14 +71,8 @@ exports.create = (app, storage, db) => {
             // success
             res.status(201).json(output).end()
         } catch (e) {
-            console.error(e)
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -112,14 +101,8 @@ exports.create = (app, storage, db) => {
             // success
             res.status(200).json(output).end()
         } catch (e) {
-            console.error(e)
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -151,12 +134,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -188,12 +166,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -230,12 +203,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(le[0]).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -281,12 +249,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -320,12 +283,7 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
 
@@ -370,12 +328,18 @@ exports.create = (app, storage, db) => {
 
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json({
-                response: {
-                    status: e.status || 500,
-                    message: e.message
-                }
-            });
+            res.status(e.status || 500).json(errhandling(e));
         }
     });
+}
+
+function errhandling(e){
+    console.log(`[Error #${e.status || 500}]`, e.message, e.fileName || '', e.lineNumber || '')
+
+    return {
+        response: {
+            status: e.status || 500,
+            message: e.message
+        }
+    }
 }
