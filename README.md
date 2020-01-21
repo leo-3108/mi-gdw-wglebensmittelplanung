@@ -29,8 +29,4 @@ $ npm install
 $ node App.js
 ```
 
-3. Access API via Browser, Terminal, Postman etc.
-
-```
-http://localhost:3000/
-```
+3. Access API via a HTTP-Request with Hostadress:3000
