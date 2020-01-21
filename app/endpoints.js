@@ -194,9 +194,6 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.post('/wg/:wg_id/liste', function(req, res) {
-        res.json(storage.create(db.wg, req.params.wg_id, req.body))
-    });
 
     app.delete('/wg/:wg_id/liste', function(req, res) {
         res.json(storage.delete(db.wg, req.params.wg_id));
@@ -237,6 +234,10 @@ exports.create = (app, storage, db) => {
                 }
             });
         }
+    });
+
+    app.post('/wg/:wg_id/liste', function(req, res) {
+        res.json(storage.create(db.wg, req.params.wg_id, req.body))
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res) {
