@@ -42,7 +42,7 @@ exports.anfrage = (method, url, qs, fun) => {
     }
     options.qs = Object.assign(qs, options.qs)
 
-    request(options, function(error, response, body){
+    return request(options, function(error, response, body){
         if(error) throw new error.InternalServerError('here-anfrage', 'InternalServerError')
 
         return fun(response, body)
