@@ -83,7 +83,7 @@ exports.delete = (collection, id, id_liste) => {
 
 exports.deleteall = (collection, id, id_liste) => {
 
-    const items collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
+    const items = collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
 
     // Log
     console.log('[Log] Delete all elements of list from WG',wg_id);
