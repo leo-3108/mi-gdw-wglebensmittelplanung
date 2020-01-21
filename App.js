@@ -14,6 +14,7 @@ const app = express();
 const storage = require('./app/storage');
 const endpoints = require('./app/endpoints');
 
+// Support for JSON-Body in HTTP-Request
 app.use(express.json())
 
 // Create Database
