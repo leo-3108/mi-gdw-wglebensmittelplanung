@@ -359,7 +359,7 @@ exports.create = (app, storage, db) => {
             }
 
             // anwendungslogik
-            let output = hereAPI.main();
+            let output = hereAPI.main('51.02496075183629,7.561652965277074');
 
             // success
             res.status(200).json(output).end()

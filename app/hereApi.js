@@ -18,7 +18,7 @@ exports.main = (currLocation) => {
         'GET',
         'https://places.cit.api.here.com/places/v1/autosuggest',
         {
-            at: '51.02496075183629,7.561652965277074',
+            at: currLocation,
             q: 'Supermarkt'
         },
         (response, body) => {
