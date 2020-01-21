@@ -291,7 +291,7 @@ exports.create = (app, storage, db) => {
         res.json(bewohnerModel.create(db.bewohner, req.body, req.params.wg_id));
     });
 
-    app.get('/wg/:wgid/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)

@@ -43,11 +43,11 @@ exports.readall = (collection, wg_id) => {
     return items;
 }
 
-exports.readone = (collection, id, id_liste) => {
+exports.readone = (collection, wg_id, mitbewohner_id) => {
 
     const items = collection.find({
-        id: parseInt(id),
-        id_liste: parseInt(id_liste)
+        wg_id: parseInt(wg_id),
+        id: parseInt(mitbewohner_id)
     });
 
     if (items.length) {
