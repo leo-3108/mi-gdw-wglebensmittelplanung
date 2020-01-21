@@ -11,7 +11,7 @@ const {
 
      try{
          // Add id
-         data.id = collection.count();
+         data.id = collection.count();                          //ID-Vegabe wie bei Mitbewohner
 
          // Save
          collection.save(data);
@@ -24,6 +24,21 @@ const {
      console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
 
      return data.id;
+ }
+
+ exports.readall = (collection) => {                //Muss noch angepasst werden
+
+     const items = collection.find();
+
+     // Remove intern id
+     for(item in items){
+         delete item._id
+     }
+
+     // Log
+     console.log('> Read all items from ', collection.collectionName);
+
+     return items;
  }
 
 exports.readone = (collection, id, id_liste) => {
