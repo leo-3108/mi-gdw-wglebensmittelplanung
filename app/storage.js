@@ -20,6 +20,7 @@ exports.init = () => {
  * @throws HTTP-Errors
  */
 
+/**
 exports.create = (collection, data) => {
 
     try{
@@ -136,3 +137,4 @@ exports.delete2 = (collection, id, id_liste) => {
 
     return collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
 }
+*/
