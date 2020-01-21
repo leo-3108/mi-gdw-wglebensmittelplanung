@@ -291,7 +291,7 @@ exports.create = (app, storage, db) => {
         res.json(bewohnerModel.create(db.bewohner, req.body, req.params.wg_id));
     });
 
-    app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.get('/wg/:wgid/mitbewohner/:mitbewohner_id', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -326,11 +326,11 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.put('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         res.json(bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
     });
 
-    app.delete('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.delete('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         res.json(bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
     });
 
@@ -338,7 +338,7 @@ exports.create = (app, storage, db) => {
      * Einkaufsmöglichkeit-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res) {
+    app.get('/wg/:wg_id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res) {
         try {
             // access to Database
             let wg = storage.readone(db.wg, req.params.wg_id)
