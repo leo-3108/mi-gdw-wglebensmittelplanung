@@ -70,7 +70,7 @@ exports.update = (collection, wg_id, mitbewohner_id, data) => {
     })
 
     // Log
-    console.log('[Log] Update Bewohner',parseInt(id),'of WG',parseInt(wg_id));
+    console.log('[Log] Update Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
 }
 
 exports.delete = (collection, wg_id, mitbewohner_id) => {
@@ -81,5 +81,5 @@ exports.delete = (collection, wg_id, mitbewohner_id) => {
     });
 
     // Log
-    console.log('[Log] Delete Bewohner',parseInt(id),'of WG',parseInt(wg_id));
+    console.log('[Log] Delete Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
 }
