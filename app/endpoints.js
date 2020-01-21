@@ -169,7 +169,7 @@ exports.create = (app, storage, db) => {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
-            let le = listenelementModel.readone2(db.listenelement, req.params.wg_id, req.params.element_id)
+            let le = listenelementModel.readall(db.listenelement, req.params.wg_id, req.params.element_id)
 
             let output = le[0]
 
