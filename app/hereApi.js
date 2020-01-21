@@ -26,11 +26,10 @@ exports.main = async function(currLocation){
             at: currLocation,
             q: 'Supermarkt'
         },
-        (response, body) => {
-            console.log(body)
-            return (body)
-        }
-    )
+    ).then(places => {
+        delete result.results[0]
+        return result
+    })
 }
 
 /**
@@ -50,7 +49,12 @@ const anfrage = (method, url, qs) => {
             app_code: app_code
         },
         headers: {
-            'User-Agent': 'Request-Promise'
+            // Request ist Promise
+            'User-Agent': 'Request-Promise',
+
+            // Testing the API
+            // @see https://developer.here.com/documentation/places/dev_guide/topics/http-request-headers-overview.html
+            'X-NLP-Testing': 1
         },
         json: true
     }

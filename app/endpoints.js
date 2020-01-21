@@ -1,12 +1,14 @@
 /**
- * Erstellt alle REST-Ressourcen
+ * Definiert alle Express Endpoints
+ * @see https://expressjs.com/en/guide/routing.html
  */
-const {
-    checkSchema
-} = require('express-validator');
+
+// Modules
+const { checkSchema } = require('express-validator');
 const error = require('rest-api-errors');
 const hereAPI = require('./hereAPI.js');
 
+// Datatypes
 const bewohnerModel = require('./models/bewohner.model.js');
 const wgModel = require('./models/wg.model.js');
 const listenelementModel = require('./models/listenelement.model.js');
