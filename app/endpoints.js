@@ -182,8 +182,8 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id/liste/:element_id', function(req, res) {
         try {
             // access to Database
-            let wg = listenelementModel.readone(db.wg, req.params.wg_id)
-            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.element_id, req.params.wg_id)
 
             // throw errors
             if (!wg.length) {
@@ -303,6 +303,7 @@ exports.create = (app, storage, db) => {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let list = listenelementModel.readall(db.listenelement, req.params.wg_id)
             let coord = req.query.coord
 
             // throw errors
@@ -318,9 +319,15 @@ exports.create = (app, storage, db) => {
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
+            if (!list.length) {
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine Routen zu Einkaufsmoeglichkeiten berechnet werden, da die Einkaufsliste der WG #' + req.params.wg_id + ' leer ist.'
+                );
+            }
 
             // anwendungslogik
-            let output = hereAPI.main(coord, wg, bw).then(result => {
+            let output = hereAPI.main(coord, wg, bw, list).then(result => {
                 res.status(200).json(result).end()
             });
 

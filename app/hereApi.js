@@ -16,7 +16,7 @@ const error = require('rest-api-errors')
  * @return {Promise}        Das Promise Objekt der Anfrage
  *                          mit allen Routen Optionen
  */
-exports.main = async function(coord){
+exports.main = async function(coord, wg, bw, list){
 
     // Get Einkaufsmoeglichkeiten in der Nähe
     return anfrage(
@@ -27,8 +27,11 @@ exports.main = async function(coord){
             q: 'Supermarkt'
         },
     ).then(places => {
-        delete result.results[0]
-        return result
+        // Filter die Einkausmöglchkeiten heraus, die Elemente der Liste anbieten
+
+        return places
+    }).then(places => {
+        // Berechne Routen zu allen Einkaufsmöglichkeiten
     })
 }
 
