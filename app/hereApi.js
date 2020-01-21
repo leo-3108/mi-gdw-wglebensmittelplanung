@@ -12,18 +12,18 @@ const error = require('rest-api-errors')
 
 /**
  * Gets
- * @param  {String} currLocation    Der aktuelle Standord des Nutzers
- * @return {Promise}                Das Promise Objekt der Anfrage
- *                                  mit allen Routen Optionen
+ * @param  {String} coord   Der aktuelle Standord des Nutzers
+ * @return {Promise}        Das Promise Objekt der Anfrage
+ *                          mit allen Routen Optionen
  */
-exports.main = async function(currLocation){
+exports.main = async function(coord){
 
     // Get Einkaufsmoeglichkeiten in der Nähe
     return anfrage(
         'GET',
         'https://places.cit.api.here.com/places/v1/autosuggest',
         {
-            at: currLocation,
+            at: coord,
             q: 'Supermarkt'
         },
     ).then(places => {
@@ -34,10 +34,10 @@ exports.main = async function(currLocation){
 
 /**
  * Stellt eine Anfrage an einen Server mit einer JSON-REST-Schnittstelle
- * @param  {String}             method      HTTP-Verb der anfrage
- * @param  {String}             url         URL der Anfrage
- * @param  {Object of Strings}  qs          URL-Parameter
- * @return {Promise}                        Das Promise Objekt der Anfrage
+ * @param  {String} method          HTTP-Verb der anfrage
+ * @param  {String} url             URL der Anfrage
+ * @param  {Object of Strings} qs   URL-Parameter
+ * @return {Promise}                Das Promise Objekt der Anfrage
  */
 const anfrage = (method, url, qs) => {
     // options

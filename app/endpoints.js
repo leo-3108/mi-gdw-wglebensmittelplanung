@@ -345,6 +345,7 @@ exports.create = (app, storage, db) => {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let coord = req.param('coord')
 
             // throw errors
             if (!wg.length) {
@@ -361,7 +362,7 @@ exports.create = (app, storage, db) => {
             }
 
             // anwendungslogik
-            let output = hereAPI.main('51.02496075183629,7.561652965277074').then(result => {
+            let output = hereAPI.main(coord, wg, bw).then(result => {
                 res.status(200).json(result).end()
             });
 
