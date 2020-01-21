@@ -63,7 +63,7 @@ exports.readone = (collection, wg_id, mitbewohner_id) => {
 
 exports.update = (collection, wg_id, mitbewohner_id, data) => {
 
-    return collection.update({
+    const items = collection.update({
         wg_id: parseInt(wg_id),
         id: parseInt(mitbewohner_id),
         data
@@ -71,15 +71,19 @@ exports.update = (collection, wg_id, mitbewohner_id, data) => {
 
     // Log
     console.log('[Log] Update Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
+
+    return items;
 }
 
 exports.delete = (collection, wg_id, mitbewohner_id) => {
 
-    return collection.remove({
-        wg_id: parseInt(wg_id),
-        id: parseInt(mitbewohner_id)
-    });
+    const items = collection.remove({
+        id: parseInt(mitbewohner_id),
+        wg_id: parseInt(wg_id)
+    }, false);
 
     // Log
     console.log('[Log] Delete Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
+
+    return items;
 }
