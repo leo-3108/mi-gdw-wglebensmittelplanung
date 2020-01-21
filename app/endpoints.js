@@ -241,11 +241,11 @@ exports.create = (app, storage, db) => {
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res) {
-        res.json(listenelementModel.update(db.listenelement, req.params.wg_id, eq.params.element_id, req.body));
+        res.json(listenelementModel.update(db.listenelement, req.params.wg_id, req.params.element_id, req.body));
     });
 
     app.delete('/wg/:wg_id/liste/:element_id', function(req, res) {
-        res.json(listenelementModel.delete(db.listenelement, req.params.wg_id, eq.params.element_id));
+        res.json(listenelementModel.delete(db.listenelement, req.params.wg_id, req.params.element_id));
     });
 
     /**
