@@ -345,7 +345,7 @@ exports.create = (app, storage, db) => {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
-            let coord = req.param('coord')
+            let coord = req.query.coord
 
             // throw errors
             if (!wg.length) {
