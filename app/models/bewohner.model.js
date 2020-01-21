@@ -29,9 +29,6 @@ exports.readall = (collection, wg_id) => {
     var items = collection.find({
         wg_id: parseInt(wg_id)
     });
-    console.log(collection.find({
-        wg_id: parseInt(wg_id)
-    }))
     // Remove intern id
     for(n in items){
         delete items[n]._id
