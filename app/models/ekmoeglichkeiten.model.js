@@ -1,0 +1,37 @@
+const {
+    checkSchema
+} = require('express-validator');
+
+/**
+ * CRUD-Befehle for EInkaufsmöglichkeiten
+ * @throws HTTP-Errors
+ */
+
+ exports.readone = (collection, id, id_liste) => {
+     // Log
+     console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
+
+     const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
+
+     if(items.length){
+         // Remove intern id
+         delete items[0]._id;
+     }
+
+     return items;
+ }
+
+ exports.readall = (collection) => {
+
+     const items = collection.find();
+
+     // Remove intern id
+     for(item in items){
+         delete item._id
+     }
+
+     // Log
+     console.log('> Read all items from ', collection.collectionName);
+
+     return items;
+ }
