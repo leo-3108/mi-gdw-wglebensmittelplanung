@@ -10,11 +10,11 @@ const {
 exports.create = (collection, data, wg_id) => {         //ID klappt noch nicht
     // Add id
     var tmp = collection.find({
-        wg_id: wg_id
+        wg_id: parseInt(wg_id)
     })
-    //console.log(collection.find(wg_id))
+    console.log(tmp)
     data.id = tmp.length;
-    data.wgid = parseInt(wg_id);
+    data.wg_id = parseInt(wg_id);
     // Save
     collection.save(data);
 
