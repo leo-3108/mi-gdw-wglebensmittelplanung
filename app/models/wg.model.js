@@ -53,24 +53,24 @@ exports.readone = (collection, wg_id) => {
     }
 
     // Log
-    console.log('[Log] Read WG',id);
+    console.log('[Log] Read WG',wg_id);
 
     return items;
 }
 
-exports.update = (collection, id, data) => {
+exports.update = (collection, wg_id, data) => {
 
-    const items = collection.update({id: parseInt(id)}, data)
+    const items = collection.update({id: parseInt(wg_id)}, data)
 
     // Log
-    console.log('[Log] Update WG',id);
+    console.log('[Log] Update WG',wg_id);
 
     return items
 }
 
-exports.delete = (collection, id) => {
+exports.delete = (collection, wg_id) => {
 
-    const items = collection.remove({id: parseInt(id)});
+    const items = collection.remove({id: parseInt(wg_id)});
 
     // Log
     console.log('[Log] Delete WG',wg_id);
