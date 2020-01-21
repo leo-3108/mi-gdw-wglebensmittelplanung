@@ -17,6 +17,23 @@ const endpoints = require('./app/endpoints');
 // Support for JSON-Body in HTTP-Request
 app.use(express.json())
 
+// Logging every access
+app.use(function(req, res, next){
+    let currDate = new Date()
+
+    console.log(
+        `\x1b[0m\x1b[31m[${currDate.toISOString()}]`,
+        '\x1b[0m',
+        'Anfrage an die Route',
+        req.originalUrl,
+        '\x1b[2m'
+    )
+
+    next()
+
+    console.log('\x1b[0m')
+})
+
 // Create Database
 const db = storage.init();
 

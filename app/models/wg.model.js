@@ -21,7 +21,7 @@ exports.create = (collection, data) => {
         throw new error.InternalServerError('db-create', 'Internal Server Error')
     }
     // Log
-    console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
+    //console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
 
     return data.id;
 }
@@ -40,12 +40,12 @@ exports.readall = (collection) => {
     return items
 }
 
-exports.readone = (collection, id) => {
+exports.readone = (collection, wg_id) => {
 
     // Log
-    console.log('> Read item #', id, ' from ', collection.collectionName);
+    //console.log('> Read item #', id, ' from ', collection.collectionName);
     const items = collection.find({
-        id: parseInt(id)
+        id: parseInt(wg_id)
     });
 
     if (items.length) {
@@ -57,14 +57,14 @@ exports.readone = (collection, id) => {
 
 exports.update = (collection, id, data) => {
     // Log
-    console.log('> Editing item #', id,' from ', collection.collectionName, ' to be: ', data);
+    //console.log('> Editing item #', id,' from ', collection.collectionName, ' to be: ', data);
 
     return collection.update({id: parseInt(id)}, data)
 }
 
 exports.delete = (collection, id) => {
     // Log
-    console.log('> Editing item #', id,' from ', collection.collectionName);
+    //console.log('> Editing item #', id,' from ', collection.collectionName);
 
     return collection.remove({id: parseInt(id)});
 }

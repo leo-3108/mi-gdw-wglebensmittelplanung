@@ -174,7 +174,7 @@ exports.create = (app, storage, db) => {
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let le = listenelementModel.readall(db.listenelement, req.params.wg_id, req.params.element_id)
 
-            let output = le[0]
+            let output = le
 
             // throw errors
             if (!wg.length) {
@@ -199,7 +199,7 @@ exports.create = (app, storage, db) => {
 
 
     app.delete('/wg/:wg_id/liste', function(req, res) {
-        res.json(listenelementModel.delete(db.wg, req.params.wg_id));
+        res.json(listenelementModel.deleteall(db.wg, req.params.wg_id));
     });
 
     /**
@@ -210,7 +210,7 @@ exports.create = (app, storage, db) => {
         try {
             // access to Database
             let wg = listenelementModel.readone(db.wg, req.params.wg_id)
-            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, eq.params.element_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
 
             // throw errors
             if (!wg.length) {
@@ -255,10 +255,10 @@ exports.create = (app, storage, db) => {
      * Mitbewohner-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:id/mitbewohner', function(req, res) {
+    app.get('/wg/:wg_id/mitbewohner', function(req, res) {
         try {
             // access to Database
-            let wg = bewohnerModel.readone(db.wg, req.params.wg_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readall(db.bewohner, req.params.wg_id)
 
             let output = bw
@@ -294,7 +294,7 @@ exports.create = (app, storage, db) => {
         res.json(bewohnerModel.create(db.bewohner, req.body, req.params.wg_id));
     });
 
-    app.get('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.get('/wg/:wgid/mitbewohner/:mitbewohner_id', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -329,11 +329,11 @@ exports.create = (app, storage, db) => {
         }
     });
 
-    app.put('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.put('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         res.json(bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
     });
 
-    app.delete('/wg/:id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.delete('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         res.json(bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
     });
 
