@@ -38,7 +38,7 @@ exports.readall = (collection, wg_id) => {
     }
 
     // Log
-    console.log('[Log] Read all Bewohner of WG',parseInt(wg_id));
+    console.log('[Log] Read all Bewohner of WG',wg_id);
 
     return items;
 }

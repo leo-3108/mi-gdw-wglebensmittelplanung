@@ -252,7 +252,7 @@ exports.create = (app, storage, db) => {
      * Mitbewohner-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:id/mitbewohner', function(req, res) {
+    app.get('/wg/:wg_id/mitbewohner', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)

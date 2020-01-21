@@ -48,8 +48,6 @@ exports.readone = (collection, wg_id) => {
         id: parseInt(wg_id)
     });
 
-    console.log(items)
-
     if (items.length) {
         // Remove intern id
         delete items[0]._id;
