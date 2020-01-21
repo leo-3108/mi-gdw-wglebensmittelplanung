@@ -17,7 +17,6 @@ exports.create = (collection, data) => {
         collection.save(data);
     }
     catch(e){
-        console.log(data)
         throw new error.InternalServerError('db-create', 'Internal Server Error')
     }
     //log
@@ -28,7 +27,7 @@ exports.create = (collection, data) => {
 
 exports.readall = (collection) => {
 
-    let items = collection.find();
+    const items = collection.find();
 
     // Remove intern id
     for (n in items) {
@@ -38,7 +37,7 @@ exports.readall = (collection) => {
     // Log
     console.log('[Log] Read all WGs');
 
-    return items
+    return items;
 }
 
 exports.readone = (collection, wg_id) => {
@@ -65,7 +64,7 @@ exports.update = (collection, wg_id, data) => {
     // Log
     console.log('[Log] Update WG',wg_id);
 
-    return items
+    return items;
 }
 
 exports.delete = (collection, wg_id) => {
