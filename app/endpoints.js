@@ -326,6 +326,10 @@ exports.create = (app, storage, db) => {
                 );
             }
 
+            if (!coord) {
+                throw new error.NotFound()
+            }
+
             // anwendungslogik
             let output = hereAPI.main(coord, wg, bw, list).then(result => {
                 res.status(200).json(result).end()

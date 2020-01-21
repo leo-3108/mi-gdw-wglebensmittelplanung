@@ -73,8 +73,9 @@ const anfrage = (method, url, qs) => {
     }
     options.qs = Object.assign(qs, options.qs)
 
-    return request(options).catch(err => {
-        throw new error.InternavlServerError('here-anfrage', 'Internavl Server Error')
+    return request(options).catch(e => {
+        console.log(`[HERE-API - Error #${e.error.status || 500}]`, e.error.message, e.error.incidentId || '')
+        throw new error.InternalServerError('here-anfrage', 'Internavl Server Error')
     })
 }
 
