@@ -32,6 +32,16 @@ exports.main = async function(coord, wg, bw, list){
         return places
     }).then(places => {
         // Berechne Routen zu allen Einkaufsmöglichkeiten
+
+        routes = places
+
+        return routes
+    }).then(routes =>{
+        // Ready for print
+
+        output = routes
+
+        return output
     })
 }
 
