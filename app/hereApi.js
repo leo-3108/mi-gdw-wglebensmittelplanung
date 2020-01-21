@@ -14,7 +14,9 @@ const error = require('rest-api-errors')
  * @return {[type]}              [description]
  */
 exports.main = (currLocation) => {
-    return this.anfrage(
+
+    // Get Einkaufsmoeglichkeiten in der Nähe
+    const emsInNaehe = anfrage(
         'GET',
         'https://places.cit.api.here.com/places/v1/autosuggest',
         {
@@ -22,15 +24,17 @@ exports.main = (currLocation) => {
             q: 'Supermarkt'
         },
         (response, body) => {
-            return {
-                response: response,
-                body: body
-            }
+            console.log(body)
+            return (body)
         }
     )
+
+    console.log(emsInNaehe)
+
+    return 'Work in progress'
 }
 
-exports.anfrage = (method, url, qs, fun) => {
+const anfrage = (method, url, qs, fun) => {
     // options
     let options = {
         method: method,
@@ -48,6 +52,29 @@ exports.anfrage = (method, url, qs, fun) => {
         return fun(response, body)
     })
 }
+
+const cache = function(){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
 * API:         Places API der HERE REST API
