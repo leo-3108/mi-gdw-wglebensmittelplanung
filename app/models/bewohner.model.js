@@ -13,7 +13,7 @@ exports.create = (collection, data, wg_id) => {         //ID klappt noch nicht
         wg_id: wg_id
     })
     //console.log(collection.find(wg_id))
-    data.id = tmp.length+1;
+    data.id = tmp.length;
     data.wgid = parseInt(wg_id);
     // Save
     collection.save(data);
