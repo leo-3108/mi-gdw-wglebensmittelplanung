@@ -24,7 +24,7 @@ const {
          throw new error.InternalServerError('db-create', 'Internal Server Error')
      }
      //log
-     console.log('[Log] Adding new element',data.id,'to list from WG',data.wg_id);
+     console.log('[Log] Add new element',data.id,'to list from WG',data.wg_id);
 
      return data.id;
  }

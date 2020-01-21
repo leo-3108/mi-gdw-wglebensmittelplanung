@@ -19,7 +19,7 @@ exports.create = (collection, data, wg_id) => {
     collection.save(data);
 
     //log
-    console.log('[Log] Adding new Bewohner',data.id,'to WG',data.wg_id);
+    console.log('[Log] Add new Bewohner',data.id,'to WG',data.wg_id);
 
     return data.id;
 }

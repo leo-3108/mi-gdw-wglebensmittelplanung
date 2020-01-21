@@ -21,7 +21,7 @@ exports.create = (collection, data) => {
         throw new error.InternalServerError('db-create', 'Internal Server Error')
     }
     //log
-    console.log('[Log] Adding new WG',data.id);
+    console.log('[Log] Add new WG',data.id);
 
     return data.id;
 }
