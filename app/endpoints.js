@@ -207,7 +207,7 @@ exports.create = (app, storage, db) => {
         try {
             // access to Database
             let wg = listenelementModel.readone(db.wg, req.params.wg_id)
-            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, eq.params.element_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
 
             // throw errors
             if (!wg.length) {
@@ -259,7 +259,7 @@ exports.create = (app, storage, db) => {
             let bw = bewohnerModel.readall(db.bewohner, req.params.wg_id)
 
             let output = bw
-            
+
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
