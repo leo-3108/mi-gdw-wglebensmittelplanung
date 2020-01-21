@@ -12,7 +12,6 @@ exports.create = (collection, data, wg_id) => {         //ID klappt noch nicht
     var tmp = collection.find({
         wg_id: parseInt(wg_id)
     })
-    console.log(tmp)
     data.id = tmp.length;
     data.wg_id = parseInt(wg_id);
     // Save

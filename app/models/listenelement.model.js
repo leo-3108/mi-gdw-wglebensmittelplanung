@@ -7,11 +7,15 @@ const {
  * @throws HTTP-Errors
  */
 
- exports.create = (collection, data) => {
+ exports.create = (collection, wg_id, data) => {
 
      try{
          // Add id
-         data.id = collection.count();                          //ID-Vegabe wie bei Mitbewohner
+         var tmp = collection.find({
+             wg_id: parseInt(wg_id)
+         })
+         data.id = tmp.length;
+         data.wg_id = parseInt(wg_id);                         //ID-Vegabe wie bei Mitbewohner
 
          // Save
          collection.save(data);
