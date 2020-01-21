@@ -171,7 +171,7 @@ exports.create = (app, storage, db) => {
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let le = listenelementModel.readall(db.listenelement, req.params.wg_id, req.params.element_id)
 
-            let output = le[0]
+            let output = le
 
             // throw errors
             if (!wg.length) {
@@ -196,7 +196,7 @@ exports.create = (app, storage, db) => {
 
 
     app.delete('/wg/:wg_id/liste', function(req, res) {
-        res.json(listenelementModel.delete(db.wg, req.params.wg_id));
+        res.json(listenelementModel.deleteall(db.wg, req.params.wg_id));
     });
 
     /**

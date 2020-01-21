@@ -30,13 +30,15 @@ const {
      return data.id;
  }
 
- exports.readall = (collection) => {                //Muss noch angepasst werden
+ exports.readall = (collection, wg_id) => {
 
-     const items = collection.find();
+     var items = collection.find({
+         wg_id: parseInt(wg_id)
+     });
 
      // Remove intern id
-     for(item in items){
-         delete item._id
+     for(n in items){
+         delete items[n]._id
      }
 
      // Log
@@ -67,6 +69,13 @@ exports.update = (collection, id, id_liste, data) => {
 }
 
 exports.delete = (collection, id, id_liste) => {
+    // Log
+    console.log('> Editing item #', id_liste,' from ', collection.collectionName);
+
+    return collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
+}
+
+exports.deleteall = (collection, id, id_liste) => {
     // Log
     console.log('> Editing item #', id_liste,' from ', collection.collectionName);
 
