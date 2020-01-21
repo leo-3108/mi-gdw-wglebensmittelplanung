@@ -299,8 +299,8 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res) {
         try {
             // access to Database
-            let wg = storage.readone(db.wg, req.params.wg_id)
-            let bw = storage.readone2(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+            let bw = bwModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
 
             // throw errors
             if (!wg.length) {

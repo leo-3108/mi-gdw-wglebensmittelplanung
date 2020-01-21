@@ -7,9 +7,7 @@ const {
  * @throws HTTP-Errors
  */
 
- exports.readone = (collection, id, id_liste) => {
-     // Log
-     console.log('> Read item #', id,' #', id_liste, ' from ', collection.collectionName);
+ exports.readone = (collection, id) => {
 
      const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
 
@@ -17,6 +15,9 @@ const {
          // Remove intern id
          delete items[0]._id;
      }
+
+     // Log
+     console.log('[Log] Read Einkaufsmoeglichkeit',id);
 
      return items;
  }
@@ -31,7 +32,7 @@ const {
      }
 
      // Log
-     console.log('> Read all items from ', collection.collectionName);
+     console.log('[Log] Read all Einkaufsmoeglichkeite');
 
      return items;
  }
