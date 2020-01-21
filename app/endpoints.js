@@ -8,8 +8,8 @@ const error = require('rest-api-errors');
 
 const bewohnerModel = require('./models/bewohner.model.js');
 const wgModel = require('./models/wg.model.js');
-const listenelement = require('./models/listenelement.model.js');
-const ekmoeglichkeiten = require('./models/ekmoeglichkeiten.model.js');
+const listenelementModel = require('./models/listenelement.model.js');
+const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function(req, res) {
@@ -168,8 +168,8 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id/liste', function(req, res) {
         try {
             // access to Database
-            let wg = storage.readone(db.wg, req.params.wg_id)
-            let le = storage.readone2(db.listenelement, req.params.wg_id, req.params.element_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+            let le = listenelementModel.readone2(db.listenelement, req.params.wg_id, req.params.element_id)
 
             let output = le[0]
 
@@ -196,7 +196,7 @@ exports.create = (app, storage, db) => {
 
 
     app.delete('/wg/:wg_id/liste', function(req, res) {
-        res.json(storage.delete(db.wg, req.params.wg_id));
+        res.json(listenelementModel.delete(db.wg, req.params.wg_id));
     });
 
     /**
@@ -206,8 +206,8 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id/liste/:element_id', function(req, res) {
         try {
             // access to Database
-            let wg = storage.readone(db.wg, req.params.wg_id)
-            let le = storage.readone2(db.listenelement, req.params.wg_id, eq.params.element_id)
+            let wg = listenelementModel.readone(db.wg, req.params.wg_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, eq.params.element_id)
 
             // throw errors
             if (!wg.length) {
@@ -237,15 +237,15 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg/:wg_id/liste', function(req, res) {
-        res.json(storage.create(db.wg, req.params.wg_id, req.body))
+        res.json(listenelementModel.create(db.wg, req.params.wg_id, req.body))
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res) {
-        res.json(storage.update2(db.listenelement, req.params.wg_id, eq.params.element_id, req.body));
+        res.json(listenelementModel.update(db.listenelement, req.params.wg_id, eq.params.element_id, req.body));
     });
 
     app.delete('/wg/:wg_id/liste/:element_id', function(req, res) {
-        res.json(storage.delete2(db.listenelement, req.params.wg_id, eq.params.element_id));
+        res.json(listenelementModel.delete(db.listenelement, req.params.wg_id, eq.params.element_id));
     });
 
     /**
