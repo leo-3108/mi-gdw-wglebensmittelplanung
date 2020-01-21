@@ -20,15 +20,13 @@ exports.create = (collection, data) => {
         console.log(data)
         throw new error.InternalServerError('db-create', 'Internal Server Error')
     }
-    // Log
-    //console.log('> Adding new item #', data.id,' from ', collection.collectionName, ' with: ', data);
+    //log
+    console.log('[Log] Adding new WG',data.id);
 
     return data.id;
 }
 
 exports.readall = (collection) => {
-
-    console.log(collection)
 
     let items = collection.find();
 
@@ -37,13 +35,14 @@ exports.readall = (collection) => {
         delete items[n]._id
     }
 
+    // Log
+    console.log('[Log] Read all WGs');
+
     return items
 }
 
 exports.readone = (collection, wg_id) => {
 
-    // Log
-    //console.log('> Read item #', id, ' from ', collection.collectionName);
     const items = collection.find({
         id: parseInt(wg_id)
     });
@@ -52,19 +51,29 @@ exports.readone = (collection, wg_id) => {
         // Remove intern id
         delete items[0]._id;
     }
+
+    // Log
+    console.log('[Log] Read WG',id);
+
     return items;
 }
 
 exports.update = (collection, id, data) => {
-    // Log
-    //console.log('> Editing item #', id,' from ', collection.collectionName, ' to be: ', data);
 
-    return collection.update({id: parseInt(id)}, data)
+    const items = collection.update({id: parseInt(id)}, data)
+
+    // Log
+    console.log('[Log] Update WG',id);
+
+    return items
 }
 
 exports.delete = (collection, id) => {
-    // Log
-    //console.log('> Editing item #', id,' from ', collection.collectionName);
 
-    return collection.remove({id: parseInt(id)});
+    const items = collection.remove({id: parseInt(id)});
+
+    // Log
+    console.log('[Log] Delete WG',wg_id);
+
+    return items;
 }
