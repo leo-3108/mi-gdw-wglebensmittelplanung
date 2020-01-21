@@ -237,7 +237,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg/:wg_id/liste', function(req, res) {
-        res.json(listenelementModel.create(db.wg, req.params.wg_id, req.body))
+        res.json(listenelementModel.create(db.listenelement, req.params.wg_id, req.body))
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res) {

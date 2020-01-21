@@ -15,7 +15,7 @@ const {
              wg_id: parseInt(wg_id)
          })
          data.id = tmp.length;
-         data.wg_id = parseInt(wg_id);                         //ID-Vegabe wie bei Mitbewohner
+         data.wg_id = parseInt(wg_id);
 
          // Save
          collection.save(data);
