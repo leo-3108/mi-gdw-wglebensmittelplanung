@@ -45,8 +45,10 @@ exports.readone = (collection, wg_id) => {
     // Log
     //console.log('> Read item #', id, ' from ', collection.collectionName);
     const items = collection.find({
-        wg_id: parseInt(wg_id)
+        id: parseInt(wg_id)
     });
+
+    console.log(items)
 
     if (items.length) {
         // Remove intern id
