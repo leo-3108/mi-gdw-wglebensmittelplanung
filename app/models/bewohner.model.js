@@ -7,30 +7,38 @@ const {
  * @throws HTTP-Errors
  */
 
-exports.create = (collection, data, wg_id) => {         //ID klappt noch nicht
+exports.create = (collection, data, wg_id) => {
     // Add id
     var tmp = collection.find({
         wg_id: parseInt(wg_id)
     })
     data.id = tmp.length;
     data.wg_id = parseInt(wg_id);
+
     // Save
     collection.save(data);
+
+    //log
+    console.log('[Log] Adding new Bewohner',data.id,'to WG',data.wg_id);
 
     return data.id;
 }
 
-exports.readall = (collection) => {
+exports.readall = (collection, wg_id) => {
 
-    const items = collection.find();
-
+    var items = collection.find({
+        wg_id: parseInt(wg_id)
+    });
+    console.log(collection.find({
+        wg_id: parseInt(wg_id)
+    }))
     // Remove intern id
-    for (item in items) {
-        delete item._id
+    for(n in items){
+        delete items[n]._id
     }
 
     // Log
-    console.log('> Read all items from ', collection.collectionName);
+    console.log('[Log] Read all Bewohner of WG',parseInt(wg_id));
 
     return items;
 }

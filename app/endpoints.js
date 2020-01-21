@@ -255,11 +255,11 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:id/mitbewohner', function(req, res) {
         try {
             // access to Database
-            let wg = bewohnerModel.readone(db.wg, req.params.wg_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readall(db.bewohner, req.params.wg_id)
 
             let output = bw
-
+            
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
