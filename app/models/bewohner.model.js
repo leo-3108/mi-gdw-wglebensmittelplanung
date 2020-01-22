@@ -19,7 +19,7 @@ exports.create = (collection, data, wg_id) => {
     collection.save(data);
 
     //log
-    console.log('[Log] Adding new Bewohner',data.id,'to WG',data.wg_id);
+    console.log('[Log] Add new Bewohner',data.id,'to WG',data.wg_id);
 
     return data.id;
 }
@@ -29,9 +29,6 @@ exports.readall = (collection, wg_id) => {
     var items = collection.find({
         wg_id: parseInt(wg_id)
     });
-    console.log(collection.find({
-        wg_id: parseInt(wg_id)
-    }))
     // Remove intern id
     for(n in items){
         delete items[n]._id
@@ -63,7 +60,7 @@ exports.readone = (collection, wg_id, mitbewohner_id) => {
 
 exports.update = (collection, wg_id, mitbewohner_id, data) => {
 
-    return collection.update({
+    const items = collection.update({
         wg_id: parseInt(wg_id),
         id: parseInt(mitbewohner_id),
         data
@@ -71,15 +68,31 @@ exports.update = (collection, wg_id, mitbewohner_id, data) => {
 
     // Log
     console.log('[Log] Update Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
+
+    return items;
+}
+
+exports.deleteall = (collection, wg_id) => {
+
+    const items = collection.remove({
+        wg_id: parseInt(wg_id)
+    });
+
+    // Log
+    console.log('[Log] Delete all Bewohner of WG',parseInt(wg_id));
+
+    return items;
 }
 
 exports.delete = (collection, wg_id, mitbewohner_id) => {
 
-    return collection.remove({
-        wg_id: parseInt(wg_id),
-        id: parseInt(mitbewohner_id)
+    const items = collection.remove({
+        id: parseInt(mitbewohner_id),
+        wg_id: parseInt(wg_id)
     });
 
     // Log
     console.log('[Log] Delete Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
+
+    return items;
 }

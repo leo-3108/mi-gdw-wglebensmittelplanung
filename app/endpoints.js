@@ -139,7 +139,7 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res) {
-        res.json(wgModel.delete(db.wg, req.params.wg_id));
+        res.json(wgModel.delete(db.wg, req.params.wg_id),bewohnerModel.deleteall(db.bewohner, req.params.wg_id),listenelementModel.deleteall(db.listenelement, req.params.wg_id));
     });
 
     /**
@@ -289,6 +289,10 @@ exports.create = (app, storage, db) => {
 
     app.put('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         res.json(bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
+    });
+
+    app.delete('/wg/:wg_id/mitbewohner', function(req, res) {
+        res.json(bewohnerModel.deleteall(db.bewohner, req.params.wg_id));
     });
 
     app.delete('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
