@@ -61,9 +61,9 @@ exports.readone = (collection, wg_id, id) => {
     return items;
 }
 
-exports.update = (collection, id, id_liste, data) => {
+exports.update = (collection, id, wg_id, data) => {
 
-    const items = collection.update({id: parseInt(id), id_liste: parseInt(id_liste), data})
+    const items = collection.update({id: parseInt(id), id_liste: parseInt(wg_id), data})
 
     // Log
     console.log('[Log] Update element',id,'of list from WG',wg_id);
@@ -71,22 +71,22 @@ exports.update = (collection, id, id_liste, data) => {
     return items
 }
 
-exports.delete = (collection, id, id_liste) => {
+exports.deleteall = (collection, wg_id) => {
 
-    const items = collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
+    const items = collection.remove({id_liste: parseInt(wg_id)});
 
     // Log
-    console.log('[Log] Delete element',id,'of list from WG',wg_id);
+    console.log('[Log] Delete all elements of list from WG',wg_id);
 
     return items
 }
 
-exports.deleteall = (collection, id, id_liste) => {
+exports.delete = (collection, id, wg_id) => {
 
-    const items = collection.remove({id: parseInt(id), id_liste: parseInt(id_liste)});
+    const items = collection.remove({id: parseInt(id), id_liste: parseInt(wg_id)});
 
     // Log
-    console.log('[Log] Delete all elements of list from WG',wg_id);
+    console.log('[Log] Delete element',id,'of list from WG',wg_id);
 
     return items
 }

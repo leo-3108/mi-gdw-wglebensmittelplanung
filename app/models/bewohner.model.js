@@ -72,6 +72,18 @@ exports.update = (collection, wg_id, mitbewohner_id, data) => {
     return items;
 }
 
+exports.deleteall = (collection, wg_id) => {
+
+    const items = collection.remove({
+        wg_id: parseInt(wg_id)
+    });
+
+    // Log
+    console.log('[Log] Delete all Bewohner of WG',parseInt(wg_id));
+
+    return items;
+}
+
 exports.delete = (collection, wg_id, mitbewohner_id) => {
 
     const items = collection.remove({
