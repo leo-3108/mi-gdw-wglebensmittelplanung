@@ -179,7 +179,7 @@ exports.create = (app, storage, db) => {
     app.get('/wg/:wg_id/liste/:element_id', function(req, res) {
         try {
             // access to Database
-            let wg = listenelementModel.readone(db.wg, req.params.wg_id)
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
             let le = listenelementModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
 
             // throw errors
