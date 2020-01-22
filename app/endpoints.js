@@ -319,27 +319,28 @@ exports.create = (app, storage, db) => {
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'WgMbEk-get-404-bw',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
             if (!list.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'WgMbEk-get-404-list',
                     'Es konnten keine Routen zu Einkaufsmoeglichkeiten berechnet werden, da die Einkaufsliste der WG #' + req.params.wg_id + ' leer ist.'
                 );
             }
 
             if (!coord) {
-                throw new error.NotFound()
+                throw new error.NotAcceptable(
+                    'WgMbEk-get-406-coord',
+                    'Es wurde kein Standord als Query Parameter angegeben: coord'
+                )
             }
 
             // anwendungslogik
             let output = hereAPI.main(coord, wg, bw, list).then(result => {
                 res.status(200).json(result).end()
-            });
-
-            // success
+            })
 
         } catch (e) {
             // error handling

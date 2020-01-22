@@ -19,7 +19,7 @@ const error = require('rest-api-errors')
 exports.main = async function(coord, wg, bw, list){
 
     // Get Einkaufsmoeglichkeiten in der Nähe
-    return anfrage(
+    let places = await anfrage(
         'GET',
         'https://places.cit.api.here.com/places/v1/autosuggest',
         {
@@ -30,19 +30,31 @@ exports.main = async function(coord, wg, bw, list){
         // Filter die Einkausmöglchkeiten heraus, die Elemente der Liste anbieten
 
         return places
-    }).then(places => {
-        // Berechne Routen zu allen Einkaufsmöglichkeiten
-
-        routes = places
-
-        return routes
-    }).then(routes =>{
-        // Ready for print
-
-        output = routes
-
-        return output
     })
+
+    // Berechne Routen zu allen Einkaufsmöglichkeiten
+    let routes = await anfrage(
+        'GET',
+        'https://route.api.here.com/routing/7.2/calculateroute.json',
+        {
+            waypoint0: '51.02496075183629,7.561652965277074',
+            waypoint1: '50.941278,6.958281',
+            departure: 'now',
+            mode: 'fastest;publicTransport',
+            combineChange: 'true'
+        }
+    )
+
+    console.log({
+        places: places,
+        routes: routes
+    })
+
+    // Filter for output
+    return {
+        places: places,
+        routes: routes
+    }
 }
 
 /**
