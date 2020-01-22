@@ -86,7 +86,7 @@ exports.deleteall = (collection, wg_id) => {
 
 exports.delete = (collection, wg_id, mitbewohner_id) => {
 
-    const tmp = collection.findOne({
+      const tmp = collection.findOne({
         id: parseInt(mitbewohner_id),
         wg_id: parseInt(wg_id)
       })
