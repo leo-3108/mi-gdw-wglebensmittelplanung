@@ -32,33 +32,35 @@ exports.main = async function(coord, wg, bw, list){
         return places.results
     })
 
-    let output = array()
+    // Log
+    console.log('[Log] Get Places from HERE API at',coord);
+
+    let output = []
 
     // Geht durch jedes Element durch (0 sind Meta-Daten der Anfrage)
     for(let i=1; i < places.length; i++){
         output[i-1] = places[i]
 
+        // Berechne Routen zu allen Einkaufsmöglichkeiten
+        let route = await anfrage(
+            'GET',
+            'https://route.api.here.com/routing/7.2/calculateroute.json',
+            {
+                waypoint0: coord,
+                waypoint1: toCoord(output[i-1].position),
+                departure: 'now',
+                mode: 'fastest;publicTransport',
+                combineChange: 'true'
+            }
+        )
 
+        output[i-1].route = route.response.route
     }
 
-    // Berechne Routen zu allen Einkaufsmöglichkeiten
-    let routes = await anfrage(
-        'GET',
-        'https://route.api.here.com/routing/7.2/calculateroute.json',
-        {
-            waypoint0: '51.02496075183629,7.561652965277074',
-            waypoint1: '50.941278,6.958281',
-            departure: 'now',
-            mode: 'fastest;publicTransport',
-            combineChange: 'true'
-        }
-    )
+    console.log('[Log] Calculated all routes');
 
     // Filter for output
-    return {
-        places: places,
-        routes: routes
-    }
+    return output
 }
 
 /**
@@ -90,7 +92,20 @@ const anfrage = (method, url, qs) => {
     options.qs = Object.assign(qs, options.qs)
 
     return request(options).catch(e => {
-        console.log(`[HERE-API - Error #${e.error.status || 500}]`, e.error.message, e.error.incidentId || '')
+        console.log(`[HERE-API - Error #${e.error.status || 500}]`, e.error.message || e, e.error.incidentId || '')
         throw new error.InternalServerError('here-anfrage', 'Internal Server Error')
     })
+}
+
+/**
+ * Transforms a Array of Coordinations to a String
+ * @param  {Array|String} coord Die Koordinaten
+ * @return {String}       Die Coordinaten im neuen Format {lo}
+ */
+const toCoord = function(coord){
+    if(typeof(coord) == 'string')
+        return coord
+
+    if(Array.isArray(coord))
+        return `${coord[0]},${coord[1]}`
 }
