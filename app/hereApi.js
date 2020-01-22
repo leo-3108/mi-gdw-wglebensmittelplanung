@@ -29,8 +29,17 @@ exports.main = async function(coord, wg, bw, list){
     ).then(places => {
         // Filter die Einkausmöglchkeiten heraus, die Elemente der Liste anbieten
 
-        return places
+        return places.results
     })
+
+    let output = array()
+
+    // Geht durch jedes Element durch (0 sind Meta-Daten der Anfrage)
+    for(let i=1; i < places.length; i++){
+        output[i-1] = places[i]
+
+
+    }
 
     // Berechne Routen zu allen Einkaufsmöglichkeiten
     let routes = await anfrage(
@@ -44,11 +53,6 @@ exports.main = async function(coord, wg, bw, list){
             combineChange: 'true'
         }
     )
-
-    console.log({
-        places: places,
-        routes: routes
-    })
 
     // Filter for output
     return {
@@ -87,10 +91,6 @@ const anfrage = (method, url, qs) => {
 
     return request(options).catch(e => {
         console.log(`[HERE-API - Error #${e.error.status || 500}]`, e.error.message, e.error.incidentId || '')
-        throw new error.InternalServerError('here-anfrage', 'Internavl Server Error')
+        throw new error.InternalServerError('here-anfrage', 'Internal Server Error')
     })
-}
-
-const cache = function(){
-
 }
