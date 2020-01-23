@@ -1,5 +1,6 @@
 # Database
 app/storage/*
+!app/storage/README.md
 
 
 #

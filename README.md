@@ -26,7 +26,17 @@ $ npm install
 2. Compiling via Node.js
 
 ```bash
-$ node App.js
+$ npm run
 ```
 
-3. Access API via a HTTP-Request with Hostadress:3000
+3. Adding Test-Data or Clear Database
+
+```bash
+$ npm run testdata
+```
+
+```bash
+$ npm run clear
+```
+
+4. Access API via a HTTP-Request with Hostadress:3000
