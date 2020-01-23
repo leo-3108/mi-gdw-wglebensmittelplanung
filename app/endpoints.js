@@ -12,7 +12,6 @@ const hereAPI = require('./hereAPI.js')
 const bewohnerModel = require('./models/bewohner.model.js')
 const wgModel = require('./models/wg.model.js')
 const listenelementModel = require('./models/listenelement.model.js')
-const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
 
 /**
  * Haupt-Funktion, die alle Endpoints definiert
