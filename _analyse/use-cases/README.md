@@ -118,6 +118,28 @@ Alle Use Cases befinden sich im Lösungsraum.
 
 ***
 
+## Use Case 5: Vorschlagen nahe liegender Einkaufsmöglichkeiten und jeweiliger Routen
+
+- **Level:** Primary Task
+- **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element.
+- **Success End Condition:** Dem User werden alle Einkaufsmöglichkeiten in seiner Nähe mit einer berechneten Route angezeigt.
+- **Failed End Condition:** Der User erhält keine Benachrichtigung.
+- **Primary Actor:** System
+- **Trigger:** Der User möchte ein Produkt erwerben.
+
+### Main Success Szenario
+| #   | Beschreibung |
+|:---:|--------------|
+| 1. | Der User wird über Einkaufsmöglichkeiten benachrichtigt. |
+| 2. | Dem User wird eine Route vorgeschlagen. |
+| 3. | Der User bemerkt die Benachrichtigung. |
+
+### Erweiterungen
+| #   | Extension |
+|:---:|--------------|
+| 2a. | Der User entscheidet sich, das Produkt zu kaufen. |
+
+
 **Template (nach Cockburn):**
 
 ```
