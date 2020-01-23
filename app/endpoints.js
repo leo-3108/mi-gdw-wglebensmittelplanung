@@ -14,16 +14,40 @@ const wgModel = require('./models/wg.model.js')
 const listenelementModel = require('./models/listenelement.model.js')
 const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
 
-exports.create = (app, storage, db) => {
+/**
+ * Haupt-Funktion, die alle Endpoints definiert
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
+exports.create = (app, db) => {
     app.get('/', function(req, res) {
         res.json({
             name: 'WG-Lebensmittelplaner',
         })
     })
 
-    /**
-     * WG-------------------------------------------------------------------------
-     */
+    // WG
+    wgEndpoints(app, db)
+
+    // Einkaufsliste
+    listeEndpoints(app, db)
+
+    // Listenelement
+    listenelementEndpoints(app, db)
+
+    // Bewohner
+    bewohnerEndpoints(app, db)
+
+    // Einkaufsmoeglichkeiten
+    einkaufsmoeglichkeitenEndpoints(app, db)
+}
+
+/**
+ * Definiert alle Endpoints die zur Ressource 'WG' gehören
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
+const wgEndpoints = (app, db) => {
 
     app.get('/wg', function(req, res) {
         try {
@@ -181,11 +205,14 @@ exports.create = (app, storage, db) => {
             res.status(e.status || 500).json(errhandling(e))
         }
     })
+}
 
-    /**
-     * Einkaufsliste-------------------------------------------------------------------------
-     */
-
+/**
+ * Definiert alle Endpoints die zur Ressource 'Liste einer WG' gehören
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
+const listeEndpoints = (app, db) => {
     app.get('/wg/:wg_id/liste', function(req, res) {
         try {
             // access to Database
@@ -251,11 +278,14 @@ exports.create = (app, storage, db) => {
             res.status(e.status || 500).json(errhandling(e))
         }
     })
+}
 
-    /**
-     * Listenelement-------------------------------------------------------------------------
-     */
-
+/**
+ * Definiert alle Endpoints die zur Ressource 'Listenelement' gehören
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
+const listenelementEndpoints = (app, db) => {
     app.get('/wg/:wg_id/liste/:element_id', function(req, res) {
         try {
             // access to Database
@@ -415,11 +445,14 @@ exports.create = (app, storage, db) => {
             res.status(e.status || 500).json(errhandling(e))
         }
     })
+}
 
-    /**
-     * Mitbewohner-------------------------------------------------------------------------
-     */
-
+/**
+ * Definiert alle Endpoints die zur Ressource 'Bewohner' gehören
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
+const bewohnerEndpoints = (app, db) => {
     app.get('/wg/:wg_id/bewohner', function(req, res) {
         try {
             // access to Database
@@ -643,10 +676,14 @@ exports.create = (app, storage, db) => {
             res.status(e.status || 500).json(errhandling(e))
         }
     })
+}
 
-    /**
-     * Einkaufsmöglichkeit-------------------------------------------------------------------------
-     */
+/**
+ * Definiert alle Endpoints die zur Anwendungslogik bzw. zur Beschaffung der Einkaufsmoeglichkeiten gehören
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
+const einkaufsmoeglichkeitenEndpoints = (app, db) => {
     app.get('/wg/:wg_id/bewohner/:bewohner_id/einkaufsmoeglichkeiten', function(req, res){
         try{
             // access to Database
@@ -705,6 +742,12 @@ exports.create = (app, storage, db) => {
     })
 }
 
+/**
+ * Help-Funktion
+ * Definiert wie mit Fehlern umgegangen werden soll
+ * @param  {Object} e Error-Object
+ * @return {Object}   Ausgabe für JSON
+ */
 function errhandling(e){
     console.log(`[Error #${e.status || 500}]`, e.message, e.fileName || '', e.lineNumber || '')
 
