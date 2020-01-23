@@ -57,7 +57,7 @@ exports.readone = (collection, wg_id, element_id) => {
     }
 
     // Log
-    console.log('[Log] Read element', elemnt_id, 'of list from WG', wg_id)
+    console.log('[Log] Read element', element_id, 'of list from WG', wg_id)
 
     return items
 }
