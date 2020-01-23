@@ -34,8 +34,10 @@ db.wg.save({
         "Stadt": "Musterstadt",
         "Land": "Musterland"
     },
-    "Telefonnummer": "123456789"
-}, {
+    "Telefonnummer": "123456789",
+    "id": 0
+})
+db.wg.save({
     "Name": "Test-WG1",
     "Adresse": {
         "Strasse": "teststraße",
@@ -44,8 +46,10 @@ db.wg.save({
         "Stadt": "Musterstadt",
         "Land": "Musterland"
     },
-    "Telefonnummer": "123456789"
-}, {
+    "Telefonnummer": "123456789",
+    "id": 1
+})
+db.wg.save({
     "Name": "Test-WG2",
     "Adresse": {
         "Strasse": "teststraße",
@@ -54,15 +58,62 @@ db.wg.save({
         "Stadt": "Musterstadt",
         "Land": "Musterland"
     },
-    "Telefonnummer": "123456789"
-}, {
-    "Name": "Test-WG3",
-    "Adresse": {
-        "Strasse": "teststraße",
-        "Hausnummer": "1",
-        "PLZ": "12345",
-        "Stadt": "Musterstadt",
-        "Land": "Musterland"
-    },
-    "Telefonnummer": "123456789"
+    "Telefonnummer": "123456789",
+    "id": 2
+})
+
+db.bewohner.save({
+    "Name": "Susi",
+    "Vorname": "Sonnenschein",
+    "Geburtsdatum": "12.12.1997",
+    "Rolle": "String",
+    "Telefonnummer": "234567876543456",
+    "wg_id": 0,
+    "id": 0
+})
+db.bewohner.save({
+    "Name": "Hanna",
+    "Vorname": "Heiter",
+    "Geburtsdatum": "12.12.1997",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "wg_id": 0,
+    "id": 1
+})
+db.bewohner.save({
+    "Name": "Max",
+    "Vorname": "Mustermann",
+    "Geburtsdatum": "12.12.1997",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "wg_id": 1,
+    "id": 2
+})
+db.bewohner.save({
+    "Name": "Fridolin",
+    "Vorname": "Fröhlich",
+    "Geburtsdatum": "12.12.1997",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "wg_id": 1,
+    "id": 2
+
+})
+db.bewohner.save({
+    "Name": "Susi",
+    "Vorname": "Sonnenschein",
+    "Geburtsdatum": "12.12.1997",
+    "Rolle": "String",
+    "Telefonnummer": "234567876543456",
+    "wg_id": 2,
+    "id": 3
+})
+db.bewohner.save({
+    "Name": "Hanna",
+    "Vorname": "Heiter",
+    "Geburtsdatum": "12.12.1997",
+    "Telefonnummer": "234567876543456",
+    "Auto": "false",
+    "wg_id": 2,
+    "id": 4
 })
