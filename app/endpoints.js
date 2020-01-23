@@ -139,7 +139,34 @@ exports.create = (app, storage, db) => {
     });
 
     app.delete('/wg/:wg_id', function(req, res) {
-        res.json(wgModel.delete(db.wg, req.params.wg_id),bewohnerModel.deleteall(db.bewohner, req.params.wg_id),listenelementModel.deleteall(db.listenelement, req.params.wg_id));
+        try {
+            // delete wg and recursive bewohner & listen
+            let wgs = wgModel.delete(db.wg, req.params.wg_id)
+            let bewohner = bewohnerModel.deleteall(db.bewohner,req.params.wg_id)
+            let list = listenelementModel.deleteall(db.listenelement, req.params.wg_id)
+
+            // throw errors
+            if (!wgs) {
+                throw new error.NotFound(
+                    'wg-get-404',
+                    'Es konnte keine WG gefunden werden.'
+                );
+            }
+
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                }
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     /**
