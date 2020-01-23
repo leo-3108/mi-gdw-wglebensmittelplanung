@@ -1,5 +1,10 @@
 const db = require('diskdb')
 
+// Datatypes
+const bewohnerModel = require('./models/bewohner.model.js')
+const wgModel = require('./models/wg.model.js')
+const listenelementModel = require('./models/listenelement.model.js')
+
 const reset = () => {
 
     // clear database
@@ -12,7 +17,8 @@ const reset = () => {
         'listenelement'
     ])
 
-    db.wg.save({
+
+    wgModel.create(db.wg, {
         "Name": "Test-WG0",
         "Adresse": {
             "Strasse": "teststraße",
@@ -21,10 +27,9 @@ const reset = () => {
             "Stadt": "Musterstadt",
             "Land": "Musterland"
         },
-        "Telefonnummer": "123456789",
-        "id": 0
+        "Telefonnummer": "123456789"
     })
-    db.wg.save({
+    wgModel.create(db.wg, {
         "Name": "Test-WG1",
         "Adresse": {
             "Strasse": "teststraße",
@@ -33,10 +38,9 @@ const reset = () => {
             "Stadt": "Musterstadt",
             "Land": "Musterland"
         },
-        "Telefonnummer": "123456789",
-        "id": 1
+        "Telefonnummer": "123456789"
     })
-    db.wg.save({
+    wgModel.create(db.wg, {
         "Name": "Test-WG2",
         "Adresse": {
             "Strasse": "teststraße",
@@ -46,137 +50,99 @@ const reset = () => {
             "Land": "Musterland"
         },
         "Telefonnummer": "123456789",
-        "id": 2
     })
 
-    db.bewohner.save({
+    bewohnerModel.create(db.bewohner, {
         "Name": "Susi",
         "Vorname": "Sonnenschein",
         "Geburtsdatum": "12.12.1997",
         "Rolle": "String",
-        "Telefonnummer": "234567876543456",
-        "wg_id": 0,
-        "id": 0
-    })
-    db.bewohner.save({
+        "Telefonnummer": "234567876543456"
+    }, 0)
+    bewohnerModel.create(db.bewohner, {
         "Name": "Hanna",
         "Vorname": "Heiter",
         "Geburtsdatum": "12.12.1997",
         "Telefonnummer": "234567876543456",
-        "Auto": "false",
-        "wg_id": 0,
-        "id": 1
-    })
-    db.bewohner.save({
+        "Auto": "false"
+    }, 0)
+    bewohnerModel.create(db.bewohner, {
         "Name": "Max",
         "Vorname": "Mustermann",
         "Geburtsdatum": "12.12.1997",
         "Telefonnummer": "234567876543456",
-        "Auto": "false",
-        "wg_id": 1,
-        "id": 0
-    })
-    db.bewohner.save({
+        "Auto": "false"
+    }, 1)
+    bewohnerModel.create(db.bewohner, {
         "Name": "Fridolin",
         "Vorname": "Fröhlich",
         "Geburtsdatum": "12.12.1997",
         "Telefonnummer": "234567876543456",
-        "Auto": "false",
-        "wg_id": 1,
-        "id": 1
-
-    })
-    db.bewohner.save({
+        "Auto": "false"
+    }, 1)
+    bewohnerModel.create(db.bewohner, {
         "Name": "Susi",
         "Vorname": "Sonnenschein",
         "Geburtsdatum": "12.12.1997",
         "Rolle": "String",
-        "Telefonnummer": "234567876543456",
-        "wg_id": 2,
-        "id": 0
-    })
-    db.bewohner.save({
+        "Telefonnummer": "234567876543456"
+    }, 2)
+    bewohnerModel.create(db.bewohner, {
         "Name": "Hanna",
         "Vorname": "Heiter",
         "Geburtsdatum": "12.12.1997",
         "Telefonnummer": "234567876543456",
         "Auto": "false",
-        "wg_id": 2,
-        "id": 1
-    })
+    }, 2)
 
-    db.listenelement.save({
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Tomaten",
-        "Geschäft": "Tomatengeschaeft",
-        "id": 0,
-        "wg_id": 0
-    })
-    db.listenelement.save({
+        "Geschäft": "Tomatengeschaeft"
+    }, 0)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Bananen",
-        "Geschäft": "Bananengeschaeft",
-        "id": 1,
-        "wg_id": 0
-    })
-    db.listenelement.save({
+        "Geschäft": "Bananengeschaeft"
+    }, 0)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Zitronen",
-        "Geschäft": "Zitronengeschaeft",
-        "id": 2,
-        "wg_id": 0
-    })
-    db.listenelement.save({
+        "Geschäft": "Zitronengeschaeft"
+    }, 0)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Gurken",
-        "Geschäft": "Gurkengeschaeft",
-        "id": 3,
-        "wg_id": 0
-    })
-    db.listenelement.save({
+        "Geschäft": "Gurkengeschaeft"
+    }, 1)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Gurken",
-        "Geschäft": "Gurkengeschaeft",
-        "id": 0,
-        "wg_id": 1
-    })
-    db.listenelement.save({
+        "Geschäft": "Gurkengeschaeft"
+    }, 1)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Zitronen",
-        "Geschäft": "Zitronengeschaeft",
-        "id": 1,
-        "wg_id": 1
-    })
-    db.listenelement.save({
+        "Geschäft": "Zitronengeschaeft"
+    }, 1)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Tomaten",
-        "Geschäft": "Tomatengeschaeft",
-        "id": 2,
-        "wg_id": 1
-    })
-    db.listenelement.save({
+        "Geschäft": "Tomatengeschaeft"
+    }, 1)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Bananen",
-        "Geschäft": "Bananengeschaeft",
-        "id": 3,
-        "wg_id": 1
-    })
-    db.listenelement.save({
+        "Geschäft": "Bananengeschaeft"
+    }, 1)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Tomaten",
-        "Geschäft": "Tomatengeschaeft",
-        "id": 0,
-        "wg_id": 2
-    })
-    db.listenelement.save({
+        "Geschäft": "Tomatengeschaeft"
+    }, 2)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Bananen",
-        "Geschäft": "Bananengeschaeft",
-        "id": 1,
-        "wg_id": 2
-    })
-    db.listenelement.save({
+        "Geschäft": "Bananengeschaeft"
+    }, 2)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Gurken",
-        "Geschäft": "Gurkengeschaeft",
-        "id": 2,
-        "wg_id": 2
-    })
-    db.listenelement.save({
+        "Geschäft": "Gurkengeschaeft"
+    }, 2)
+    listenelementModel.create(db.listenelement, {
         "Produktname": "Zitronen",
-        "Geschäft": "Zitronengeschaeft",
-        "id": 3,
-        "wg_id": 2
-    })
+        "Geschäft": "Zitronengeschaeft"
+    }, 2)
 
     console.log('[Log] Successfully inserted Test Data')
 }

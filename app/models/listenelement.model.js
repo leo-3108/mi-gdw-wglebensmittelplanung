@@ -1,15 +1,6 @@
-const {
-    checkSchema
-} = require('express-validator')
+exports.create = (collection, data, wg_id) => {
 
-/**
- * CRUD-Befehle for Listenelement
- * @throws HTTP-Errors
- */
-
- exports.create = (collection, wg_id, data) => {
-
-     try{
+try{
          // Add id
          var tmp = collection.find({
              wg_id: parseInt(wg_id)
