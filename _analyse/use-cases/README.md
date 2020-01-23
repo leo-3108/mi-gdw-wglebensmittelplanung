@@ -118,7 +118,7 @@ Alle Use Cases befinden sich im Lösungsraum.
 
 ***
 
-## Use Case 5: Vorschlagen nahe liegender Einkaufsmöglichkeiten und jeweiliger Routen
+## Use Case 5: Vorschlagen naheliegender Einkaufsmöglichkeiten und der jeweiligen Routen
 
 - **Level:** Primary Task
 - **Preconditions:** Es existiert eine Einkaufsliste mit mind. einem Element.
