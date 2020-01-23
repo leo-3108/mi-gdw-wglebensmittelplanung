@@ -14,6 +14,11 @@ const wgModel = require('./models/wg.model.js')
 const listenelementModel = require('./models/listenelement.model.js')
 const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
 
+/**
+ * Haupt-Funktion, die alle Endpoints definiert
+ * @param  {Object} app Die Express.js Instanz
+ * @param  {Object} db  Die DiskDB Instanz
+ */
 exports.create = (app, db) => {
     app.get('/', function(req, res) {
         res.json({
