@@ -1,96 +1,120 @@
 exports.create = (collection, data, wg_id) => {
 
-try{
-         // Add id
-         var tmp = collection.find({
-             wg_id: parseInt(wg_id)
-         })
-         data.id = tmp.length
-         data.wg_id = parseInt(wg_id)
+    // Add id
+    var tmp = collection.find({
+        wg_id: parseInt(wg_id)
+    })
+    data.id = tmp.length
+    data.wg_id = parseInt(wg_id)
 
-         // Save
-         collection.save(data)
-     }
-     catch(e){
-         throw new error.InternalServerError('db-create', 'Internal Server Error')
-     }
-     //log
-     console.log('[Log] Add new element',data.id,'to list from WG',data.wg_id)
+    // Add visability
+    data.vis = true
 
-     return data.id
- }
+    // Save
+    collection.save(data)
 
- exports.readall = (collection, wg_id) => {
+    // Log
+    console.log('[Log] Add new element', data.id, 'to list from WG', data.wg_id)
 
-     var items = collection.find({
-         wg_id: parseInt(wg_id)
-     })
+    return data.id
+}
 
-     // Remove intern id
-     for(n in items){
-         delete items[n]._id
-     }
+exports.readall = (collection, wg_id) => {
 
-     // Log
-     console.log('[Log] Read all elements of list from WG',wg_id)
+    var items = collection.find({
+        wg_id: parseInt(wg_id),
+        vis: true
+    })
 
-     return items
- }
-
-exports.readone = (collection, wg_id, id) => {
-
-    const items = collection.find({id: parseInt(id), id_liste: parseInt(wg_id)})
-
-    if(items.length){
+    for (n in items) {
         // Remove intern id
-        delete items[0]._id
+        delete items[n]._id
+
+        // Remove visability
+        delete items[n].vis
     }
 
     // Log
-    console.log('[Log] Read element',id,'of list from WG',wg_id)
+    console.log('[Log] Read all elements of list from WG', wg_id)
 
     return items
 }
 
-exports.update = (collection, id, wg_id, data) => {
+exports.readone = (collection, wg_id, element_id) => {
 
-    const items = collection.update(
-        {
-            id: parseInt(id),
-            id_liste: parseInt(wg_id)
+    const items = collection.find({
+        id: parseInt(element_id),
+        wg_id: parseInt(wg_id),
+        vis: true
+    })
+
+    if (items.length) {
+        // Remove intern id
+        delete items[0]._id
+
+        // Remove visability
+        delete items[0].vis
+    }
+
+    // Log
+    console.log('[Log] Read element', id, 'of list from WG', wg_id)
+
+    return items
+}
+
+exports.update = (collection, element_id, wg_id, data) => {
+
+    const items = collection.update({
+            id: parseInt(element_id),
+            wg_id: parseInt(wg_id),
+            vis: true
         },
         data
     )
 
     // Log
-    console.log('[Log] Update element',id,'of list from WG',wg_id)
+    console.log('[Log] Update element', id, 'of list from WG', wg_id)
 
     return items
 }
 
 exports.deleteall = (collection, wg_id) => {
 
-    const items = collection.remove({wg_id: parseInt(wg_id)})
+    const tmp = collection.findOne({
+        wg_id: parseInt(wg_id),
+        vis: true
+    })
+
+    for (item of tmp) {
+        collection.update({
+            _id: item._id
+        }, {
+            vis: false
+        })
+    }
 
     // Log
-    console.log('[Log] Delete all elements of list from WG',wg_id)
+    console.log('[Log] Delete all elements of list from WG', wg_id)
 
-    return items
+    return true
 }
 
-exports.delete = (collection, wg_id, id) => {
+exports.delete = (collection, wg_id, element_id) => {
 
     const tmp = collection.findOne({
-      id: parseInt(id),
-      id_liste: parseInt(wg_id)
+        id: parseInt(element_id),
+        wg_id: parseInt(wg_id),
+        vis: true
     })
 
-    const items = collection.remove({
-      _id: tmp._id
+    const items = collection.update({
+        _id: tmp._id
+    }, {
+        vis: false
     })
 
     // Log
-    console.log('[Log] Delete element',id,'of list from WG',wg_id)
+    console.log('[Log] Delete element', id, 'of list from WG', wg_id)
 
     return items
 }
