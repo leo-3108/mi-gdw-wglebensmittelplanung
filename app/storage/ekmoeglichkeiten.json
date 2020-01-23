@@ -1,9 +1,0 @@
-[
-  {
-   "Name": "String",
-   "Adresse": "String",
-   "Koordinaten": "Int",
-   "Typ": "String",
-   "Öffnungszeit": "Int"
- }
-]

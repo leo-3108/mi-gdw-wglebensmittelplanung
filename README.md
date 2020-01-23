@@ -26,7 +26,7 @@ $ npm install
 2. Compiling via Node.js
 
 ```bash
-$ node App.js
+$ node app.js
 ```
 
 3. Access API via a HTTP-Request with Hostadress:3000
