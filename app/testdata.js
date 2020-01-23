@@ -1,14 +1,14 @@
 const db = require('diskdb')
 
-exports.reset = () => {
+const reset = () => {
 
     // clear database
-    this.resetclear()
+    resetclear()
+    console.log('[Log] Successfully resetted DB')
 
     db.connect('./app/storage', [
         'wg',
         'bewohner',
-        'ekmoeglichkeiten',
         'listenelement'
     ])
 
@@ -177,20 +177,23 @@ exports.reset = () => {
         "id": 3,
         "wg_id": 2
     })
+
+    console.log('[Log] Successfully inserted Test Data')
 }
 
-exports.resetclear = () => {
+const resetclear = () => {
     // connect to database
     db.connect('./app/storage', [
         'wg',
         'bewohner',
-        'ekmoeglichkeiten',
         'listenelement'
     ])
 
     // remove all data
     db.wg.remove()
     db.listenelement.remove()
-    db.ekmoeglichkeiten.remove()
     db.bewohner.remove()
 }
+
+
+reset()
