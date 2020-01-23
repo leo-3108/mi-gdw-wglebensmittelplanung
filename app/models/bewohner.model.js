@@ -1,13 +1,9 @@
-const {
-    checkSchema
-} = require('express-validator')
-
 /**
- * CRUD-Befehle for Bewohner
- * @throws HTTP-Errors
+ * Bewohner Modell
  */
 
 exports.create = (collection, data, wg_id) => {
+
     // Add id
     var tmp = collection.find({
         wg_id: parseInt(wg_id)
@@ -15,11 +11,14 @@ exports.create = (collection, data, wg_id) => {
     data.id = tmp.length
     data.wg_id = parseInt(wg_id)
 
+    // Add visability
+    data.vis = true
+
     // Save
     collection.save(data)
 
-    //log
-    console.log('[Log] Add new Bewohner',data.id,'to WG',data.wg_id)
+    // Log
+    console.log('[Log] Add new Bewohner', data.id, 'to WG', data.wg_id)
 
     return data.id
 }
@@ -27,15 +26,20 @@ exports.create = (collection, data, wg_id) => {
 exports.readall = (collection, wg_id) => {
 
     var items = collection.find({
-        wg_id: parseInt(wg_id)
+        wg_id: parseInt(wg_id),
+        vis: true
     })
-    // Remove intern id
-    for(n in items){
+
+    for (n in items) {
+        // Remove intern id
         delete items[n]._id
+
+        // Remove visability
+        delete items[n].vis
     }
 
     // Log
-    console.log('[Log] Read all Bewohner of WG',wg_id)
+    console.log('[Log] Read all Bewohner of WG', wg_id)
 
     return items
 }
@@ -44,64 +48,79 @@ exports.readone = (collection, wg_id, bewohner_id) => {
 
     const items = collection.find({
         wg_id: parseInt(wg_id),
-        id: parseInt(bewohner_id)
+        id: parseInt(bewohner_id),
+        vis: true
     })
 
     if (items.length) {
         // Remove intern id
         delete items[0]._id
+
+        // Remove visability
+        delete items[0].vis
     }
 
     // Log
-    console.log('[Log] Read Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
+    console.log('[Log] Read Bewohner', parseInt(bewohner_id), 'of WG', parseInt(wg_id))
 
     return items
 }
 
 exports.update = (collection, wg_id, bewohner_id, data) => {
-
+    
     const tmp = collection.findOne({
-      id: parseInt(bewohner_id),
-      wg_id: parseInt(wg_id)
+        id: parseInt(bewohner_id),
+        wg_id: parseInt(wg_id),
+        vis: true
     })
 
     const items = collection.update({
-      _id: tmp._id
+        _id: tmp._id
     }, data)
-
-
     // Log
-    console.log('[Log] Update Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
+    console.log('[Log] Update Bewohner', parseInt(bewohner_id), 'of WG', parseInt(wg_id))
 
     return items
 }
 
 exports.deleteall = (collection, wg_id) => {
 
-    const items = collection.remove({
-        wg_id: parseInt(wg_id)
+    const tmp = collection.findOne({
+        wg_id: parseInt(wg_id),
+        vis: true
     })
 
-    // Log
-    console.log('[Log] Delete all Bewohner of WG',parseInt(wg_id))
+    for (item of tmp) {
+        collection.update({
+            _id: item._id
+        }, {
+            vis: false
+        })
+    }
 
-    return items
+    // Log
+    console.log('[Log] Delete all Bewohner of WG', parseInt(wg_id))
+
+    return true
 }
 
 exports.delete = (collection, wg_id, bewohner_id) => {
 
-      const tmp = collection.findOne({
+    const tmp = collection.findOne({
         id: parseInt(bewohner_id),
-        wg_id: parseInt(wg_id)
-      })
+        wg_id: parseInt(wg_id),
+        vis: true
+    })
 
-      const items = collection.remove({
+    const items = collection.update({
         _id: tmp._id
-      })
+    }, {
+        vis: false
+    })
 
 
     // Log
-    console.log('[Log] Delete Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
+    console.log('[Log] Delete Bewohner', parseInt(bewohner_id), 'of WG', parseInt(wg_id))
 
-    return items
+    return true
 }

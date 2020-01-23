@@ -335,7 +335,7 @@ const listenelementEndpoints = (app, db) => {
             }
 
             // create
-            let list_id = listenelementModel.create(db.listenelement, req.params.wg_id, req.body)
+            let list_id = listenelementModel.create(db.listenelement, req.body, req.params.wg_id)
 
             // output
             let listenelement = wgModel.readone(db.wg, list_id)
@@ -751,6 +751,7 @@ const einkaufsmoeglichkeitenEndpoints = (app, db) => {
  */
 function errhandling(e){
     console.log(`[Error #${e.status || 500}]`, e.message, e.fileName || '', e.lineNumber || '')
+    console.error(e)
 
     return {
         response: {
