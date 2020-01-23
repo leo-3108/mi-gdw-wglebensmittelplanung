@@ -1,11 +1,14 @@
 /**
- * Erstellt alle REST-Ressourcen
+ * Definiert alle Express Endpoints
+ * @see https://expressjs.com/en/guide/routing.html
  */
-const {
-    checkSchema
-} = require('express-validator');
-const error = require('rest-api-errors');
 
+// Modules
+const { checkSchema } = require('express-validator');
+const error = require('rest-api-errors');
+const hereAPI = require('./hereAPI.js');
+
+// Datatypes
 const bewohnerModel = require('./models/bewohner.model.js');
 const wgModel = require('./models/wg.model.js');
 const listenelementModel = require('./models/listenelement.model.js');
@@ -299,12 +302,13 @@ exports.create = (app, storage, db) => {
     /**
      * Einkaufsmöglichkeit-------------------------------------------------------------------------
      */
-
-    app.get('/wg/:wg_id/mitbewohner/:id/einkaufsmoeglichkeiten', function(req, res) {
-        try {
+    app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id/einkaufsmoeglichkeiten', function(req, res){
+        try{
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
-            let bw = bwModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let list = listenelementModel.readall(db.listenelement, req.params.wg_id)
+            let coord = req.query.coord
 
             // throw errors
             if (!wg.length) {
@@ -315,18 +319,40 @@ exports.create = (app, storage, db) => {
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'WgMbEk-get-404-bw',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
+            if (!list.length) {
+                throw new error.NotFound(
+                    'WgMbEk-get-404-list',
+                    'Es konnten keine Routen zu Einkaufsmoeglichkeiten berechnet werden, da die Einkaufsliste der WG #' + req.params.wg_id + ' leer ist.'
+                );
+            }
+
+            if (!coord) {
+                throw new error.NotAcceptable(
+                    'WgMbEk-get-406-coord',
+                    'Es wurde kein Standord als Query Parameter angegeben: coord'
+                )
+            }
 
             // anwendungslogik
-            let output = {
-                api: 'error'
-            };
+            hereAPI.main(coord, wg, bw, list).then(result => {
+                result = {
+                    response: {
+                        status: 200,
+                        message: 'OK'
+                    },
+                    request: {
+                        coord: coord
+                    },
+                    data: result
+                }
 
-            // success
-            res.status(200).json(output).end()
+                res.status(200).json(result).end()
+            })
+
         } catch (e) {
             // error handling
             res.status(e.status || 500).json(errhandling(e));
