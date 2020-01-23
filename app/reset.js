@@ -18,5 +18,22 @@ db.listenelement.remove()
 db.ekmoeglichkeiten.remove()
 db.bewohner.remove()
 
+db.connect('./storage', [
+    'wg',
+    'bewohner',
+    'ekmoeglichkeiten',
+    'listenelement'
+]);
 
-//db.add()
+db.wg.save({
+    "Name": "Test-WG0",
+    "Adresse": {
+        "Strasse": "teststraße",
+        "Hausnummer": "1",
+        "PLZ": "12345",
+        "Stadt": "Musterstadt",
+        "Land": "Musterland"
+    },
+    "Telefonnummer": "123456789",
+    "id": 0
+})
