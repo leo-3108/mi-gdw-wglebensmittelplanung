@@ -16,7 +16,9 @@ const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js');
 
 exports.create = (app, storage, db) => {
     app.get('/', function(req, res) {
-        res.send('Hello World! :D');
+        res.json({
+            name: 'WG-Lebensmittelplaner',
+        });
     });
 
     /**
@@ -31,7 +33,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wgs.length) {
                 throw new error.NotFound(
-                    'wg-get-404',
+                    'wg_get-404',
                     'Es konnten keine WGs gefunden werden.'
                 );
             }
@@ -84,7 +86,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgSingle-get-404',
+                    'wg-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
@@ -125,7 +127,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgSingle-get-404',
+                    'wg-id_put-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
@@ -140,16 +142,27 @@ exports.create = (app, storage, db) => {
 
     app.delete('/wg/:wg_id', function(req, res) {
         try {
-            // delete wg and recursive bewohner & listen
-            let wgs = wgModel.delete(db.wg, req.params.wg_id)
-            let bewohner = bewohnerModel.deleteall(db.bewohner,req.params.wg_id)
-            let list = listenelementModel.deleteall(db.listenelement, req.params.wg_id)
+            // access to Database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
 
             // throw errors
-            if (!wgs) {
+            if (!wg) {
                 throw new error.NotFound(
-                    'wg-get-404',
-                    'Es konnte keine WG gefunden werden.'
+                    'wg-id_delete-404',
+                    'Es konnte keine WG mit der ID #' + req.params.wg_id + 'gefunden werden.'
+                );
+            }
+
+            // delete wg and recursive bewohner & listen
+            let wgDelete = wgModel.delete(db.wg, req.params.wg_id)
+            let bewohnerDelete = bewohnerModel.deleteall(db.bewohner,req.params.wg_id)
+            let listDelete = listenelementModel.deleteall(db.listenelement, req.params.wg_id)
+
+            // throw errors
+            if (!wgDelete || !bewohnerDelete || !listDelete) {
+                throw new error.InternalServerError(
+                    'wg-delete-500',
+                    'Internal Server Error'
                 );
             }
 
@@ -179,15 +192,16 @@ exports.create = (app, storage, db) => {
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let le = listenelementModel.readall(db.listenelement, req.params.wg_id, req.params.element_id)
 
-            let output = le
-
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-liste_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
+
+            // output
+            let output = le
 
             // success
             res.status(200).json(output).end()
@@ -199,7 +213,43 @@ exports.create = (app, storage, db) => {
 
 
     app.delete('/wg/:wg_id/liste', function(req, res) {
-        res.json(listenelementModel.deleteall(db.wg, req.params.wg_id));
+        try {
+            // access to Database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wg-id-liste_delete-404',
+                    'Es konnte keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // delete liste
+            let listDelete = listenelementModel.deleteall(db.listenelement, req.params.wg_id)
+
+            // throw errors
+            if (!listDelete) {
+                throw new error.InternalServerError(
+                    'wg-id-liste_delete-500',
+                    'Internal Server Error'
+                );
+            }
+
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                }
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     /**
@@ -215,15 +265,23 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-liste-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
             if (!le.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
-                    'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' gefunden werden.'
+                    'wg-id-liste-id_get-404',
+                    'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + 'gefunden werden.'
                 );
+            }
+
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                },
+                data: le[0]
             }
 
             // success
@@ -235,15 +293,127 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg/:wg_id/liste', function(req, res) {
-        res.json(listenelementModel.create(db.listenelement, req.params.wg_id, req.body))
+        try {
+            // access to database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wg-id-liste_post-404',
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // create
+            let list_id = listenelementModel.create(db.listenelement, req.params.wg_id, req.body)
+
+            // output
+            let listenelement = wgModel.readone(db.wg, list_id)
+            let output = {
+                response: {
+                    status: 201,
+                    message: 'Created'
+                },
+                data: listenelement
+            }
+
+            // success
+            res.status(201).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res) {
-        res.json(listenelementModel.update(db.listenelement, req.params.wg_id, req.params.element_id, req.body));
+        try {
+            // access to db
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wg-id-liste-id_put-404',
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // change
+            let changelog = listenelementModel.update(db.listenelement, req.params.wg_id, req.params.element_id, req.body)
+
+            // output
+            let le = wgModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'Updated'
+                },
+                changelog: changelog,
+                data: le
+            }
+
+            // throw errors
+            if (!le.length) {
+                throw new error.NotFound(
+                    'wg-id-liste-id_put-404',
+                    'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     app.delete('/wg/:wg_id/liste/:element_id', function(req, res) {
-        res.json(listenelementModel.delete(db.listenelement, req.params.wg_id, req.params.element_id));
+        try {
+            // access to Database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.wg_id,  req.params.element_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+            if (!le.length) {
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' gefunden werden.'
+                );
+            }
+
+            // delete listenelement
+            let listDelete = listenelementModel.delete(db.listenelement, req.params.wg_id, req.params.element_id)
+
+            // throw errors
+            if (!listDelete) {
+                throw new error.InternalServerError(
+                    'wg-get-404',
+                    'Internal Server Error'
+                );
+            }
+
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                }
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     /**
@@ -281,7 +451,37 @@ exports.create = (app, storage, db) => {
     });
 
     app.post('/wg/:wg_id/mitbewohner', function(req, res) {
-        res.json(bewohnerModel.create(db.bewohner, req.body, req.params.wg_id));
+        try {
+            // access to database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wg-id-mitbewohner_post-404',
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // create
+            let bw_id = bewohnerModel.create(db.bewohner, req.body, req.params.wg_id)
+
+            // output
+            let bw = bewohnerModel.readone(db.wg, bw_id)
+            let output = {
+                response: {
+                    status: 201,
+                    message: 'Created'
+                },
+                data: bw
+            }
+
+            // success
+            res.status(201).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
@@ -315,15 +515,133 @@ exports.create = (app, storage, db) => {
     });
 
     app.put('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
-        res.json(bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body));
+        try {
+            // access to db
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wg-id-mitbewohner-id_put-404',
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // change
+            let changelog = bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body)
+
+            // output
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'Updated'
+                },
+                changelog: changelog,
+                data: bw
+            }
+
+            // throw errors
+            if (!le.length) {
+                throw new error.NotFound(
+                    'wg-id-mitbewohner-id_put-404',
+                    'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     app.delete('/wg/:wg_id/mitbewohner', function(req, res) {
-        res.json(bewohnerModel.deleteall(db.bewohner, req.params.wg_id));
+        try {
+            // access to Database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wg-id-mitbewohner_delete-404',
+                    'Es konnte keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+
+            // delete liste
+            let bewDelete = bewohnerModel.deleteall(db.bewohner, req.params.wg_id)
+
+            // throw errors
+            if (!bewDelete) {
+                throw new error.InternalServerError(
+                    'wg-id-mitbewohner_delete-500',
+                    'Internal Server Error'
+                );
+            }
+
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                }
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     app.delete('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
-        res.json(bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id));
+        try {
+            // access to Database
+            let wg = wgModel.readone(db.wg, req.params.wg_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+
+            // throw errors
+            if (!wg.length) {
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                );
+            }
+            if (!bw.length) {
+                throw new error.NotFound(
+                    'wgList-get-404',
+                    'Es konnte kein Bewohner mit der ID #' + req.params.mitbewohner_id + ' gefunden werden.'
+                );
+            }
+
+            // delete listenelement
+            let bewohnerDelete = bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+
+            // throw errors
+            if (!bewohnerDelete) {
+                throw new error.InternalServerError(
+                    'wg-get-404',
+                    'Internal Server Error'
+                );
+            }
+
+            // output
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                }
+            }
+
+            // success
+            res.status(200).json(output).end()
+        } catch (e) {
+            // error handling
+            res.status(e.status || 500).json(errhandling(e));
+        }
     });
 
     /**
@@ -393,7 +711,8 @@ function errhandling(e){
     return {
         response: {
             status: e.status || 500,
-            message: e.message
+            message: e.message,
+            code: e.code
         }
     }
 }
