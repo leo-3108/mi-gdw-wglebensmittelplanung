@@ -751,6 +751,7 @@ const einkaufsmoeglichkeitenEndpoints = (app, db) => {
  */
 function errhandling(e){
     console.log(`[Error #${e.status || 500}]`, e.message, e.fileName || '', e.lineNumber || '')
+    console.error(e)
 
     return {
         response: {
