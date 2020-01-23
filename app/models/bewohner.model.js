@@ -77,7 +77,6 @@ exports.update = (collection, wg_id, bewohner_id, data) => {
     const items = collection.update({
         _id: tmp._id
     }, data)
-
     // Log
     console.log('[Log] Update Bewohner', parseInt(bewohner_id), 'of WG', parseInt(wg_id))
 
