@@ -338,7 +338,7 @@ const listenelementEndpoints = (app, db) => {
             let list_id = listenelementModel.create(db.listenelement, req.body, req.params.wg_id)
 
             // output
-            let listenelement = wgModel.readone(db.wg, list_id)
+            let listenelement = listenelementModel.readone(db.wg, req.params.wg_id, list_id)
             let output = {
                 response: {
                     status: 201,
@@ -499,7 +499,7 @@ const bewohnerEndpoints = (app, db) => {
             let bw_id = bewohnerModel.create(db.bewohner, req.body, req.params.wg_id)
 
             // output
-            let bw = bewohnerModel.readone(db.wg, bw_id)
+            let bw = bewohnerModel.readone(db.wg, req.params.wg_id, bw_id)
             let output = {
                 response: {
                     status: 201,
