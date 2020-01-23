@@ -574,7 +574,7 @@ const bewohnerEndpoints = (app, db) => {
             }
 
             // throw errors
-            if (!le.length) {
+            if (!bw.length) {
                 throw new error.NotFound(
                     'wg-id-bewohner-id_put-404',
                     'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'

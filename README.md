@@ -35,4 +35,4 @@ $ npm run reset
 $ npm start
 ```
 
-3. Access API via a HTTP-Request with `Hostadress4:3000
+4. Access API via a HTTP-Request with `Hostadress`:3000
