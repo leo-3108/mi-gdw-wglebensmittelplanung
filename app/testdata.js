@@ -34,6 +34,35 @@ db.wg.save({
         "Stadt": "Musterstadt",
         "Land": "Musterland"
     },
-    "Telefonnummer": "123456789",
-    "id": 0
+    "Telefonnummer": "123456789"
+}, {
+    "Name": "Test-WG1",
+    "Adresse": {
+        "Strasse": "teststraße",
+        "Hausnummer": "1",
+        "PLZ": "12345",
+        "Stadt": "Musterstadt",
+        "Land": "Musterland"
+    },
+    "Telefonnummer": "123456789"
+}, {
+    "Name": "Test-WG2",
+    "Adresse": {
+        "Strasse": "teststraße",
+        "Hausnummer": "1",
+        "PLZ": "12345",
+        "Stadt": "Musterstadt",
+        "Land": "Musterland"
+    },
+    "Telefonnummer": "123456789"
+}, {
+    "Name": "Test-WG3",
+    "Adresse": {
+        "Strasse": "teststraße",
+        "Hausnummer": "1",
+        "PLZ": "12345",
+        "Stadt": "Musterstadt",
+        "Land": "Musterland"
+    },
+    "Telefonnummer": "123456789"
 })
