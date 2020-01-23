@@ -68,8 +68,6 @@ exports.update = (collection, wg_id, id, data) => {
       wg_id: parseInt(wg_id)
     })
 
-    console.log(tmp)
-
     const items = collection.update({
       _id: tmp._id
     }, data)
