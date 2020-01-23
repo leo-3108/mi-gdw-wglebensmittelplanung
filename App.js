@@ -14,6 +14,8 @@ const app = express();
 const storage = require('./app/storage');
 const endpoints = require('./app/endpoints');
 const rs = require('./app/testdata');
+const readline = require('readline');
+const rl = readline.createInterface(process.stdin,process.stdout);
 
 // Support for JSON-Body in HTTP-Request
 app.use(express.json())
@@ -35,8 +37,6 @@ app.use(function(req, res, next){
     console.log('\x1b[0m')
 })
 
-rs.reset()
-
 // Create Database
 const db = storage.init();
 
@@ -45,5 +45,12 @@ endpoints.create(app, storage, db);
 
 
 app.listen(3000, '0.0.0.0', function () {
+  rl.question("0: Testdaten; 1: leerer Datensatz\n", function (answer){
+    let tmp=answer
+
+    if(tmp==0) rs.reset()
+    else rs.resetclear()
     console.log('WG-Lebensmittelplaner listening on port 3000 on any IPv4-Adress!');
+    rl.close
+  });
 });

@@ -193,3 +193,17 @@ exports.reset = () => {
         "wg_id": 2
     })
 }
+
+exports.resetclear = () => {
+    db.connect('./app/storage', [
+        'wg',
+        'bewohner',
+        'ekmoeglichkeiten',
+        'listenelement'
+    ]);
+
+    db.wg.remove()
+    db.listenelement.remove()
+    db.ekmoeglichkeiten.remove()
+    db.bewohner.remove()
+}
