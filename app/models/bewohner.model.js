@@ -40,11 +40,11 @@ exports.readall = (collection, wg_id) => {
     return items
 }
 
-exports.readone = (collection, wg_id, mitbewohner_id) => {
+exports.readone = (collection, wg_id, bewohner_id) => {
 
     const items = collection.find({
         wg_id: parseInt(wg_id),
-        id: parseInt(mitbewohner_id)
+        id: parseInt(bewohner_id)
     })
 
     if (items.length) {
@@ -53,21 +53,21 @@ exports.readone = (collection, wg_id, mitbewohner_id) => {
     }
 
     // Log
-    console.log('[Log] Read Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id))
+    console.log('[Log] Read Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
 
     return items
 }
 
-exports.update = (collection, wg_id, mitbewohner_id, data) => {
+exports.update = (collection, wg_id, bewohner_id, data) => {
 
     const items = collection.update({
         wg_id: parseInt(wg_id),
-        id: parseInt(mitbewohner_id),
+        id: parseInt(bewohner_id),
         data
     })
 
     // Log
-    console.log('[Log] Update Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id))
+    console.log('[Log] Update Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
 
     return items
 }
@@ -84,10 +84,10 @@ exports.deleteall = (collection, wg_id) => {
     return items
 }
 
-exports.delete = (collection, wg_id, mitbewohner_id) => {
+exports.delete = (collection, wg_id, bewohner_id) => {
 
       const tmp = collection.findOne({
-        id: parseInt(mitbewohner_id),
+        id: parseInt(bewohner_id),
         wg_id: parseInt(wg_id)
       })
 
@@ -97,7 +97,7 @@ exports.delete = (collection, wg_id, mitbewohner_id) => {
 
 
     // Log
-    console.log('[Log] Delete Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id))
+    console.log('[Log] Delete Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
 
     return items
 }

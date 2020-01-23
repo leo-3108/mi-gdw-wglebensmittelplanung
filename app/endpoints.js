@@ -420,7 +420,7 @@ exports.create = (app, storage, db) => {
      * Mitbewohner-------------------------------------------------------------------------
      */
 
-    app.get('/wg/:wg_id/mitbewohner', function(req, res) {
+    app.get('/wg/:wg_id/bewohner', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -431,13 +431,13 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner_get-404',
+                    'wg-id-bewohner_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner_get-404',
+                    'wg-id-bewohner_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
@@ -450,7 +450,7 @@ exports.create = (app, storage, db) => {
         }
     })
 
-    app.post('/wg/:wg_id/mitbewohner', function(req, res) {
+    app.post('/wg/:wg_id/bewohner', function(req, res) {
         try {
             // access to database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -458,7 +458,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner_post-404',
+                    'wg-id-bewohner_post-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
@@ -484,25 +484,25 @@ exports.create = (app, storage, db) => {
         }
     })
 
-    app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.get('/wg/:wg_id/bewohner/:bewohner_id', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
-            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.bewohner_id)
 
             let output = bw[0]
 
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id_get-404',
+                    'wg-id-bewohner-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id_get-404',
-                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
+                    'wg-id-bewohner-id_get-404',
+                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.bewohner_id + ' gefunden werden.'
                 )
             }
 
@@ -514,7 +514,7 @@ exports.create = (app, storage, db) => {
         }
     })
 
-    app.put('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.put('/wg/:wg_id/bewohner/:bewohner_id', function(req, res) {
         try {
             // access to db
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -522,16 +522,16 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id_put-404',
+                    'wg-id-bewohner-id_put-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
 
             // change
-            let changelog = bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.mitbewohner_id, req.body)
+            let changelog = bewohnerModel.update(db.bewohner, req.params.wg_id, req.params.bewohner_id, req.body)
 
             // output
-            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.bewohner_id)
             let output = {
                 response: {
                     status: 200,
@@ -544,7 +544,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!le.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id_put-404',
+                    'wg-id-bewohner-id_put-404',
                     'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
@@ -557,7 +557,7 @@ exports.create = (app, storage, db) => {
         }
     })
 
-    app.delete('/wg/:wg_id/mitbewohner', function(req, res) {
+    app.delete('/wg/:wg_id/bewohner', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -565,7 +565,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner_delete-404',
+                    'wg-id-bewohner_delete-404',
                     'Es konnte keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
@@ -576,7 +576,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!bewDelete) {
                 throw new error.InternalServerError(
-                    'wg-id-mitbewohner_delete-500',
+                    'wg-id-bewohner_delete-500',
                     'Internal Server Error'
                 )
             }
@@ -597,33 +597,33 @@ exports.create = (app, storage, db) => {
         }
     })
 
-    app.delete('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
+    app.delete('/wg/:wg_id/bewohner/:bewohner_id', function(req, res) {
         try {
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
-            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.bewohner_id)
 
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id_delete-404',
+                    'wg-id-bewohner-id_delete-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id_delete-404',
-                    'Es konnte kein Bewohner mit der ID #' + req.params.mitbewohner_id + ' gefunden werden.'
+                    'wg-id-bewohner-id_delete-404',
+                    'Es konnte kein Bewohner mit der ID #' + req.params.bewohner_id + ' gefunden werden.'
                 )
             }
 
             // delete listenelement
-            let bewohnerDelete = bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let bewohnerDelete = bewohnerModel.delete(db.bewohner, req.params.wg_id, req.params.bewohner_id)
 
             // throw errors
             if (!bewohnerDelete) {
                 throw new error.InternalServerError(
-                    'wg-id-mitbewohner-id_delete-500',
+                    'wg-id-bewohner-id_delete-500',
                     'Internal Server Error'
                 )
             }
@@ -647,37 +647,37 @@ exports.create = (app, storage, db) => {
     /**
      * Einkaufsmöglichkeit-------------------------------------------------------------------------
      */
-    app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id/einkaufsmoeglichkeiten', function(req, res){
+    app.get('/wg/:wg_id/bewohner/:bewohner_id/einkaufsmoeglichkeiten', function(req, res){
         try{
             // access to Database
             let wg = wgModel.readone(db.wg, req.params.wg_id)
-            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.mitbewohner_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.bewohner_id)
             let list = listenelementModel.readall(db.listenelement, req.params.wg_id)
             let coord = req.query.coord
 
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
+                    'wg-id-bewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
-                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
+                    'wg-id-bewohner-id-einkaufsmoeglichkeiten_get-404',
+                    'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.bewohner_id + ' gefunden werden.'
                 )
             }
             if (!list.length) {
                 throw new error.NotFound(
-                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
+                    'wg-id-bewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten keine Routen zu Einkaufsmoeglichkeiten berechnet werden, da die Einkaufsliste der WG #' + req.params.wg_id + ' leer ist.'
                 )
             }
 
             if (!coord) {
                 throw new error.NotAcceptable(
-                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-406',
+                    'wg-id-bewohner-id-einkaufsmoeglichkeiten_get-406',
                     'Es wurde kein Standord als Query Parameter angegeben: coord'
                 )
             }
