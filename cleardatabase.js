@@ -1,6 +1,6 @@
 const db = require('diskdb');
 
-db.connect('./storage', [
+db.connect('./app/storage', [
     'wg',
     'bewohner',
     'ekmoeglichkeiten',
