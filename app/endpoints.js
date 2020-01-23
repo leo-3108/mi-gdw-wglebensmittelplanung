@@ -338,7 +338,18 @@ exports.create = (app, storage, db) => {
             }
 
             // anwendungslogik
-            let output = hereAPI.main(coord, wg, bw, list).then(result => {
+            hereAPI.main(coord, wg, bw, list).then(result => {
+                result = {
+                    response: {
+                        status: 200,
+                        message: 'OK'
+                    },
+                    request: {
+                        coord: coord
+                    },
+                    data: result
+                }
+
                 res.status(200).json(result).end()
             })
 
