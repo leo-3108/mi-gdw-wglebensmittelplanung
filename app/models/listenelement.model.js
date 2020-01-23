@@ -63,7 +63,14 @@ exports.readone = (collection, wg_id, id) => {
 
 exports.update = (collection, id, wg_id, data) => {
 
-    const items = collection.update({id: parseInt(id), id_liste: parseInt(wg_id), data})
+    const tmp = collection.findOne({
+      id: parseInt(id),
+      wg_id: parseInt(wg_id)
+    })
+
+    const items = collection.update({
+      _id: tmp._id
+    }, data)
 
     // Log
     console.log('[Log] Update element',id,'of list from WG',wg_id)
