@@ -2,10 +2,12 @@
  * Bewohner Modell
  */
 
+const error = require('rest-api-errors')
+
 exports.create = (collection, data, wg_id) => {
 
     // Add id
-    var tmp = collection.find({
+    let tmp = collection.find({
         wg_id: parseInt(wg_id)
     })
     data.id = tmp.length
@@ -25,7 +27,7 @@ exports.create = (collection, data, wg_id) => {
 
 exports.readall = (collection, wg_id) => {
 
-    var items = collection.find({
+    let items = collection.find({
         wg_id: parseInt(wg_id),
         vis: true
     })
@@ -46,7 +48,7 @@ exports.readall = (collection, wg_id) => {
 
 exports.readone = (collection, wg_id, bewohner_id) => {
 
-    const items = collection.find({
+    let items = collection.find({
         wg_id: parseInt(wg_id),
         id: parseInt(bewohner_id),
         vis: true
@@ -67,16 +69,25 @@ exports.readone = (collection, wg_id, bewohner_id) => {
 }
 
 exports.update = (collection, wg_id, bewohner_id, data) => {
-    
-    const tmp = collection.findOne({
+
+    let tmp = collection.findOne({
         id: parseInt(bewohner_id),
         wg_id: parseInt(wg_id),
         vis: true
     })
 
-    const items = collection.update({
+    // throw errors
+    if (!tmp) {
+        throw new error.NotFound(
+            null,
+            'Es konnten kein Bewohner mit der ID #' + bewohner_id + ' in der WG mit der ID #' + wg_id + ' gefunden werden.'
+        )
+    }
+
+    let items = collection.update({
         _id: tmp._id
     }, data)
+
     // Log
     console.log('[Log] Update Bewohner', parseInt(bewohner_id), 'of WG', parseInt(wg_id))
 
@@ -85,7 +96,7 @@ exports.update = (collection, wg_id, bewohner_id, data) => {
 
 exports.deleteall = (collection, wg_id) => {
 
-    const tmp = collection.findOne({
+    let tmp = collection.find({
         wg_id: parseInt(wg_id),
         vis: true
     })
@@ -106,13 +117,13 @@ exports.deleteall = (collection, wg_id) => {
 
 exports.delete = (collection, wg_id, bewohner_id) => {
 
-    const tmp = collection.findOne({
+    let tmp = collection.findOne({
         id: parseInt(bewohner_id),
         wg_id: parseInt(wg_id),
         vis: true
     })
 
-    const items = collection.update({
+    let items = collection.update({
         _id: tmp._id
     }, {
         vis: false

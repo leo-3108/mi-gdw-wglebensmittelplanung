@@ -1,3 +1,9 @@
+/**
+ * WG Modell
+ */
+
+const error = require('rest-api-errors')
+
 exports.create = (collection, data) => {
 
     // Add id
@@ -17,7 +23,7 @@ exports.create = (collection, data) => {
 
 exports.readall = (collection) => {
 
-    const items = collection.find({
+    let items = collection.find({
         vis: true
     })
 
@@ -37,7 +43,7 @@ exports.readall = (collection) => {
 
 exports.readone = (collection, wg_id) => {
 
-    const items = collection.find({
+    let items = collection.find({
         id: parseInt(wg_id),
         vis: true
     })
@@ -58,12 +64,20 @@ exports.readone = (collection, wg_id) => {
 
 exports.update = (collection, wg_id, data) => {
 
-    const tmp = collection.findOne({
+    let tmp = collection.findOne({
         id: parseInt(wg_id),
         vis: true
     })
 
-    const items = collection.update({
+    // throw errors
+    if (!tmp) {
+        throw new error.NotFound(
+            null,
+            'Es konnten keine WG mit der ID #' + wg_id + ' gefunden werden.'
+        )
+    }
+
+    let items = collection.update({
         _id: tmp._id
     }, data)
 
@@ -75,12 +89,12 @@ exports.update = (collection, wg_id, data) => {
 
 exports.delete = (collection, wg_id) => {
 
-    const tmp = collection.findOne({
+    let tmp = collection.findOne({
         id: parseInt(wg_id),
         vis: true
     })
 
-    const items = collection.update({
+    let items = collection.update({
         _id: tmp._id
     }, {
         vis: false

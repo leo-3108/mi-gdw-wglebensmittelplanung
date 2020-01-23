@@ -341,16 +341,16 @@ const listenelementEndpoints = (app, db) => {
             }
 
             // create
-            let list_id = listenelementModel.create(db.listenelement, req.body, req.params.wg_id)
+            let le_id = listenelementModel.create(db.listenelement, req.body, req.params.wg_id)
 
             // output
-            let listenelement = listenelementModel.readone(db.wg, req.params.wg_id, list_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, le_id)
             let output = {
                 response: {
                     status: 201,
                     message: 'Created'
                 },
-                data: listenelement
+                data: le
             }
 
             // success
@@ -378,7 +378,7 @@ const listenelementEndpoints = (app, db) => {
             let changelog = listenelementModel.update(db.listenelement, req.params.wg_id, req.params.element_id, req.body)
 
             // output
-            let le = wgModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
+            let le = listenelementModel.readone(db.listenelement, req.params.wg_id, req.params.element_id)
             let output = {
                 response: {
                     status: 200,
@@ -512,7 +512,7 @@ const bewohnerEndpoints = (app, db) => {
             let bw_id = bewohnerModel.create(db.bewohner, req.body, req.params.wg_id)
 
             // output
-            let bw = bewohnerModel.readone(db.wg, req.params.wg_id, bw_id)
+            let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, bw_id)
             let output = {
                 response: {
                     status: 201,
@@ -540,7 +540,6 @@ const bewohnerEndpoints = (app, db) => {
                     status: 200,
                     message: 'OK'
                 },
-                changelog: changelog,
                 data: bw[0]
             }
 
@@ -597,7 +596,7 @@ const bewohnerEndpoints = (app, db) => {
             if (!bw.length) {
                 throw new error.NotFound(
                     'wg-id-bewohner-id_put-404',
-                    'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
+                    'Es konnten kein Bewohner mit der ID #' + req.params.bewohner_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 )
             }
 
