@@ -87,7 +87,7 @@ db.bewohner.save({
     "Telefonnummer": "234567876543456",
     "Auto": "false",
     "wg_id": 1,
-    "id": 2
+    "id": 0
 })
 db.bewohner.save({
     "Name": "Fridolin",
@@ -96,7 +96,7 @@ db.bewohner.save({
     "Telefonnummer": "234567876543456",
     "Auto": "false",
     "wg_id": 1,
-    "id": 3
+    "id": 1
 
 })
 db.bewohner.save({
@@ -106,7 +106,7 @@ db.bewohner.save({
     "Rolle": "String",
     "Telefonnummer": "234567876543456",
     "wg_id": 2,
-    "id": 4
+    "id": 0
 })
 db.bewohner.save({
     "Name": "Hanna",
@@ -115,7 +115,7 @@ db.bewohner.save({
     "Telefonnummer": "234567876543456",
     "Auto": "false",
     "wg_id": 2,
-    "id": 5
+    "id": 1
 })
 
 db.listenelement.save({
@@ -131,26 +131,62 @@ db.listenelement.save({
     "wg_id": 0
 })
 db.listenelement.save({
+    "Produktname": "Zitronen",
+    "Geschäft": "Zitronengeschaeft",
+    "id": 2,
+    "wg_id": 0
+})
+db.listenelement.save({
     "Produktname": "Gurken",
     "Geschäft": "Gurkengeschaeft",
-    "id": 2,
+    "id": 3,
+    "wg_id": 0
+})
+db.listenelement.save({
+    "Produktname": "Gurken",
+    "Geschäft": "Gurkengeschaeft",
+    "id": 0,
     "wg_id": 1
 })
 db.listenelement.save({
     "Produktname": "Zitronen",
     "Geschäft": "Zitronengeschaeft",
+    "id": 1,
+    "wg_id": 1
+})
+db.listenelement.save({
+    "Produktname": "Tomaten",
+    "Geschäft": "Tomatengeschaeft",
+    "id": 2,
+    "wg_id": 1
+})
+db.listenelement.save({
+    "Produktname": "Bananen",
+    "Geschäft": "Bananengeschaeft",
     "id": 3,
     "wg_id": 1
 })
 db.listenelement.save({
     "Produktname": "Tomaten",
     "Geschäft": "Tomatengeschaeft",
-    "id": 4,
+    "id": 0,
     "wg_id": 2
 })
 db.listenelement.save({
     "Produktname": "Bananen",
     "Geschäft": "Bananengeschaeft",
-    "id": 5,
+    "id": 1,
+    "wg_id": 2
+})
+db.listenelement.save({
+    "Produktname": "Gurken",
+    "Geschäft": "Gurkengeschaeft",
+    "id": 2,
+    "wg_id": 2
+})
+db.listenelement.save({
+    "Produktname": "Zitronen",
+    "Geschäft": "Zitronengeschaeft",
+    "id": 3,
     "wg_id": 2
 })
