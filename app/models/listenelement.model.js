@@ -73,7 +73,7 @@ exports.update = (collection, id, wg_id, data) => {
 
 exports.deleteall = (collection, wg_id) => {
 
-    const items = collection.remove({id_liste: parseInt(wg_id)})
+    const items = collection.remove({wg_id: parseInt(wg_id)})
 
     // Log
     console.log('[Log] Delete all elements of list from WG',wg_id)
