@@ -59,7 +59,12 @@ exports.readone = (collection, wg_id) => {
 
 exports.update = (collection, wg_id, data) => {
 
-    const items = collection.update({id: parseInt(wg_id)}, data)
+    const items = collection.update(
+        {
+            id: parseInt(wg_id)
+        },
+        data
+    )
 
     // Log
     console.log('[Log] Update WG',wg_id)

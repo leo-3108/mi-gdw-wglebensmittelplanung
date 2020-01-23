@@ -15,6 +15,9 @@ exports.create = (collection, data, wg_id) => {
     data.id = tmp.length
     data.wg_id = parseInt(wg_id)
 
+    // Add visability
+    data.vis = true
+
     // Save
     collection.save(data)
 
@@ -27,7 +30,8 @@ exports.create = (collection, data, wg_id) => {
 exports.readall = (collection, wg_id) => {
 
     var items = collection.find({
-        wg_id: parseInt(wg_id)
+        wg_id: parseInt(wg_id),
+        vis: true
     })
     // Remove intern id
     for(n in items){
@@ -44,7 +48,8 @@ exports.readone = (collection, wg_id, bewohner_id) => {
 
     const items = collection.find({
         wg_id: parseInt(wg_id),
-        id: parseInt(bewohner_id)
+        id: parseInt(bewohner_id),
+        vis: true
     })
 
     if (items.length) {
@@ -60,11 +65,13 @@ exports.readone = (collection, wg_id, bewohner_id) => {
 
 exports.update = (collection, wg_id, bewohner_id, data) => {
 
-    const items = collection.update({
-        wg_id: parseInt(wg_id),
-        id: parseInt(bewohner_id),
+    const items = collection.update(
+        {
+            wg_id: parseInt(wg_id),
+            id: parseInt(bewohner_id)
+        },
         data
-    })
+    )
 
     // Log
     console.log('[Log] Update Bewohner',parseInt(bewohner_id),'of WG',parseInt(wg_id))
