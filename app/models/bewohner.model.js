@@ -86,10 +86,15 @@ exports.deleteall = (collection, wg_id) => {
 
 exports.delete = (collection, wg_id, mitbewohner_id) => {
 
-    const items = collection.remove({
+      const tmp = collection.findOne({
         id: parseInt(mitbewohner_id),
         wg_id: parseInt(wg_id)
-    });
+      })
+
+      const items = collection.remove({
+        _id: tmp._id
+      });
+
 
     // Log
     console.log('[Log] Delete Bewohner',parseInt(mitbewohner_id),'of WG',parseInt(wg_id));
