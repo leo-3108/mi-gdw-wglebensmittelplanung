@@ -23,10 +23,16 @@ Campus Gummersbach
 $ npm install
 ```
 
-2. Compiling via Node.js
+2. Insert Test-Data to DB
 
 ```bash
-$ node app.js
+$ npm run reset
 ```
 
-3. Access API via a HTTP-Request with Hostadress:3000
+3. Compiling via Node.js
+
+```bash
+$ npm start
+```
+
+3. Access API via a HTTP-Request with `Hostadress4:3000
