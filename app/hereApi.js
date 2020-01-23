@@ -38,7 +38,7 @@ exports.main = async function(coord, wg, bw, list){
     let output = []
 
     // Geht durch jedes Element durch (0 sind Meta-Daten der Anfrage)
-    for(let i=1 i < places.length i++){
+    for(let i=1; i < places.length; i++){
         output[i-1] = places[i]
 
         // Berechne Routen zu allen Einkaufsmöglichkeiten
