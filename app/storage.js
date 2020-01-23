@@ -7,7 +7,6 @@ exports.init = () => {
     db.connect('./app/storage', [
         'wg',
         'bewohner',
-        'ekmoeglichkeiten',
         'listenelement'
     ])
 
