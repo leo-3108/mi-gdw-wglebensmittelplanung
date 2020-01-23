@@ -2,23 +2,8 @@ const db = require('diskdb')
 
 exports.reset = () => {
 
-    db.connect('./app/storage', [
-        'wg',
-        'bewohner',
-        'ekmoeglichkeiten',
-        'listenelement'
-    ])
-
-    const bewohnerModel = require('./models/bewohner.model.js')
-    const wgModel = require('./models/wg.model.js')
-    const listenelementModel = require('./models/listenelement.model.js')
-    const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
-
-
-    db.wg.remove()
-    db.listenelement.remove()
-    db.ekmoeglichkeiten.remove()
-    db.bewohner.remove()
+    // clear database
+    this.resetclear()
 
     db.connect('./app/storage', [
         'wg',
@@ -195,6 +180,7 @@ exports.reset = () => {
 }
 
 exports.resetclear = () => {
+    // connect to database
     db.connect('./app/storage', [
         'wg',
         'bewohner',
@@ -202,6 +188,7 @@ exports.resetclear = () => {
         'listenelement'
     ])
 
+    // remove all data
     db.wg.remove()
     db.listenelement.remove()
     db.ekmoeglichkeiten.remove()
