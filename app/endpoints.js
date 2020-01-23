@@ -12,7 +12,6 @@ const hereAPI = require('./hereAPI.js')
 const bewohnerModel = require('./models/bewohner.model.js')
 const wgModel = require('./models/wg.model.js')
 const listenelementModel = require('./models/listenelement.model.js')
-const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
 
 /**
  * Haupt-Funktion, die alle Endpoints definiert
@@ -336,7 +335,7 @@ const listenelementEndpoints = (app, db) => {
             }
 
             // create
-            let list_id = listenelementModel.create(db.listenelement, req.params.wg_id, req.body)
+            let list_id = listenelementModel.create(db.listenelement, req.body, req.params.wg_id)
 
             // output
             let listenelement = wgModel.readone(db.wg, list_id)
