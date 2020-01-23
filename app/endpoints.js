@@ -161,7 +161,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wgDelete || !bewohnerDelete || !listDelete) {
                 throw new error.InternalServerError(
-                    'wg-delete-500',
+                    'wg-id_delete-500',
                     'Internal Server Error'
                 );
             }
@@ -378,13 +378,13 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-liste-id_delete-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
             if (!le.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-liste-id_delete-404',
                     'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' gefunden werden.'
                 );
             }
@@ -395,7 +395,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!listDelete) {
                 throw new error.InternalServerError(
-                    'wg-get-404',
+                    'wg-id-liste-id_delete-500',
                     'Internal Server Error'
                 );
             }
@@ -431,13 +431,13 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
@@ -495,13 +495,13 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner-id_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
@@ -606,13 +606,13 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner-id_delete-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner-id_delete-404',
                     'Es konnte kein Bewohner mit der ID #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
@@ -623,7 +623,7 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!bewohnerDelete) {
                 throw new error.InternalServerError(
-                    'wg-get-404',
+                    'wg-id-mitbewohner-id_delete-500',
                     'Internal Server Error'
                 );
             }
@@ -658,26 +658,26 @@ exports.create = (app, storage, db) => {
             // throw errors
             if (!wg.length) {
                 throw new error.NotFound(
-                    'wgList-get-404',
+                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
                 );
             }
             if (!bw.length) {
                 throw new error.NotFound(
-                    'WgMbEk-get-404-bw',
+                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
                 );
             }
             if (!list.length) {
                 throw new error.NotFound(
-                    'WgMbEk-get-404-list',
+                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten keine Routen zu Einkaufsmoeglichkeiten berechnet werden, da die Einkaufsliste der WG #' + req.params.wg_id + ' leer ist.'
                 );
             }
 
             if (!coord) {
                 throw new error.NotAcceptable(
-                    'WgMbEk-get-406-coord',
+                    'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-406',
                     'Es wurde kein Standord als Query Parameter angegeben: coord'
                 )
             }
