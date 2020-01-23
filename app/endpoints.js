@@ -733,6 +733,8 @@ const einkaufsmoeglichkeitenEndpoints = (app, db) => {
                 }
 
                 res.status(200).json(result).end()
+            }).catch(e => {
+                throw e
             })
 
         } catch (e) {

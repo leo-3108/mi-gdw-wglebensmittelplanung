@@ -18,19 +18,20 @@ const error = require('rest-api-errors')
  */
 exports.main = async function(coord, wg, bw, list){
 
-    // Get Einkaufsmoeglichkeiten in der Nähe
-    let places = await anfrage(
-        'GET',
-        'https://places.cit.api.here.com/places/v1/autosuggest',
-        {
-            at: coord,
-            q: 'Supermarkt'
-        },
-    ).then(places => {
-        // Filter die Einkausmöglchkeiten heraus, die Elemente der Liste anbieten
+    try {
+        // Get Einkaufsmoeglichkeiten in der Nähe
+        let places = await anfrage(
+            'GET',
+            'https://places.cit.api.here.com/places/v1/autosuggest',
+            {
+                at: coord,
+                q: 'Supermarkt'
+            },
+        ).then(places => {
+            // Filter die Einkausmöglchkeiten heraus, die Elemente der Liste anbieten
 
-        return places.results
-    })
+            return places.results
+        })
 
     // Log
     console.log('[Log] Get Places from HERE API at',coord)
@@ -38,7 +39,7 @@ exports.main = async function(coord, wg, bw, list){
     let output = []
 
     // Geht durch jedes Element durch (0 sind Meta-Daten der Anfrage)
-    for(let i=1; i < places.length; i++){
+    for (let i=1; i < places.length; i++) {
         output[i-1] = places[i]
 
         // Berechne Routen zu allen Einkaufsmöglichkeiten
@@ -49,19 +50,29 @@ exports.main = async function(coord, wg, bw, list){
                 waypoint0: coord,
                 waypoint1: toCoord(output[i-1].position),
                 departure: 'now',
-                mode: 'fastestpublicTransport',
+                mode: 'fastest;publicTransport',
                 combineChange: 'true'
             }
         )
         console.log('  [Log] Calculated Route #' + (i-1))
 
-        output[i-1].route = route.response.route
+        if(route.statusCode == 200){
+            output[i-1].route = route.response.route
+        }
     }
 
     console.log('[Log] Calculated all routes')
 
     // Filter for output
     return output
+
+
+    }
+    catch (e) {
+        console.log(`[HERE-API - Error #${e.statusCode || 500}]`, e)
+
+        throw new error.InternalServerError('here-anfrage', 'Internal Server Error')
+    }
 }
 
 /**
@@ -92,9 +103,8 @@ const anfrage = (method, url, qs) => {
     }
     options.qs = Object.assign(qs, options.qs)
 
-    return request(options).catch(e => {
-        console.log(`[HERE-API - Error #${e.error.status || 500}]`, e.error.message || e, e.error.incidentId || '')
-        throw new error.InternalServerError('here-anfrage', 'Internal Server Error')
+    return request(options).then(result => {
+        return result
     })
 }
 
