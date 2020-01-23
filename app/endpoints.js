@@ -320,7 +320,7 @@ const listenelementEndpoints = (app, db) => {
             }
 
             // success
-            res.status(200).json(le[0]).end()
+            res.status(200).json(output).end()
         } catch (e) {
             // error handling
             res.status(e.status || 500).json(errhandling(e))
