@@ -1,8 +1,8 @@
 /**
  * Modul zum Speichern der Daten
  */
-const db = require('diskdb');
-const error = require('rest-api-errors');
+const db = require('diskdb')
+const error = require('rest-api-errors')
 
 exports.init = () => {
     db.connect('./app/storage', [
@@ -10,7 +10,7 @@ exports.init = () => {
         'bewohner',
         'ekmoeglichkeiten',
         'listenelement'
-    ]);
+    ])
 
     return db
 }

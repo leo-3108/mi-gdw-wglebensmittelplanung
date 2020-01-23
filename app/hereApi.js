@@ -33,12 +33,12 @@ exports.main = async function(coord, wg, bw, list){
     })
 
     // Log
-    console.log('[Log] Get Places from HERE API at',coord);
+    console.log('[Log] Get Places from HERE API at',coord)
 
     let output = []
 
     // Geht durch jedes Element durch (0 sind Meta-Daten der Anfrage)
-    for(let i=1; i < places.length; i++){
+    for(let i=1 i < places.length i++){
         output[i-1] = places[i]
 
         // Berechne Routen zu allen Einkaufsmöglichkeiten
@@ -49,16 +49,16 @@ exports.main = async function(coord, wg, bw, list){
                 waypoint0: coord,
                 waypoint1: toCoord(output[i-1].position),
                 departure: 'now',
-                mode: 'fastest;publicTransport',
+                mode: 'fastestpublicTransport',
                 combineChange: 'true'
             }
         )
-        console.log('  [Log] Calculated Route #' + (i-1));
+        console.log('  [Log] Calculated Route #' + (i-1))
 
         output[i-1].route = route.response.route
     }
 
-    console.log('[Log] Calculated all routes');
+    console.log('[Log] Calculated all routes')
 
     // Filter for output
     return output

@@ -4,22 +4,22 @@
  */
 
 // Modules
-const { checkSchema } = require('express-validator');
-const error = require('rest-api-errors');
-const hereAPI = require('./hereAPI.js');
+const { checkSchema } = require('express-validator')
+const error = require('rest-api-errors')
+const hereAPI = require('./hereAPI.js')
 
 // Datatypes
-const bewohnerModel = require('./models/bewohner.model.js');
-const wgModel = require('./models/wg.model.js');
-const listenelementModel = require('./models/listenelement.model.js');
-const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js');
+const bewohnerModel = require('./models/bewohner.model.js')
+const wgModel = require('./models/wg.model.js')
+const listenelementModel = require('./models/listenelement.model.js')
+const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
 
 exports.create = (app, storage, db) => {
     app.get('/', function(req, res) {
         res.json({
             name: 'WG-Lebensmittelplaner',
-        });
-    });
+        })
+    })
 
     /**
      * WG-------------------------------------------------------------------------
@@ -35,7 +35,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg_get-404',
                     'Es konnten keine WGs gefunden werden.'
-                );
+                )
             }
 
             // output
@@ -51,14 +51,14 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.post('/wg', function(req, res) {
         try {
             // create
-            let wg_id = wgModel.create(db.wg, req.body);
+            let wg_id = wgModel.create(db.wg, req.body)
 
             // output
             let wg = wgModel.readone(db.wg, wg_id)
@@ -74,9 +74,9 @@ exports.create = (app, storage, db) => {
             res.status(201).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.get('/wg/:wg_id', function(req, res) {
         try {
@@ -88,7 +88,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // output
@@ -104,14 +104,14 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.put('/wg/:wg_id', function(req, res) {
         try {
             // change
-            let changelog = wgModel.update(db.wg, req.params.wg_id, req.body);
+            let changelog = wgModel.update(db.wg, req.params.wg_id, req.body)
 
             // output
             let wg = wgModel.readone(db.wg, req.params.wg_id)
@@ -129,16 +129,16 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id_put-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // success
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.delete('/wg/:wg_id', function(req, res) {
         try {
@@ -150,7 +150,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id_delete-404',
                     'Es konnte keine WG mit der ID #' + req.params.wg_id + 'gefunden werden.'
-                );
+                )
             }
 
             // delete wg and recursive bewohner & listen
@@ -163,7 +163,7 @@ exports.create = (app, storage, db) => {
                 throw new error.InternalServerError(
                     'wg-id_delete-500',
                     'Internal Server Error'
-                );
+                )
             }
 
             // output
@@ -178,9 +178,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     /**
      * Einkaufsliste-------------------------------------------------------------------------
@@ -197,7 +197,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // output
@@ -207,9 +207,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
 
     app.delete('/wg/:wg_id/liste', function(req, res) {
@@ -222,7 +222,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste_delete-404',
                     'Es konnte keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // delete liste
@@ -233,7 +233,7 @@ exports.create = (app, storage, db) => {
                 throw new error.InternalServerError(
                     'wg-id-liste_delete-500',
                     'Internal Server Error'
-                );
+                )
             }
 
             // output
@@ -248,9 +248,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     /**
      * Listenelement-------------------------------------------------------------------------
@@ -267,13 +267,13 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
             if (!le.length) {
                 throw new error.NotFound(
                     'wg-id-liste-id_get-404',
                     'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + 'gefunden werden.'
-                );
+                )
             }
 
             let output = {
@@ -288,9 +288,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(le[0]).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.post('/wg/:wg_id/liste', function(req, res) {
         try {
@@ -302,7 +302,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste_post-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // create
@@ -322,9 +322,9 @@ exports.create = (app, storage, db) => {
             res.status(201).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.put('/wg/:wg_id/liste/:element_id', function(req, res) {
         try {
@@ -336,7 +336,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste-id_put-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // change
@@ -358,16 +358,16 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste-id_put-404',
                     'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // success
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.delete('/wg/:wg_id/liste/:element_id', function(req, res) {
         try {
@@ -380,13 +380,13 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-liste-id_delete-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
             if (!le.length) {
                 throw new error.NotFound(
                     'wg-id-liste-id_delete-404',
                     'Es konnten keine Listenelement mit der ID #' + req.params.element_id + ' gefunden werden.'
-                );
+                )
             }
 
             // delete listenelement
@@ -397,7 +397,7 @@ exports.create = (app, storage, db) => {
                 throw new error.InternalServerError(
                     'wg-id-liste-id_delete-500',
                     'Internal Server Error'
-                );
+                )
             }
 
             // output
@@ -412,9 +412,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     /**
      * Mitbewohner-------------------------------------------------------------------------
@@ -433,22 +433,22 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
             if (!bw.length) {
                 throw new error.NotFound(
                     'wg-id-mitbewohner_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // success
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.post('/wg/:wg_id/mitbewohner', function(req, res) {
         try {
@@ -460,7 +460,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner_post-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // create
@@ -480,9 +480,9 @@ exports.create = (app, storage, db) => {
             res.status(201).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.get('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         try {
@@ -497,22 +497,22 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
             if (!bw.length) {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
-                );
+                )
             }
 
             // success
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.put('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         try {
@@ -524,7 +524,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id_put-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // change
@@ -546,16 +546,16 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id_put-404',
                     'Es konnten kein Listenelement mit der ID #' + req.params.element_id + ' in der WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // success
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.delete('/wg/:wg_id/mitbewohner', function(req, res) {
         try {
@@ -567,7 +567,7 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner_delete-404',
                     'Es konnte keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
 
             // delete liste
@@ -578,7 +578,7 @@ exports.create = (app, storage, db) => {
                 throw new error.InternalServerError(
                     'wg-id-mitbewohner_delete-500',
                     'Internal Server Error'
-                );
+                )
             }
 
             // output
@@ -593,9 +593,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     app.delete('/wg/:wg_id/mitbewohner/:mitbewohner_id', function(req, res) {
         try {
@@ -608,13 +608,13 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id_delete-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
             if (!bw.length) {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id_delete-404',
                     'Es konnte kein Bewohner mit der ID #' + req.params.mitbewohner_id + ' gefunden werden.'
-                );
+                )
             }
 
             // delete listenelement
@@ -625,7 +625,7 @@ exports.create = (app, storage, db) => {
                 throw new error.InternalServerError(
                     'wg-id-mitbewohner-id_delete-500',
                     'Internal Server Error'
-                );
+                )
             }
 
             // output
@@ -640,9 +640,9 @@ exports.create = (app, storage, db) => {
             res.status(200).json(output).end()
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 
     /**
      * Einkaufsmöglichkeit-------------------------------------------------------------------------
@@ -660,19 +660,19 @@ exports.create = (app, storage, db) => {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten keine WG mit der ID #' + req.params.wg_id + ' gefunden werden.'
-                );
+                )
             }
             if (!bw.length) {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten kein Bewohner in der WG #' + req.params.wg_id + ' mit der ID  #' + req.params.mitbewohner_id + ' gefunden werden.'
-                );
+                )
             }
             if (!list.length) {
                 throw new error.NotFound(
                     'wg-id-mitbewohner-id-einkaufsmoeglichkeiten_get-404',
                     'Es konnten keine Routen zu Einkaufsmoeglichkeiten berechnet werden, da die Einkaufsliste der WG #' + req.params.wg_id + ' leer ist.'
-                );
+                )
             }
 
             if (!coord) {
@@ -700,9 +700,9 @@ exports.create = (app, storage, db) => {
 
         } catch (e) {
             // error handling
-            res.status(e.status || 500).json(errhandling(e));
+            res.status(e.status || 500).json(errhandling(e))
         }
-    });
+    })
 }
 
 function errhandling(e){

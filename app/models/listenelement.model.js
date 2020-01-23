@@ -1,6 +1,6 @@
 const {
     checkSchema
-} = require('express-validator');
+} = require('express-validator')
 
 /**
  * CRUD-Befehle for Listenelement
@@ -14,26 +14,26 @@ const {
          var tmp = collection.find({
              wg_id: parseInt(wg_id)
          })
-         data.id = tmp.length;
-         data.wg_id = parseInt(wg_id);
+         data.id = tmp.length
+         data.wg_id = parseInt(wg_id)
 
          // Save
-         collection.save(data);
+         collection.save(data)
      }
      catch(e){
          throw new error.InternalServerError('db-create', 'Internal Server Error')
      }
      //log
-     console.log('[Log] Add new element',data.id,'to list from WG',data.wg_id);
+     console.log('[Log] Add new element',data.id,'to list from WG',data.wg_id)
 
-     return data.id;
+     return data.id
  }
 
  exports.readall = (collection, wg_id) => {
 
      var items = collection.find({
          wg_id: parseInt(wg_id)
-     });
+     })
 
      // Remove intern id
      for(n in items){
@@ -41,24 +41,24 @@ const {
      }
 
      // Log
-     console.log('[Log] Read all elements of list from WG',wg_id);
+     console.log('[Log] Read all elements of list from WG',wg_id)
 
-     return items;
+     return items
  }
 
 exports.readone = (collection, wg_id, id) => {
 
-    const items = collection.find({id: parseInt(id), id_liste: parseInt(wg_id)});
+    const items = collection.find({id: parseInt(id), id_liste: parseInt(wg_id)})
 
     if(items.length){
         // Remove intern id
-        delete items[0]._id;
+        delete items[0]._id
     }
 
     // Log
-    console.log('[Log] Read element',id,'of list from WG',wg_id);
+    console.log('[Log] Read element',id,'of list from WG',wg_id)
 
-    return items;
+    return items
 }
 
 exports.update = (collection, id, wg_id, data) => {
@@ -66,17 +66,17 @@ exports.update = (collection, id, wg_id, data) => {
     const items = collection.update({id: parseInt(id), id_liste: parseInt(wg_id), data})
 
     // Log
-    console.log('[Log] Update element',id,'of list from WG',wg_id);
+    console.log('[Log] Update element',id,'of list from WG',wg_id)
 
     return items
 }
 
 exports.deleteall = (collection, wg_id) => {
 
-    const items = collection.remove({id_liste: parseInt(wg_id)});
+    const items = collection.remove({id_liste: parseInt(wg_id)})
 
     // Log
-    console.log('[Log] Delete all elements of list from WG',wg_id);
+    console.log('[Log] Delete all elements of list from WG',wg_id)
 
     return items
 }
@@ -93,7 +93,7 @@ exports.delete = (collection, wg_id, id) => {
     })
 
     // Log
-    console.log('[Log] Delete element',id,'of list from WG',wg_id);
+    console.log('[Log] Delete element',id,'of list from WG',wg_id)
 
     return items
 }

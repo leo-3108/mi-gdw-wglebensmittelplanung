@@ -1,6 +1,6 @@
 const {
     checkSchema
-} = require('express-validator');
+} = require('express-validator')
 
 /**
  * CRUD-Befehle for EInkaufsmöglichkeiten
@@ -9,22 +9,22 @@ const {
 
  exports.readone = (collection, id) => {
 
-     const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)});
+     const items = collection.find({id: parseInt(id), id_liste: parseInt(id_liste)})
 
      if(items.length){
          // Remove intern id
-         delete items[0]._id;
+         delete items[0]._id
      }
 
      // Log
-     console.log('[Log] Read Einkaufsmoeglichkeit',id);
+     console.log('[Log] Read Einkaufsmoeglichkeit',id)
 
-     return items;
+     return items
  }
 
  exports.readall = (collection) => {
 
-     const items = collection.find();
+     const items = collection.find()
 
      // Remove intern id
      for(item in items){
@@ -32,7 +32,7 @@ const {
      }
 
      // Log
-     console.log('[Log] Read all Einkaufsmoeglichkeite');
+     console.log('[Log] Read all Einkaufsmoeglichkeite')
 
-     return items;
+     return items
  }

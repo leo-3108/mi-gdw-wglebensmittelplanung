@@ -1,4 +1,4 @@
-const db = require('diskdb');
+const db = require('diskdb')
 
 exports.reset = () => {
 
@@ -7,12 +7,12 @@ exports.reset = () => {
         'bewohner',
         'ekmoeglichkeiten',
         'listenelement'
-    ]);
+    ])
 
-    const bewohnerModel = require('./models/bewohner.model.js');
-    const wgModel = require('./models/wg.model.js');
-    const listenelementModel = require('./models/listenelement.model.js');
-    const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js');
+    const bewohnerModel = require('./models/bewohner.model.js')
+    const wgModel = require('./models/wg.model.js')
+    const listenelementModel = require('./models/listenelement.model.js')
+    const ekmoeglichkeitenModel = require('./models/ekmoeglichkeiten.model.js')
 
 
     db.wg.remove()
@@ -25,7 +25,7 @@ exports.reset = () => {
         'bewohner',
         'ekmoeglichkeiten',
         'listenelement'
-    ]);
+    ])
 
     db.wg.save({
         "Name": "Test-WG0",
@@ -200,7 +200,7 @@ exports.resetclear = () => {
         'bewohner',
         'ekmoeglichkeiten',
         'listenelement'
-    ]);
+    ])
 
     db.wg.remove()
     db.listenelement.remove()
