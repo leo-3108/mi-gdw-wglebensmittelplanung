@@ -227,7 +227,13 @@ const listeEndpoints = (app, db) => {
             }
 
             // output
-            let output = le
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                },
+                data: le
+            }
 
             // success
             res.status(200).json(output).end()
@@ -458,7 +464,14 @@ const bewohnerEndpoints = (app, db) => {
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readall(db.bewohner, req.params.wg_id)
 
-            let output = bw
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                },
+                data: bw
+            }
+
 
             // throw errors
             if (!wg.length) {
@@ -522,7 +535,14 @@ const bewohnerEndpoints = (app, db) => {
             let wg = wgModel.readone(db.wg, req.params.wg_id)
             let bw = bewohnerModel.readone(db.bewohner, req.params.wg_id, req.params.bewohner_id)
 
-            let output = bw[0]
+            let output = {
+                response: {
+                    status: 200,
+                    message: 'OK'
+                },
+                changelog: changelog,
+                data: bw[0]
+            }
 
             // throw errors
             if (!wg.length) {
