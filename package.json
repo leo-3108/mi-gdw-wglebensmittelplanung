@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "reset": "node ./app/reset.js"
+    "testdata": "node ./app/testdata.js"
+    "clear": "node ./app/cleardatabase.js"
   },
   "nodemonConfig": {
     "ignore": [
