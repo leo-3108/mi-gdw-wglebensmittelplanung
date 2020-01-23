@@ -1,10 +1,5 @@
-const {
-    checkSchema
-} = require('express-validator')
-
 /**
- * CRUD-Befehle for Bewohner
- * @throws HTTP-Errors
+ * Bewohner Modell
  */
 
 exports.create = (collection, data, wg_id) => {
@@ -34,8 +29,12 @@ exports.readall = (collection, wg_id) => {
         vis: true
     })
     // Remove intern id
-    for(n in items){
+    for(n of items){
+        // Remove intern id
         delete items[n]._id
+
+        // Remove visability
+        delete items[n].vis
     }
 
     // Log
@@ -55,6 +54,9 @@ exports.readone = (collection, wg_id, bewohner_id) => {
     if (items.length) {
         // Remove intern id
         delete items[0]._id
+
+        // Remove visability
+        delete items[0].vis
     }
 
     // Log
@@ -68,7 +70,8 @@ exports.update = (collection, wg_id, bewohner_id, data) => {
     const items = collection.update(
         {
             wg_id: parseInt(wg_id),
-            id: parseInt(bewohner_id)
+            id: parseInt(bewohner_id),
+            vis: true
         },
         data
     )
@@ -81,26 +84,44 @@ exports.update = (collection, wg_id, bewohner_id, data) => {
 
 exports.deleteall = (collection, wg_id) => {
 
-    const items = collection.remove({
-        wg_id: parseInt(wg_id)
+    const tmp = collection.findOne({
+        wg_id: parseInt(wg_id),
+        vis: true
     })
+
+    for(item of tmp){
+        collection.update(
+            {
+                _id: item._id
+            },
+            {
+                vis: false
+            }
+        )
+    }
 
     // Log
     console.log('[Log] Delete all Bewohner of WG',parseInt(wg_id))
 
-    return items
+    return true
 }
 
 exports.delete = (collection, wg_id, bewohner_id) => {
 
-      const tmp = collection.findOne({
+    const tmp = collection.findOne({
         id: parseInt(bewohner_id),
-        wg_id: parseInt(wg_id)
-      })
+        wg_id: parseInt(wg_id),
+        vis: true
+    })
 
-      const items = collection.remove({
-        _id: tmp._id
-      })
+    const items = collection.update(
+        {
+            _id: tmp._id
+        },
+        {
+            vis: false
+        }
+    )
 
 
     // Log
