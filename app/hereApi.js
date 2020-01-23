@@ -53,6 +53,7 @@ exports.main = async function(coord, wg, bw, list){
                 combineChange: 'true'
             }
         )
+        console.log('  [Log] Calculated Route #' + (i-1));
 
         output[i-1].route = route.response.route
     }
