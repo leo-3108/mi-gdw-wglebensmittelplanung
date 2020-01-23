@@ -1,3 +1,12 @@
+# Database
+app/storage/*
+!app/storage/README.md
+
+
+#
+#  NODE.JS
+#
+
 # DS_Store (macOS)
 .DS_Store
 

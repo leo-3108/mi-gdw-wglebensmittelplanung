@@ -13,6 +13,7 @@ const express = require('express');
 const app = express();
 const storage = require('./app/storage');
 const endpoints = require('./app/endpoints');
+const rs = require('./app/testdata');
 
 // Support for JSON-Body in HTTP-Request
 app.use(express.json())
@@ -33,6 +34,8 @@ app.use(function(req, res, next){
 
     console.log('\x1b[0m')
 })
+
+rs.reset()
 
 // Create Database
 const db = storage.init();
