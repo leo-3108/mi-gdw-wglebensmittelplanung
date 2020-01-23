@@ -1,11 +1,12 @@
 {
-  "name": "gdw_ws1920_bao_gedrath_pelzer",
+  "name": "mi-gdw-201920-WG",
   "version": "1.0.0",
   "description": "Gruppe 1: Benjamin Krumnow (Raum 3.111)",
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "reset": "node app/testdata.js"
   },
   "nodemonConfig": {
     "ignore": [
