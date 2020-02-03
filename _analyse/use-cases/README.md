@@ -8,6 +8,7 @@ Alle Use Cases befinden sich im Lösungsraum.
 - [Use Case 3: Kostenaufteilung](#use-case-2-kostenaufteilung)
 - [Use Case 4: Mitbewohner befindet sich in der Nähe eines Geschäftes](#use-case-4-mitbewohner-befindet-sich-in-der-nähe-eines-geschäftes)
 - [Use Case 4a: Zwei Mitbewohner kaufen gleichzeitig ein Produkt Geschäftes](#use-case-4a-zwei-mitbewohner-kaufen-gleichzeitig-ein-produkt)
+- [Use Case 5: Vorschlagen naheliegender Einkaufsmöglichkeiten und der jeweiligen Routen](#use-case-5-vorschlagen-naheliegender-einkaufsmöglichkeiten-und-der-jeweiligen-routen)
 
 ***
 
