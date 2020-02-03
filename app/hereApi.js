@@ -56,9 +56,7 @@ exports.main = async function(coord, wg, bw, list){
         )
         console.log('  [Log] Calculated Route #' + (i-1))
 
-        if(route.statusCode == 200){
-            output[i-1].route = route.response.route
-        }
+        output[i-1].route = route.response.route
     }
 
     console.log('[Log] Calculated all routes')
